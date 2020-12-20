@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSPHelperWPF", "KSPHelperWPF\KSPHelperWPF.csproj", "{7C525F42-365B-4BE2-910A-1272CA3B1C7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSPModelLibrary", "KSPModelLibrary\KSPModelLibrary.csproj", "{F76A46C3-3440-44CD-A316-9191CAB3D1BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonReaderLibrary", "..\..\..\Libraries\JsonReaderLibrary\JsonReaderLibrary\JsonReaderLibrary.csproj", "{696384F0-DF49-44E0-84E9-C1A125915DAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C525F42-365B-4BE2-910A-1272CA3B1C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C525F42-365B-4BE2-910A-1272CA3B1C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C525F42-365B-4BE2-910A-1272CA3B1C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C525F42-365B-4BE2-910A-1272CA3B1C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F76A46C3-3440-44CD-A316-9191CAB3D1BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F76A46C3-3440-44CD-A316-9191CAB3D1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F76A46C3-3440-44CD-A316-9191CAB3D1BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F76A46C3-3440-44CD-A316-9191CAB3D1BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696384F0-DF49-44E0-84E9-C1A125915DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696384F0-DF49-44E0-84E9-C1A125915DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696384F0-DF49-44E0-84E9-C1A125915DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696384F0-DF49-44E0-84E9-C1A125915DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D9C162C-98A5-4610-BA39-81F4E9CE5801}
+	EndGlobalSection
+EndGlobal
