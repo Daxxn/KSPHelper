@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KSPModelLibrary;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -20,7 +21,11 @@ namespace KSPHelperWPF.ViewModels
       #endregion
 
       #region - Methods
-
+      public void GameDataReadEvent(object sender, EventArgs e)
+      {
+         // Move to either an AppSetting or to a settings view.
+         GameDataReader.ReadGameData(@"B:\Games\steamapps\common\Kerbal Space Program\GameData");
+      }
       #endregion
 
       #region - Full Properties

@@ -14,6 +14,7 @@
 
         <Menu Grid.Row="0">
             <MenuItem Header="File" />
+            <MenuItem Header="Run Part Reader" Name="GameDataReaderButton" ToolTip="This may take a while..." />
         </Menu>
 
         <TabControl Grid.Row="1">

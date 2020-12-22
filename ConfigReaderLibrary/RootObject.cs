@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KSPModelLibrary
+namespace ConfigReaderLibrary
 {
-   public static class FileDialogManager
+   public class RootObject
    {
       #region - Fields & Properties
+      public BaseObject Child { get; set; }
+      #endregion
 
+      #region - Constructors
+      public RootObject() { }
       #endregion
 
       #region - Methods
-      public static void OpenDialog()
-      {
 
-      }
       #endregion
 
       #region - Full Properties

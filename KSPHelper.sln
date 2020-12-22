@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSPHelperWPF", "KSPHelperWPF\KSPHelperWPF.csproj", "{7C525F42-365B-4BE2-910A-1272CA3B1C7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSPModelLibrary", "KSPModelLibrary\KSPModelLibrary.csproj", "{F76A46C3-3440-44CD-A316-9191CAB3D1BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSPModelLibrary", "KSPModelLibrary\KSPModelLibrary.csproj", "{F76A46C3-3440-44CD-A316-9191CAB3D1BD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonReaderLibrary", "..\..\..\Libraries\JsonReaderLibrary\JsonReaderLibrary\JsonReaderLibrary.csproj", "{696384F0-DF49-44E0-84E9-C1A125915DAE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigReaderLibrary", "ConfigReaderLibrary\ConfigReaderLibrary.csproj", "{9963AFFD-0AEE-4A20-9EE8-2C039B20FCD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSearchLibrary", "..\..\..\Libraries\FileSearchLibrary\FileSearchLibrary\FileSearchLibrary.csproj", "{30209945-F083-4775-A886-F0A500FFE101}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{696384F0-DF49-44E0-84E9-C1A125915DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{696384F0-DF49-44E0-84E9-C1A125915DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{696384F0-DF49-44E0-84E9-C1A125915DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9963AFFD-0AEE-4A20-9EE8-2C039B20FCD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9963AFFD-0AEE-4A20-9EE8-2C039B20FCD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9963AFFD-0AEE-4A20-9EE8-2C039B20FCD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9963AFFD-0AEE-4A20-9EE8-2C039B20FCD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30209945-F083-4775-A886-F0A500FFE101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30209945-F083-4775-A886-F0A500FFE101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30209945-F083-4775-A886-F0A500FFE101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30209945-F083-4775-A886-F0A500FFE101}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

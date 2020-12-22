@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="KSPModelLibrary" GeneratedClassName="PathSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="GameDataPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">B:\Games\steamapps\common\Kerbal Space Program\GameData</Value>
+    </Setting>
+    <Setting Name="AdditionalPartDirs" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VanillaDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\Squad\Parts</Value>
+    </Setting>
+    <Setting Name="DLCDirs" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\SquadExpansion\MakingHistory\Parts,\SquadExpansion\Serenity\Parts</Value>
+    </Setting>
+    <Setting Name="ModDirs" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\PlanetaryBaseInc\BaseSystem\Parts,\PlanetaryBaseInc\ContainerSystem,\SCANsat\Parts,\TarsierSpaceTech\Parts</Value>
+    </Setting>
+    <Setting Name="ExcludedDirs" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

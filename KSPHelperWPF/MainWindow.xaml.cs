@@ -28,6 +28,12 @@ namespace KSPHelperWPF
          DataContext = vm;
          ElectricalTab.Content = new ElectricalView(vm.ElectricalVM);
          CommsTab.Content = new CommsView(vm.CommsVM);
+         InitEvents(vm);
+      }
+
+      private void InitEvents(MainViewModel vm)
+      {
+         GameDataReaderButton.Click += vm.GameDataReadEvent;
       }
    }
 }

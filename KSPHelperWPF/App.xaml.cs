@@ -1,4 +1,6 @@
-﻿using KSPHelperWPF.ViewModels;
+﻿using ConfigReaderLibrary;
+using KSPHelperWPF.ViewModels;
+using KSPModelLibrary;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,8 +18,10 @@ namespace KSPHelperWPF
    {
       protected override void OnStartup(StartupEventArgs e)
       {
-         var mainView = new MainWindow(MainViewModel.Instance);
-         mainView.Show();
+         GameDataReader.ReadGameData(@"B:\Games\steamapps\common\Kerbal Space Program\GameData\Squad\Parts\FuelTank");
+         //GameDataReader.ReadGameDataAsync(@"B:\Games\steamapps\common\Kerbal Space Program\GameData\Squad\Parts\Wheel").Wait();
+         //var mainView = new MainWindow(MainViewModel.Instance);
+         //mainView.Show();
       }
    }
 }

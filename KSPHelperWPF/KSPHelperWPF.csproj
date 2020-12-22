@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\KSPModelLibrary\KSPModelLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

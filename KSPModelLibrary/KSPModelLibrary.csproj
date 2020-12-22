@@ -12,4 +12,25 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\FileSearchLibrary\FileSearchLibrary\FileSearchLibrary.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\JsonReaderLibrary\JsonReaderLibrary\JsonReaderLibrary.csproj" />
+    <ProjectReference Include="..\ConfigReaderLibrary\ConfigReaderLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="PathSettings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PathSettings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="PathSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>PathSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
 </Project>
