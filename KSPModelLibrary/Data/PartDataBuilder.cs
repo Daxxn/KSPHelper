@@ -37,6 +37,10 @@ namespace KSPModelLibrary.Data
 
          foreach (var partData in data)
          {
+            if (partData is null)
+            {
+               continue;
+            }
             var foundPart = partData.GetChild("PART");
             if (foundPart != null)
             {
@@ -73,18 +77,76 @@ namespace KSPModelLibrary.Data
          {
             foreach (var moduleType in (ModuleType[])Enum.GetValues(typeof(ModuleType)))
             {
+               var newModule = ModuleFactory.Selector[moduleType]();
                if (rawModule.Values.ContainsKey("name"))
                {
                   if (rawModule.Values["name"] == Enum.GetName(typeof(ModuleType), moduleType))
                   {
-                     var newModule = ModuleFactory.Selector[moduleType]();
-                     newModule.Name = rawModule.Values["name"];
+                     string newModuleName = rawModule.Values["name"];
+                     newModule.Name = newModuleName;
                      foreach (var keyVal in rawModule.Values)
                      {
                         newModule.SetProp(keyVal.Key, keyVal.Value);
                      }
-                     part.Modules.Add(rawModule.Values["name"], newModule);
+                     if (!part.Modules.ContainsKey(newModuleName))
+                     {
+                        part.Modules.Add(rawModule.Values["name"], newModule); 
+                     }
                   }
+               }
+
+               // Need to test ALL this
+               switch (moduleType)
+               {
+                  case ModuleType.ModuleEnginesFX:
+                     if (rawModule.Children.Count > 0)
+                     {
+                        var tempModule = newModule as EngineModule;
+                        foreach (var subModule in rawModule.Children)
+                        {
+                           if (subModule.Values.ContainsKey("name"))
+                           {
+                              if (subModule.Key == "PROPELLANT")
+                              {
+                                 if (tempModule != null)
+                                 {
+                                    var newPropModule = new PropellentModule();
+                                    newPropModule.Name = subModule.Values["name"];
+                                    foreach (var keyVal in subModule.Values)
+                                    {
+                                       newPropModule.SetProp(keyVal.Key, keyVal.Value);
+                                    }
+                                    tempModule.PropellentRequirements.Add(newPropModule);
+                                 }
+                              }
+                           }
+                           if (subModule.Key == "RESOURCE")
+                           {
+                              
+                           }
+                        }
+                     }
+                     break;
+                  case ModuleType.ModuleReactionWheel:
+                     if (rawModule.Children.Count > 0)
+                     {
+                        var tempModule = newModule as ReactionWheelModule;
+                        foreach (var subModule in rawModule.Children)
+                        {
+                           if (subModule.Key == "RESOURCE")
+                           {
+                              tempModule.Electrical = new ElectricalLoadModule();
+                              tempModule.Name = subModule.Values["name"];
+                              foreach (var keyVal in subModule.Values)
+                              {
+                                 tempModule.Electrical.SetProp(keyVal.Key, keyVal.Value);
+                              }
+                           }
+                        }
+                     }
+                     break;
+                  default:
+                     break;
                }
             }
          }

@@ -18,10 +18,15 @@ namespace KSPHelperWPF
    {
       protected override void OnStartup(StartupEventArgs e)
       {
-         GameDataReader.ReadGameData(@"B:\Games\steamapps\common\Kerbal Space Program\GameData\Squad\Parts\FuelTank");
-         //GameDataReader.ReadGameDataAsync(@"B:\Games\steamapps\common\Kerbal Space Program\GameData\Squad\Parts\Wheel").Wait();
-         //var mainView = new MainWindow(MainViewModel.Instance);
-         //mainView.Show();
+         PathSettings.OnStartup();
+         var mainView = new MainWindow(MainViewModel.Instance);
+         mainView.Show();
+      }
+
+      protected override void OnExit(ExitEventArgs e)
+      {
+         PathSettings.OnExit();
+         base.OnExit(e);
       }
    }
 }

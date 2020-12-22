@@ -1,0 +1,35 @@
+﻿{
+  "GameDataPath": "B:\\Games\\steamapps\\common\\Kerbal Space Program\\GameData",
+  "AdditionalPartPaths": [],
+  "VanillaPath": "Squad\\Parts",
+  "DLCPaths": [
+    "SquadExpansion\\MakingHistory\\Parts",
+    "SquadExpansion\\Serenity\\Parts"
+  ],
+  "ModPaths": [
+    "TarsierSpaceTech\\Parts",
+    "PlanetaryBaseInc\\BaseSystem\\Parts",
+    "PlanetaryBaseInc\\ContainerSystem",
+    "SCANsat\\Parts"
+  ],
+  "ExcludedPaths": [
+    "Squad\\Parts\\Misc",
+    "PreBuilt",
+    "Squad\\Parts\\Cargo",
+    "Squad\\Parts\\CompoundParts",
+    "SharedAssets",
+    "MakingHistory\\Parts\\Utility"
+  ],
+  "ExcludedFiles": [
+    "_config",
+    "VariantThemes",
+    "flag",
+    "kerbalEVA",
+    "kerbalEVAfemale"
+  ],
+  "FileFilters": [
+    ".cfg"
+  ],
+  "DirFilters": [
+  ]
+}

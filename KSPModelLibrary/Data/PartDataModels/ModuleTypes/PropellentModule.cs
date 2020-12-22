@@ -9,6 +9,7 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
       public string Name { get; set; }
       public double Ratio { get; set; }
       public bool DrawGauge { get; set; }
+      public double MinReserve { get; set; }
 
       public void SetProp(string prop, string value)
       {
@@ -19,6 +20,9 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
                break;
             case "DrawGauge":
                DrawGauge = ParseMethods.ParseBool(value);
+               break;
+            case "minResToLeave":
+               MinReserve = ParseMethods.ParseDouble(value);
                break;
             default:
                break;

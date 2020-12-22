@@ -42,7 +42,13 @@ namespace KSPModelLibrary
             throw new DirectoryNotFoundException(root);
          }
 
-         string[] foundFiles = FileSearch.FindFiles(root, Filters["dirs"], Filters["files"], Filters["exts"]);
+         string[] foundFiles = FileSearch_2.FilterFiles(
+            PathSettings.AllPaths,
+            PathSettings.SettingsModel.ExcludedFiles,
+            PathSettings.SettingsModel.ExcludedPaths,
+            PathSettings.SettingsModel.FileFilters,
+            PathSettings.SettingsModel.DirFilters
+         );
 
          return foundFiles;
       }

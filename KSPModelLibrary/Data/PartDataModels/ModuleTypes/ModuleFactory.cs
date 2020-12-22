@@ -13,7 +13,8 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
          { ModuleType.ModuleEnginesFX, () => new EngineModule() },
          { ModuleType.ModuleReactionWheel, () => new ReactionWheelModule() },
          { ModuleType.ModuleScienceExperiment, () => new ScienceModule() },
-         { ModuleType.ModuleDeployableSolarPanel, () => new SolarPanelModule() }
+         { ModuleType.ModuleDeployableSolarPanel, () => new SolarPanelModule() },
+         { ModuleType.ModuleDecouple, () => new DecoupleModule() }
       };
    }
 }

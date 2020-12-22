@@ -11,6 +11,7 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
       public double MaxThrust { get; set; }
       public EngineType EngineType { get; set; }
       public bool IsGimbal { get; set; }
+      public AlternatorModule Alternator { get; set; }
       public List<PropellentModule> PropellentRequirements { get; set; }
 
       public void SetProp(string prop, string value)

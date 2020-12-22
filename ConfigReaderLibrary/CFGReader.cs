@@ -25,8 +25,8 @@ namespace ConfigReaderLibrary
       #region - Methods
       public static List<BaseObject> ReadFiles(string[] files, string filter)
       {
-         try
-         {
+         //try
+         //{
             var output = new List<BaseObject>();
 
             foreach (var file in files)
@@ -36,11 +36,11 @@ namespace ConfigReaderLibrary
                output.Add(newReader.ParseFile(filter));
             }
             return output;
-         }
-         catch (Exception)
-         {
-            throw;
-         }
+         //}
+         //catch (Exception)
+         //{
+         //   throw;
+         //}
       }
 
       public void ReadFile()
@@ -65,59 +65,69 @@ namespace ConfigReaderLibrary
 
       public BaseObject ParseFile(string filter)
       {
-         try
+         //try
+         //{
+         if (Data[0] == filter)
          {
-            if (Data[0] == filter)
+            BaseObject tempObject = new BaseObject();
+            for (int i = 0; i < Data.Count; i++)
             {
-               BaseObject tempObject = new BaseObject();
-               for (int i = 0; i < Data.Count; i++)
+               if (String.IsNullOrWhiteSpace(Data[i]) || Data[i] == "\t")
                {
-                  if (Data[i].Contains('{'))
+                  continue;
+               }
+               if (Data[i].Contains('{'))
+               {
+                  if (i > 0)
                   {
-                     if (i > 0)
+                     string temp = CleanTabsRec(Data[i]);
+                     string cleanedKey;
+                     if (temp.EndsWith("{") && temp.Length > 2)
                      {
-                        var cleanedKey = CleanTabsRec(Data[i - 1]);
-                        var newChild = new BaseObject();
-                        newChild.Key = cleanedKey;
-                        tempObject.Children.Add(newChild);
-                        newChild.Parent = tempObject;
-                        tempObject = newChild;
+                        cleanedKey = temp.TrimEnd('{');
                      }
-                  }
-                  if (Data[i].Contains('='))
-                  {
-                     var cleanedLine = CleanTabsRec(Data[i]);
-                     if (cleanedLine.StartsWith("//"))
+                     else
                      {
-                        continue;
+                        cleanedKey = CleanTabsRec(Data[i - 1]);
                      }
-                     var (key, val) = ParseLine(cleanedLine);
-                     var success = tempObject.Values.TryAdd(key, val);
-                     if (!success)
-                     {
-                        Console.WriteLine($"Key already Exists {key}");
-                     }
-                  }
-                  if (Data[i].Contains('}'))
-                  {
-                     if (i < Data.Count)
-                     {
-                        tempObject = tempObject.Parent;
-                     }
+                     var newChild = new BaseObject();
+                     newChild.Key = cleanedKey;
+                     tempObject.Children.Add(newChild);
+                     newChild.Parent = tempObject;
+                     tempObject = newChild;
                   }
                }
-               ParsedObject = tempObject.GetRoot();
-               return ParsedObject;
+               if (Data[i].Contains('='))
+               {
+                  var cleanedLine = CleanTabsRec(Data[i]);
+                  if (cleanedLine.StartsWith("//"))
+                  {
+                     continue;
+                  }
+                  var (key, val) = ParseLine(cleanedLine);
+                  var success = tempObject.Values.TryAdd(key, val);
+                  if (!success)
+                  {
+                     Console.WriteLine($"Key already Exists {key}");
+                  }
+               }
+               if (Data[i].Contains('}'))
+               {
+                  tempObject = tempObject.Parent;
+               }
             }
-            else
-            {
-               return null;
-            }
+            ParsedObject = tempObject.GetRoot();
+            return ParsedObject;
          }
-         catch (Exception)
+         else
          {
-            throw;
+            return null;
          }
+         //}
+         //catch (Exception)
+         //{
+         //   throw;
+         //}
       }
 
       public (string, string) ParseLine(string line)

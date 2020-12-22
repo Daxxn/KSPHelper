@@ -9,6 +9,7 @@ namespace KSPModelLibrary.Data.PartDataModels.ResourceTypes
       public string Name { get; set; }
       public int Amount { get; set; }
       public int MaxAmount { get; set; }
+      public double Rate { get; set; }
       public void SetProp(string prop, string value)
       {
          switch (prop)
@@ -18,6 +19,9 @@ namespace KSPModelLibrary.Data.PartDataModels.ResourceTypes
                break;
             case "maxAmount":
                MaxAmount = ParseMethods.ParseInt(value);
+               break;
+            case "rate":
+               Rate = ParseMethods.ParseDouble(value);
                break;
             default:
                break;

@@ -12,6 +12,7 @@ namespace KSPModelLibrary.Data.PartDataModels
       ModuleReactionWheel,
       ModuleScienceExperiment,
       ModuleDeployableSolarPanel,
+      ModuleDecouple,
    }
 
    /// <summary>
