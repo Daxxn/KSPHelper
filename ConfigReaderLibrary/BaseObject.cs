@@ -4,6 +4,9 @@ using System.Text;
 
 namespace ConfigReaderLibrary
 {
+   /// <summary>
+   /// The object containing the data from a config file.
+   /// </summary>
    public class BaseObject
    {
       #region - Fields & Properties
@@ -23,29 +26,14 @@ namespace ConfigReaderLibrary
          return Parent;
       }
 
-      ///// <summary>
-      ///// Basic ONLY. Need to implement recursive tree search.
-      ///// </summary>
-      //public BaseObject GetChild(string key)
-      //{
-      //   if (String.IsNullOrEmpty(key))
-      //   {
-      //      var found = Children.Find((obj) => obj.Key == key);
-      //      if (found != null)
-      //      {
-      //         return found;
-      //      }
-      //      else
-      //      {
-      //         return null;
-      //      }
-      //   }
-      //   return null;
-      //}
-
+      /// <summary>
+      /// Gets a child Recursively, searching down the tree.
+      /// </summary>
+      /// <param name="key">The key of the child objects to search for.</param>
+      /// <returns>The found object or null.</returns>
       public BaseObject GetChild(string key)
       {
-         if (!String.IsNullOrEmpty(key))
+         if (!String.IsNullOrWhiteSpace(key))
          {
             if (Key == key)
             {
@@ -79,9 +67,43 @@ namespace ConfigReaderLibrary
          }
       }
 
-      public List<BaseObject> GetChildren(string name)
+      /// <summary>
+      /// Searches just the next branch of children only.
+      /// </summary>
+      /// <param name="key">The key of the child objects to search for.</param>
+      /// <returns>The found object or null.</returns>
+      public BaseObject ShallowGetChild(string key)
       {
-         if (String.IsNullOrWhiteSpace(name))
+         if (String.IsNullOrWhiteSpace(key))
+         {
+            if (Key == key)
+            {
+               return this;
+            }
+
+            foreach (var child in Children)
+            {
+               if (child.Key == key)
+               {
+                  return child;
+               }
+            }
+            return null;
+         }
+         else
+         {
+            return null;
+         }
+      }
+
+      /// <summary>
+      /// Gets all the children that match the <paramref name="key"/>.
+      /// </summary>
+      /// <param name="key"></param>
+      /// <returns>A <see cref="List{}"/> of <see cref="BaseObject"/> or an empty <see cref="List{}"/>.</returns>
+      public List<BaseObject> GetChildren(string key)
+      {
+         if (String.IsNullOrWhiteSpace(key))
          {
             throw new Exception("Cannot be null or empty.");
          }
@@ -90,7 +112,7 @@ namespace ConfigReaderLibrary
 
          foreach (var child in Children)
          {
-            if (child.Key == name)
+            if (child.Key == key)
             {
                foundChildren.Add(child);
             }
@@ -99,6 +121,14 @@ namespace ConfigReaderLibrary
          return foundChildren;
       }
 
+      /// <summary>
+      /// Finds all children that contain the <paramref name="property"/> and match <paramref name="value"/>.
+      /// <para/>
+      /// Note: The search is only in the current objects children.
+      /// </summary>
+      /// <param name="property">The property to search.</param>
+      /// <param name="value">The value to search.</param>
+      /// <returns>A <see cref="List{T}"/> that match the provided parameters.</returns>
       public List<BaseObject> GetChildrenByProperty(string property, string value)
       {
          List<BaseObject> foundChildren = new List<BaseObject>();
@@ -117,19 +147,18 @@ namespace ConfigReaderLibrary
          return foundChildren;
       }
 
+      /// <summary>
+      /// Finds a child that has the <paramref name="property"/> and matches the <paramref name="value"/>
+      /// </summary>
+      /// <param name="property">The property to search.</param>
+      /// <param name="value">The value to search.</param>
+      /// <returns>A child that matches the given parameters or null.</returns>
       public BaseObject FindChildByProperty(string property, string value)
       {
          if (String.IsNullOrWhiteSpace(property))
          {
             return null;
          }
-         //if (Values.ContainsKey(property))
-         //{
-         //   if (Values[property] == value)
-         //   {
-         //      return this;
-         //   }
-         //}
          BaseObject foundChild = null;
          foreach (var child in Children)
          {
@@ -152,6 +181,10 @@ namespace ConfigReaderLibrary
          return foundChild;
       }
 
+      /// <summary>
+      /// Finds the Top of the tree.
+      /// </summary>
+      /// <returns>The root node of the tree.</returns>
       public BaseObject GetRoot()
       {
          if (IsRoot)

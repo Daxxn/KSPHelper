@@ -10,10 +10,12 @@ namespace KSPModelLibrary.Data
 {
    public static class PartDataBuilder
    {
-      #region - Fields & Properties
-      #endregion
-
       #region - Methods
+      /// <summary>
+      /// Parses the parts data from a .cfg file.
+      /// </summary>
+      /// <param name="data">The data from the config file.</param>
+      /// <returns>PartData of all parsed parts.</returns>
       public static PartData Build(List<BaseObject> data)
       {
 
@@ -44,9 +46,13 @@ namespace KSPModelLibrary.Data
          {
             return null;
          }
-
       }
 
+      /// <summary>
+      /// Builds a single part from the config data.
+      /// </summary>
+      /// <param name="partData">object with the PART tag.</param>
+      /// <returns>New part with Modules/Resources included.</returns>
       private static Part BuildPart(BaseObject partData)
       {
          if (partData != null)
@@ -62,7 +68,7 @@ namespace KSPModelLibrary.Data
             }
 
             BuildModules(partData, newPart);
-            BuildResources_2(partData, newPart);
+            BuildResources(partData, newPart);
 
             return newPart;
          }
@@ -72,6 +78,11 @@ namespace KSPModelLibrary.Data
          }
       }
 
+      /// <summary>
+      /// Parses modules from the part.
+      /// </summary>
+      /// <param name="root">The config part data.</param>
+      /// <param name="part">The instance of the new part.</param>
       public static void BuildModules(BaseObject root, Part part)
       {
          foreach (var moduleType in (ModuleType[])Enum.GetValues(typeof(ModuleType)))
@@ -79,6 +90,13 @@ namespace KSPModelLibrary.Data
             BuildModule(root, part, moduleType);
          }
       }
+
+      /// <summary>
+      /// Gets all modules pertaining to the module type given.
+      /// </summary>
+      /// <param name="root">The config part data.</param>
+      /// <param name="part">The instance of the new part.</param>
+      /// <param name="type">The type of module to search for.</param>
       public static void BuildModule(BaseObject root, Part part, ModuleType type)
       {
          foreach (var module in GetModules(root, type))
@@ -149,12 +167,23 @@ namespace KSPModelLibrary.Data
          }
       }
 
+      /// <summary>
+      /// Gets the module config data from the PART object tree.
+      /// </summary>
+      /// <param name="baseModule">The PART config object.</param>
+      /// <param name="type">The type to search in the tree.</param>
+      /// <returns>A list of all found objects matching the given type.</returns>
       private static List<BaseObject> GetModules(BaseObject baseModule, ModuleType type)
       {
          return baseModule.GetChildrenByProperty("name", type.ToString());
       }
 
-      public static void BuildResources_2(BaseObject root, Part part)
+      /// <summary>
+      /// Builds resources from the PART object.
+      /// </summary>
+      /// <param name="root">The PART config object.</param>
+      /// <param name="part">The instance of the new part.</param>
+      public static void BuildResources(BaseObject root, Part part)
       {
          foreach (var obj in GetResources(root))
          {
@@ -174,6 +203,11 @@ namespace KSPModelLibrary.Data
          }
       }
 
+      /// <summary>
+      /// Gets the resource config data from the PART object tree.
+      /// </summary>
+      /// <param name="root">The PART config object.</param>
+      /// <returns>A list of all the resources for the part.</returns>
       private static List<BaseObject> GetResources(BaseObject root)
       {
          return root.GetChildren("RESOURCE");

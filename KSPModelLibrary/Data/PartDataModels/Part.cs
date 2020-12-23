@@ -6,13 +6,14 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels
 {
+   /// <summary>
+   /// Individual part with basic data and 0 or more Modules and/or Resources.
+   /// </summary>
    public class Part
    {
-      //public static string[] SearchProps { get; } = new string[]
-      //{
-      //   "title", "category", "cost", "mass"
-      //};
-
+      /// <summary>
+      /// Converts the provided property and assigns it to the property on the part instance provided. - Used for parsing.
+      /// </summary>
       public static Dictionary<string, Action<string, Part>> SearchProps = new Dictionary<string, Action<string, Part>>
       {
          { "name", (string name, Part part) => part.Name = name },
@@ -40,10 +41,6 @@ namespace KSPModelLibrary.Data.PartDataModels
          }
       };
 
-      public static TModule Converter<TModule>(IModule module) where TModule : class
-      {
-         return module as TModule;
-      }
 
       public string Title { get; set; }
       public string Name { get; set; }

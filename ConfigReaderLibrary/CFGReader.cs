@@ -7,11 +7,23 @@ using System.Threading.Tasks;
 
 namespace ConfigReaderLibrary
 {
+   /// <summary>
+   /// Parses a .cfg or config file.
+   /// </summary>
    public class CFGReader
    {
       #region - Fields & Properties
+      /// <summary>
+      /// The path to the config file.
+      /// </summary>
       public string FilePath { get; set; }
+      /// <summary>
+      /// The ROOT node of the config file.
+      /// </summary>
       public BaseObject ParsedObject { get; set; }
+      /// <summary>
+      /// The lines from the config file.
+      /// </summary>
       private List<string> Data { get; set; }
       #endregion
 
@@ -23,6 +35,11 @@ namespace ConfigReaderLibrary
       #endregion
 
       #region - Methods
+      /// <summary>
+      /// Reads an array of config files.
+      /// </summary>
+      /// <param name="files">The complete paths to the config files.</param>
+      /// <returns>A list of ROOT nodes for the config files.</returns>
       public static List<BaseObject> ReadFiles(string[] files)
       {
          try
@@ -43,6 +60,9 @@ namespace ConfigReaderLibrary
          }
       }
 
+      /// <summary>
+      /// Reads the config file.
+      /// </summary>
       public void ReadFile()
       {
          try
@@ -67,6 +87,10 @@ namespace ConfigReaderLibrary
          }
       }
 
+      /// <summary>
+      /// Parses the config file.
+      /// </summary>
+      /// <returns>The ROOT node of the config file.</returns>
       public BaseObject ParseFile()
       {
          try
@@ -78,6 +102,7 @@ namespace ConfigReaderLibrary
                {
                   continue;
                }
+               // Starts a new node on the current node.
                else if (Data[i].Contains('{'))
                {
                   if (i > 0)
@@ -98,6 +123,7 @@ namespace ConfigReaderLibrary
                      tempObject = newChild;
                   }
                }
+               // Parses the property.
                else if (Data[i].Contains('='))
                {
                   var cleanedLine = Data[i];
@@ -112,6 +138,7 @@ namespace ConfigReaderLibrary
                      Console.WriteLine($"Key already Exists {key}");
                   }
                }
+               // moves up to the parent node.
                else if (Data[i].Contains('}'))
                {
                   tempObject = tempObject.Parent;
@@ -126,6 +153,11 @@ namespace ConfigReaderLibrary
          }
       }
 
+      /// <summary>
+      /// Parses the config file, if the first node matches the <paramref name="filter"/>
+      /// </summary>
+      /// <param name="filter">The filter for the first node.</param>
+      /// <returns>The ROOT node of the config file.</returns>
       public BaseObject ParseFile(string filter)
       {
          try
@@ -139,6 +171,7 @@ namespace ConfigReaderLibrary
                   {
                      continue;
                   }
+                  // Starts a new node on the current node.
                   else if (Data[i].Contains('{'))
                   {
                      if (i > 0)
@@ -159,6 +192,7 @@ namespace ConfigReaderLibrary
                         tempObject = newChild;
                      }
                   }
+                  // Parses the property.
                   else if (Data[i].Contains('='))
                   {
                      var cleanedLine = Data[i];
@@ -173,6 +207,7 @@ namespace ConfigReaderLibrary
                         Console.WriteLine($"Key already Exists {key}");
                      }
                   }
+                  // moves up to the parent node.
                   else if (Data[i].Contains('}'))
                   {
                      tempObject = tempObject.Parent;
@@ -192,6 +227,11 @@ namespace ConfigReaderLibrary
          }
       }
 
+      /// <summary>
+      /// Parses the property from the given line.
+      /// </summary>
+      /// <param name="line">The line to parse.</param>
+      /// <returns>A <see cref="Tuple{T1, T2}"/> of <see cref="string"/>s for the property and value of the line.</returns>
       public (string, string) ParseLine(string line)
       {
          //var cleanedLine = CleanTabsRec(line);
@@ -215,6 +255,11 @@ namespace ConfigReaderLibrary
          }
       }
 
+      /// <summary>
+      /// Recursively removes tabs from the line.
+      /// </summary>
+      /// <param name="input">The line to clean.</param>
+      /// <returns>The cleaned <paramref name="input"/> line.</returns>
       private string CleanTabsRec(string input)
       {
          if (input[0] == '\t')
@@ -229,6 +274,12 @@ namespace ConfigReaderLibrary
          return input;
       }
 
+      /// <summary>
+      /// Removes tabs and spaces from the given <paramref name="input"/> line.
+      /// </summary>
+      /// <param name="input">The line to clean.</param>
+      /// <param name="strict">If true, will clean the line anyway, otherwise will check the line first.</param>
+      /// <returns>The cleaned <paramref name="input"/> line.</returns>
       private string Clean(string input, bool strict = true)
       {
          if (strict)
@@ -255,6 +306,13 @@ namespace ConfigReaderLibrary
             }
          }
       }
+
+      /// <summary>
+      /// Cleans the tabs and spaces from an <see cref="Array"/> of lines.
+      /// </summary>
+      /// <param name="inputs">The input lines.</param>
+      /// <param name="strict">If true, will clean the lines anyway, otherwise will check the lines first.</param>
+      /// <returns>The cleaned <paramref name="inputs"/>.</returns>
       private string[] Clean(string[] inputs, bool strict = true)
       {
          List<string> output = new List<string>();
@@ -264,82 +322,6 @@ namespace ConfigReaderLibrary
          }
          return output.ToArray();
       }
-
-      private string CleanTabsAndSpaces(string input)
-      {
-         var cleanedTabs = CleanTabsRec(input);
-         return cleanedTabs.Replace(" ", "");
-      }
-
-      private string[] CleanSpaces(string[] inputs)
-      {
-         List<string> output = new List<string>();
-         foreach (var input in inputs)
-         {
-            output.Add(input.Trim());
-         }
-         return output.ToArray();
-      }
-
-      #region OLD Async Version
-      //public async Task<BaseObject> ParseFileAsync()
-      //{
-      //   try
-      //   {
-      //      return await Task.Run(() =>
-      //      {
-      //         ReadFile();
-      //         return ParseFile();
-      //      });
-      //   }
-      //   catch (Exception)
-      //   {
-      //      throw;
-      //   }
-      //}
-
-      //public static async Task<List<BaseObject>> ReadFilesAsync(string[] files)
-      //{
-      //   try
-      //   {
-      //      //List<Task<BaseObject>> tasks = new List<Task<BaseObject>>();
-
-      //      //foreach (var file in files)
-      //      //{
-      //      //   var newReader = new CFGReader(file);
-      //      //   //newReader.ReadFile();
-      //      //   tasks.Add(newReader.ParseFileAsync());
-      //      //}
-
-      //      var output = await Task.Run(() =>
-      //      {
-      //         return ReadFiles(files);
-      //      });
-
-      //      return output;
-      //   }
-      //   catch (Exception)
-      //   {
-      //      throw;
-      //   }
-      //}
-
-      //public async Task ReadFileAsync(string path)
-      //{
-      //   try
-      //   {
-      //      var output = new List<string>();
-      //      await Task.Run(() =>
-      //      {
-      //         ReadFile();
-      //      });
-      //   }
-      //   catch (Exception)
-      //   {
-      //      throw;
-      //   }
-      //}
-      #endregion
       #endregion
 
       #region - Full Properties

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels
 {
+   /// <summary>
+   /// Part container for game Parts.
+   /// </summary>
    public class PartData
    {
       public static readonly double LiquidFuelMassPerUnit = 0.5;

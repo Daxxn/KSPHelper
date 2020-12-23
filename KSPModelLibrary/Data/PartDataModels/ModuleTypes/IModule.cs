@@ -5,6 +5,9 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
+   /// <summary>
+   /// Contains data for a part.
+   /// </summary>
    public interface IModule
    {
       string Name { get; set; }

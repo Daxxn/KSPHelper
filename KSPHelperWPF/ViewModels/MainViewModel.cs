@@ -53,7 +53,6 @@ namespace KSPHelperWPF.ViewModels
       public void ModuleTestEvent(object sender, EventArgs e)
       {
          var parsedParts = GameDataReader.AllPartData.Parts.FindAll((part) => part.Category == "Electrical");
-         //var savedParts = AllPartsTest.Parts.Find((part) => part.Category == "Electrical");
       }
       #endregion
 

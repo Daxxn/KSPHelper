@@ -4,6 +4,9 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels
 {
+   /// <summary>
+   /// Module type for each part. - Used for parsing.
+   /// </summary>
    public enum ModuleType
    {
       ModuleCommand,
@@ -27,7 +30,7 @@ namespace KSPModelLibrary.Data.PartDataModels
    }
 
    /// <summary>
-   /// Basically a "Tank" of some kind.
+   /// Basically a "Tank/Container" of some kind.
    /// </summary>
    public enum ResourceType
    {
@@ -40,6 +43,9 @@ namespace KSPModelLibrary.Data.PartDataModels
       SolidFuel,
    }
 
+   /// <summary>
+   /// Specifies how antenna module works.
+   /// </summary>
    public enum AntennaType
    {
       INTERNAL,
@@ -47,6 +53,9 @@ namespace KSPModelLibrary.Data.PartDataModels
       RELAY
    }
 
+   /// <summary>
+   /// All Engine types.
+   /// </summary>
    public enum EngineType
    {
       LiquidFuel,
@@ -54,6 +63,9 @@ namespace KSPModelLibrary.Data.PartDataModels
       Turbine,
    }
 
+   /// <summary>
+   /// Selects how fuel is used from the tanks. 
+   /// </summary>
    public enum FlowMode
    {
       STAGE_PRIORITY_FLOW,
