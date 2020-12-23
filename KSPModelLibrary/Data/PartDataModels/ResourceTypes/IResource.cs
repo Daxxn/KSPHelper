@@ -9,6 +9,6 @@ namespace KSPModelLibrary.Data.PartDataModels.ResourceTypes
       string Name { get; set; }
       int Amount { get; set; }
       int MaxAmount { get; set; }
-      void SetProp(string prop, string value);
+      void SetProp(KeyValuePair<string, string> keyVal);
    }
 }

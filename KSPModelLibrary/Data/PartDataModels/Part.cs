@@ -20,17 +20,30 @@ namespace KSPModelLibrary.Data.PartDataModels
          { "category", (string prop, Part part) => part.Category = prop },
          { "cost", (string prop, Part part) =>
             {
-               bool success = Int32.TryParse(prop, out int res);
-               if (success) { part.Cost = res; }
+               part.Cost = ParseMethods.ParseInt(prop);
             }
          },
          { "mass", (string prop, Part part) =>
             {
-               bool success = Double.TryParse(prop, out double res);
-               if (success) { part.Mass = res; }
+               part.Mass = ParseMethods.ParseDouble(prop);
+            }
+         },
+         { "CrewCapacity", (string prop, Part part) =>
+            {
+               part.CrewCapacity = ParseMethods.ParseInt(prop);
+            }
+         },
+         { "TechRequired", (string prop, Part part) =>
+            {
+               part.TechRequired = prop;
             }
          }
       };
+
+      public static TModule Converter<TModule>(IModule module) where TModule : class
+      {
+         return module as TModule;
+      }
 
       public string Title { get; set; }
       public string Name { get; set; }
@@ -39,7 +52,9 @@ namespace KSPModelLibrary.Data.PartDataModels
       public double Mass { get; set; }
       public double DryMass { get; set; }
       public double WetMass { get; set; }
-      public Dictionary<string, IModule> Modules { get; set; } = new Dictionary<string, IModule>();
-      public Dictionary<string, IResource> Resources { get; set; } = new Dictionary<string, IResource>();
+      public int CrewCapacity { get; set; }
+      public string TechRequired { get; set; }
+      public List<IModule> Modules { get; set; } = new List<IModule>();
+      public List<IResource> Resources { get; set; } = new List<IResource>();
    }
 }

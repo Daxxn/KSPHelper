@@ -14,7 +14,15 @@
 
         <Menu Grid.Row="0">
             <MenuItem Header="File" />
-            <MenuItem Header="Run Part Reader" Name="GameDataReaderButton" ToolTip="This may take a while..." />
+            <MenuItem Header="Readers">
+                <MenuItem Header="Part Reader" Name="GameDataReaderButton" ToolTip="This may take a while..." />
+                <MenuItem Header="Experiment Reader" Name="ExperimentReaderButton"/>
+            </MenuItem>
+            <MenuItem Header="Json Read Test">
+                <MenuItem Header="Parts" Name="PartsJsonReadButton"/>
+                <MenuItem Header="Science" Name="ScienceJsonReadButton"/>
+            </MenuItem>
+            <MenuItem Header="Module Test" Name="ModuleTestButton"/>
         </Menu>
 
         <TabControl Grid.Row="1">

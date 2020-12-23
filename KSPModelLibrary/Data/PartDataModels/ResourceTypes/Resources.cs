@@ -9,4 +9,7 @@ namespace KSPModelLibrary.Data.PartDataModels.ResourceTypes
    public class MonoPorpellentResource : BaseResource, IResource { }
    public class OxidizerResource : BaseResource, IResource { }
    public class XenonResource : BaseResource, IResource { }
+   public class AirIntakeResource : BaseResource, IResource { }
+   public class SolidFuelResource : BaseResource, IResource { }
+   public class OreResource : BaseResource, IResource { }
 }

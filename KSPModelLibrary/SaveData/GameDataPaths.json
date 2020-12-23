@@ -1,5 +1,8 @@
 ﻿{
   "GameDataPath": "B:\\Games\\steamapps\\common\\Kerbal Space Program\\GameData",
+  "ScienceDataPath": "B:\\Games\\steamapps\\common\\Kerbal Space Program\\GameData\\Squad\\Resources\\ScienceDefs.cfg",
+  "PartDataSavePath": "KSPModelLibrary\\SaveData\\PartData.json",
+  "ScienceDataSavePath": "KSPModelLibrary\\SaveData\\ScienceData.json",
   "AdditionalPartPaths": [],
   "VanillaPath": "Squad\\Parts",
   "DLCPaths": [

@@ -1,0 +1,149 @@
+{
+  "$type": "KSPModelLibrary.Data.ScienceDataModels.Science, KSPModelLibrary",
+  "Experiments": [
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "crewReport",
+      "Title": "CrewReport",
+      "BaseValue": 5,
+      "ScienceCap": 5,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "evaReport",
+      "Title": "EVAReport",
+      "BaseValue": 8,
+      "ScienceCap": 8,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "mysteryGoo",
+      "Title": "MysteryGoo™Observation",
+      "BaseValue": 10,
+      "ScienceCap": 13,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "surfaceSample",
+      "Title": "SurfaceSample",
+      "BaseValue": 30,
+      "ScienceCap": 40,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "mobileMaterialsLab",
+      "Title": "MaterialsStudy",
+      "BaseValue": 25,
+      "ScienceCap": 32,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "temperatureScan",
+      "Title": "TemperatureScan",
+      "BaseValue": 8,
+      "ScienceCap": 8,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "barometerScan",
+      "Title": "AtmosphericPressureScan",
+      "BaseValue": 12,
+      "ScienceCap": 12,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "seismicScan",
+      "Title": "SeismicScan",
+      "BaseValue": 20,
+      "ScienceCap": 22,
+      "DataScale": 2.5
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "gravityScan",
+      "Title": "GravityScan",
+      "BaseValue": 20,
+      "ScienceCap": 22,
+      "DataScale": 3.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "atmosphereAnalysis",
+      "Title": "AtmosphereAnalysis",
+      "BaseValue": 20,
+      "ScienceCap": 24,
+      "DataScale": 10.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "asteroidSample",
+      "Title": "AsteroidSample",
+      "BaseValue": 60,
+      "ScienceCap": 70,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "cometSample_short",
+      "Title": "ShortPeriodCometSample",
+      "BaseValue": 90,
+      "ScienceCap": 100,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "cometSample_intermediate",
+      "Title": "IntermediatePeriodCometSample",
+      "BaseValue": 135,
+      "ScienceCap": 150,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "cometSample_long",
+      "Title": "LongPeriodCometSample",
+      "BaseValue": 270,
+      "ScienceCap": 300,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "cometSample_interstellar",
+      "Title": "InterstellarCometSample",
+      "BaseValue": 900,
+      "ScienceCap": 1000,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "infraredTelescope",
+      "Title": "InfraredTelescope",
+      "BaseValue": 15,
+      "ScienceCap": 22,
+      "DataScale": 2.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "magnetometer",
+      "Title": "MagnetometerReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "evaScience",
+      "Title": "EVAScienceExperiment",
+      "BaseValue": 25,
+      "ScienceCap": 25,
+      "DataScale": 1.0
+    }
+  ]
+}

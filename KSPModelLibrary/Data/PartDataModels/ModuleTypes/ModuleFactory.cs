@@ -14,7 +14,9 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
          { ModuleType.ModuleReactionWheel, () => new ReactionWheelModule() },
          { ModuleType.ModuleScienceExperiment, () => new ScienceModule() },
          { ModuleType.ModuleDeployableSolarPanel, () => new SolarPanelModule() },
-         { ModuleType.ModuleDecouple, () => new DecoupleModule() }
+         { ModuleType.ModuleDecouple, () => new DecoupleModule() },
+         { ModuleType.ModuleAlternator, () => new AlternatorModule() },
+         { ModuleType.ModuleResourceIntake, () => new AirIntakeModule() }
       };
    }
 }

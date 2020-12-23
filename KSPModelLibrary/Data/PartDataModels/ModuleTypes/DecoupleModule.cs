@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfigReaderLibrary;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,12 +10,26 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
       public string Name { get; set; }
       public double EjectionForce { get; set; }
 
-      public void SetProp(string prop, string value)
+      public void SetProp(KeyValuePair<string, string> keyVal)
       {
-         if (prop == "ejectionForce")
+         if (keyVal.Key == "name")
          {
-            EjectionForce = ParseMethods.ParseDouble(value);
+            Name = keyVal.Value;
          }
+         else if (keyVal.Key == "ejectionForce")
+         {
+            EjectionForce = ParseMethods.ParseDouble(keyVal.Value);
+         }
+      }
+
+      public static DecoupleModule BuildModule(BaseObject obj)
+      {
+         var newDecupler = new DecoupleModule();
+         foreach (var kv in obj.Values)
+         {
+            newDecupler.SetProp(kv);
+         }
+         return newDecupler;
       }
    }
 }

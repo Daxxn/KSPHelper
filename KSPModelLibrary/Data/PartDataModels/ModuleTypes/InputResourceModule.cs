@@ -5,12 +5,12 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class ScienceModule : ModuleFactory, IModule
+   public class InputResourceModule : IModule
    {
       public string Name { get; set; }
-      public string ExperimentID { get; set; }
-      public bool Rerunable { get; set; }
-      public double TransmitScale { get; set; }
+      public string ResourceName { get; set; }
+      public double Ratio { get; set; }
+      public FlowMode FlowMode { get; set; }
 
       public void SetProp(KeyValuePair<string, string> keyVal)
       {
@@ -19,23 +19,27 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
             case "name":
                Name = keyVal.Value;
                break;
-            case "experimentID":
-               ExperimentID = keyVal.Value;
+            case "ResourceName":
+               ResourceName = keyVal.Value;
                break;
-            case "rerunnable":
-               Rerunable = ParseMethods.ParseBool(keyVal.Value);
+            case "Ratio":
+               Ratio = ParseMethods.ParseDouble(keyVal.Value);
                break;
-            case "xmitDataScalar":
-               TransmitScale = ParseMethods.ParseDouble(keyVal.Value);
+            case "FlowMode":
+               bool success = Enum.TryParse(keyVal.Value, out FlowMode result);
+               if (success)
+               {
+                  FlowMode = result;
+               }
                break;
             default:
                break;
          }
       }
 
-      public static ScienceModule BuildModule(BaseObject obj)
+      public static InputResourceModule BuildModule(BaseObject obj)
       {
-         var newInst = new ScienceModule();
+         var newInst = new InputResourceModule();
          foreach (var kv in obj.Values)
          {
             newInst.SetProp(kv);

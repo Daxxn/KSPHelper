@@ -1,4 +1,5 @@
-﻿using KSPModelLibrary.Data.PartDataModels.ResourceTypes;
+﻿using ConfigReaderLibrary;
+using KSPModelLibrary.Data.PartDataModels.ResourceTypes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,25 +16,41 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
       public double TorqueResponseSpeed { get; set; }
       public ElectricalLoadModule Electrical { get; set; }
 
-      public void SetProp(string prop, string value)
+      public void SetProp(KeyValuePair<string, string> keyVal)
       {
-         switch (prop)
+         switch (keyVal.Key)
          {
             case "PitchTorque":
-               PitchTorque = ParseMethods.ParseInt(value);
+               PitchTorque = ParseMethods.ParseInt(keyVal.Value);
                break;
             case "YawTorque":
-               YawTorque = ParseMethods.ParseInt(value);
+               YawTorque = ParseMethods.ParseInt(keyVal.Value);
                break;
             case "RollTorque":
-               RollTorque = ParseMethods.ParseInt(value);
+               RollTorque = ParseMethods.ParseInt(keyVal.Value);
                break;
             case "torqueResponseSpeed":
-               TorqueResponseSpeed = ParseMethods.ParseDouble(value);
+               TorqueResponseSpeed = ParseMethods.ParseDouble(keyVal.Value);
                break;
             default:
                break;
          }
+      }
+
+      public static ReactionWheelModule BuildModule(BaseObject obj)
+      {
+         var newInst = new ReactionWheelModule();
+         foreach (var kv in obj.Values)
+         {
+            newInst.SetProp(kv);
+         }
+         newInst.Electrical = new ElectricalLoadModule();
+         var elec = obj.GetChild("RESOURCE");
+         foreach (var kv in elec.Values)
+         {
+            newInst.Electrical.SetProp(kv);
+         }
+         return newInst;
       }
    }
 }

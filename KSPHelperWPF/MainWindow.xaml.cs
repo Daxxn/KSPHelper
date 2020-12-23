@@ -34,6 +34,10 @@ namespace KSPHelperWPF
       private void InitEvents(MainViewModel vm)
       {
          GameDataReaderButton.Click += vm.GameDataReadEvent;
+         ExperimentReaderButton.Click += vm.ExperimentReadEvent;
+         ModuleTestButton.Click += vm.ModuleTestEvent;
+         PartsJsonReadButton.Click += vm.PartJsonReadEvent;
+         ScienceJsonReadButton.Click += vm.ScienceJsonReadEvent;
       }
    }
 }

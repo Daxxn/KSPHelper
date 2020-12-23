@@ -8,11 +8,22 @@ namespace KSPModelLibrary.Data.PartDataModels
    {
       ModuleCommand,
       ModuleDataTransmitter,
+      ModuleEngines,
       ModuleEnginesFX,
+      MultiModeEngine,
       ModuleReactionWheel,
       ModuleScienceExperiment,
       ModuleDeployableSolarPanel,
       ModuleDecouple,
+      ModuleResourceIntake,
+      ModuleAlternator,
+      ModuleGenerator,
+      ModuleResourceConverter,
+      ModuleResourceHarvester,
+      ModuleAsteroidDrill,
+      ModuleActiveRadiator,
+      ModuleLight,
+      ModuleRCSFX,
    }
 
    /// <summary>
@@ -25,6 +36,8 @@ namespace KSPModelLibrary.Data.PartDataModels
       LiquidFuel,
       Oxidizer,
       XenonGas,
+      IntakeAir,
+      SolidFuel,
    }
 
    public enum AntennaType
@@ -37,5 +50,18 @@ namespace KSPModelLibrary.Data.PartDataModels
    public enum EngineType
    {
       LiquidFuel,
+      SolidBooster,
+      Turbine,
+   }
+
+   public enum FlowMode
+   {
+      STAGE_PRIORITY_FLOW,
+   }
+
+   public enum DataType
+   {
+      PartData,
+      ScienceData,
    }
 }

@@ -23,24 +23,24 @@ namespace ConfigReaderLibrary
       #endregion
 
       #region - Methods
-      public static List<BaseObject> ReadFiles(string[] files, string filter)
+      public static List<BaseObject> ReadFiles(string[] files)
       {
-         //try
-         //{
+         try
+         {
             var output = new List<BaseObject>();
 
             foreach (var file in files)
             {
                var newReader = new CFGReader(file);
                newReader.ReadFile();
-               output.Add(newReader.ParseFile(filter));
+               output.Add(newReader.ParseFile());
             }
             return output;
-         //}
-         //catch (Exception)
-         //{
-         //   throw;
-         //}
+         }
+         catch (Exception)
+         {
+            throw;
+         }
       }
 
       public void ReadFile()
@@ -52,7 +52,11 @@ namespace ConfigReaderLibrary
             {
                while (!reader.EndOfStream)
                {
-                  output.Add(reader.ReadLine());
+                  var line = Clean(reader.ReadLine());
+                  if (!String.IsNullOrWhiteSpace(line))
+                  {
+                     output.Add(line);
+                  }
                }
             }
             Data = output;
@@ -63,11 +67,9 @@ namespace ConfigReaderLibrary
          }
       }
 
-      public BaseObject ParseFile(string filter)
+      public BaseObject ParseFile()
       {
-         //try
-         //{
-         if (Data[0] == filter)
+         try
          {
             BaseObject tempObject = new BaseObject();
             for (int i = 0; i < Data.Count; i++)
@@ -76,30 +78,29 @@ namespace ConfigReaderLibrary
                {
                   continue;
                }
-               if (Data[i].Contains('{'))
+               else if (Data[i].Contains('{'))
                {
                   if (i > 0)
                   {
-                     string temp = CleanTabsRec(Data[i]);
-                     string cleanedKey;
+                     string temp = Data[i];
+                     string key;
                      if (temp.EndsWith("{") && temp.Length > 2)
                      {
-                        cleanedKey = temp.TrimEnd('{');
+                        key = temp.TrimEnd('{');
                      }
                      else
                      {
-                        cleanedKey = CleanTabsRec(Data[i - 1]);
+                        key = Data[i - 1];
                      }
-                     var newChild = new BaseObject();
-                     newChild.Key = cleanedKey;
+                     var newChild = new BaseObject { Key = key };
                      tempObject.Children.Add(newChild);
                      newChild.Parent = tempObject;
                      tempObject = newChild;
                   }
                }
-               if (Data[i].Contains('='))
+               else if (Data[i].Contains('='))
                {
-                  var cleanedLine = CleanTabsRec(Data[i]);
+                  var cleanedLine = Data[i];
                   if (cleanedLine.StartsWith("//"))
                   {
                      continue;
@@ -111,7 +112,7 @@ namespace ConfigReaderLibrary
                      Console.WriteLine($"Key already Exists {key}");
                   }
                }
-               if (Data[i].Contains('}'))
+               else if (Data[i].Contains('}'))
                {
                   tempObject = tempObject.Parent;
                }
@@ -119,34 +120,99 @@ namespace ConfigReaderLibrary
             ParsedObject = tempObject.GetRoot();
             return ParsedObject;
          }
-         else
+         catch (Exception)
          {
-            return null;
+            throw;
          }
-         //}
-         //catch (Exception)
-         //{
-         //   throw;
-         //}
+      }
+
+      public BaseObject ParseFile(string filter)
+      {
+         try
+         {
+            if (Data[0] == filter)
+            {
+               BaseObject tempObject = new BaseObject();
+               for (int i = 0; i < Data.Count; i++)
+               {
+                  if (String.IsNullOrWhiteSpace(Data[i]) || Data[i] == "\t")
+                  {
+                     continue;
+                  }
+                  else if (Data[i].Contains('{'))
+                  {
+                     if (i > 0)
+                     {
+                        string temp = Data[i];
+                        string key;
+                        if (temp.EndsWith("{") && temp.Length > 1)
+                        {
+                           key = temp.TrimEnd('{');
+                        }
+                        else
+                        {
+                           key = Data[i - 1];
+                        }
+                        var newChild = new BaseObject{ Key = key };
+                        tempObject.Children.Add(newChild);
+                        newChild.Parent = tempObject;
+                        tempObject = newChild;
+                     }
+                  }
+                  else if (Data[i].Contains('='))
+                  {
+                     var cleanedLine = Data[i];
+                     if (cleanedLine.StartsWith("//"))
+                     {
+                        continue;
+                     }
+                     var (key, val) = ParseLine(cleanedLine);
+                     var success = tempObject.Values.TryAdd(key, val);
+                     if (!success)
+                     {
+                        Console.WriteLine($"Key already Exists {key}");
+                     }
+                  }
+                  else if (Data[i].Contains('}'))
+                  {
+                     tempObject = tempObject.Parent;
+                  }
+               }
+               ParsedObject = tempObject.GetRoot();
+               return ParsedObject;
+            }
+            else
+            {
+               return null;
+            }
+         }
+         catch (Exception)
+         {
+            throw;
+         }
       }
 
       public (string, string) ParseLine(string line)
       {
          //var cleanedLine = CleanTabsRec(line);
-         var split = line.Split(new string[] { " = ", "=" }, StringSplitOptions.None);
-         if (split.Length == 0)
+         var dirtySplit = line.Split(new string[] { " = ", "=" }, StringSplitOptions.RemoveEmptyEntries);
+         var split = Clean(dirtySplit, false);
+         if (split.Length == 2)
          {
-            return ("PARSE FAILURE", "NULL");
+            return (split[0], split[1]);
          }
-         if (split.Length == 1)
+         else if (split.Length == 1)
          {
             return (split[0], "NULL");
          }
-         if (split.Length > 2)
+         else if (split.Length > 2)
          {
             return (split[0], split[2]);
          }
-         return (split[0], split[1]);
+         else
+         {
+            return ("PARSE FAILURE", "NULL");
+         }
       }
 
       private string CleanTabsRec(string input)
@@ -161,6 +227,58 @@ namespace ConfigReaderLibrary
             }
          }
          return input;
+      }
+
+      private string Clean(string input, bool strict = true)
+      {
+         if (strict)
+         {
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in input)
+            {
+               if (c != '\t' && c != ' ')
+               {
+                  sb.Append(c);
+               }
+            }
+            return sb.ToString();
+         }
+         else
+         {
+            if (input.Contains('\t') || input.Contains(' '))
+            {
+               return Clean(input);
+            }
+            else
+            {
+               return input;
+            }
+         }
+      }
+      private string[] Clean(string[] inputs, bool strict = true)
+      {
+         List<string> output = new List<string>();
+         foreach (var input in inputs)
+         {
+            output.Add(Clean(input, strict));
+         }
+         return output.ToArray();
+      }
+
+      private string CleanTabsAndSpaces(string input)
+      {
+         var cleanedTabs = CleanTabsRec(input);
+         return cleanedTabs.Replace(" ", "");
+      }
+
+      private string[] CleanSpaces(string[] inputs)
+      {
+         List<string> output = new List<string>();
+         foreach (var input in inputs)
+         {
+            output.Add(input.Trim());
+         }
+         return output.ToArray();
       }
 
       #region OLD Async Version

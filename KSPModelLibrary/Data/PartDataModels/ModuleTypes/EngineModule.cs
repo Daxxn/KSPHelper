@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ConfigReaderLibrary;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
@@ -11,21 +11,24 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
       public double MaxThrust { get; set; }
       public EngineType EngineType { get; set; }
       public bool IsGimbal { get; set; }
-      public AlternatorModule Alternator { get; set; }
-      public List<PropellentModule> PropellentRequirements { get; set; }
+      //public AlternatorModule Alternator { get; set; }
+      public List<PropellantModule> PropellentRequirements { get; set; } = new List<PropellantModule>();
 
-      public void SetProp(string prop, string value)
+      public void SetProp(KeyValuePair<string, string> keyVal)
       {
-         switch (prop)
+         switch (keyVal.Key)
          {
+            case "name":
+               Name = keyVal.Value;
+               break;
             case "minThrust":
-               MinThrust = ParseMethods.ParseDouble(value);
+               MinThrust = ParseMethods.ParseDouble(keyVal.Value);
                break;
             case "maxThrust":
-               MaxThrust = ParseMethods.ParseDouble(value);
+               MaxThrust = ParseMethods.ParseDouble(keyVal.Value);
                break;
             case "EngineType":
-               bool success = Enum.TryParse(value, out EngineType result);
+               bool success = Enum.TryParse(keyVal.Value, out EngineType result);
                if (success)
                {
                   EngineType = result;
@@ -34,6 +37,25 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
             default:
                break;
          }
+      }
+
+      public static EngineModule BuildModule(BaseObject obj)
+      {
+         var newInst = new EngineModule();
+         foreach (var kv in obj.Values)
+         {
+            newInst.SetProp(kv);
+         }
+         //var newAlt = AlternatorModule.BuildModule(obj.FindChildByProperty("name", ModuleType.ModuleAlternator.ToString()));
+         foreach (var p in obj.GetChildren("PROPELLANT"))
+         {
+            var newProp = PropellantModule.BuildModule(p);
+            if (newProp != null)
+            {
+               newInst.PropellentRequirements.Add(newProp);
+            }
+         }
+         return newInst;
       }
    }
 }

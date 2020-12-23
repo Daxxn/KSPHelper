@@ -123,13 +123,13 @@ namespace ConfigReaderLibrary
          {
             return null;
          }
-         if (Values.ContainsKey(property))
-         {
-            if (Values[property] == value)
-            {
-               return this;
-            }
-         }
+         //if (Values.ContainsKey(property))
+         //{
+         //   if (Values[property] == value)
+         //   {
+         //      return this;
+         //   }
+         //}
          BaseObject foundChild = null;
          foreach (var child in Children)
          {

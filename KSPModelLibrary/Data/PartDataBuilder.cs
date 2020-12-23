@@ -11,169 +11,172 @@ namespace KSPModelLibrary.Data
    public static class PartDataBuilder
    {
       #region - Fields & Properties
-      //private static string[] Keys { get; set; } = new string[]
-      //{
-      //   "MODULE",
-      //   "RESOURCE"
-      //};
-
-      //public static string[] Values { get; set; } = new string[]
-      //{
-      //   "name",
-      //   "title",
-      //   "maxTemp"
-      //};
-
-      //public static Dictionary<string, string[]> ModuleProperties { get; set; } = new Dictionary<string, string[]>
-      //{
-      //   { "ModuleDeployableSolarPanel", new string[] { "chargeRate", "resourceName" } }
-      //};
       #endregion
 
       #region - Methods
-      public static void Build(List<BaseObject> data)
+      public static PartData Build(List<BaseObject> data)
       {
-         PartData parts = new PartData();
 
-         foreach (var partData in data)
+         if (data != null)
          {
-            if (partData is null)
+            PartData parts = new PartData();
+
+            foreach (var partData in data)
+            {
+               if (partData is null)
+               {
+                  continue;
+               }
+               var foundPartData = partData.GetChild("PART");
+               if (foundPartData != null)
+               {
+                  var newPart = BuildPart(foundPartData);
+                  if (newPart != null)
+                  {
+                     parts.Parts.Add(newPart);
+                  }
+               }
+            }
+
+            return parts;
+         }
+         else
+         {
+            return null;
+         }
+
+      }
+
+      private static Part BuildPart(BaseObject partData)
+      {
+         if (partData != null)
+         {
+            var newPart = new Part();
+
+            foreach (var prop in partData.Values)
+            {
+               if (Part.SearchProps.ContainsKey(prop.Key))
+               {
+                  Part.SearchProps[prop.Key](prop.Value, newPart);
+               }
+            }
+
+            BuildModules(partData, newPart);
+            BuildResources_2(partData, newPart);
+
+            return newPart;
+         }
+         else
+         {
+            return null;
+         }
+      }
+
+      public static void BuildModules(BaseObject root, Part part)
+      {
+         foreach (var moduleType in (ModuleType[])Enum.GetValues(typeof(ModuleType)))
+         {
+            BuildModule(root, part, moduleType);
+         }
+      }
+      public static void BuildModule(BaseObject root, Part part, ModuleType type)
+      {
+         foreach (var module in GetModules(root, type))
+         {
+            if (module is null)
             {
                continue;
             }
-            var foundPart = partData.GetChild("PART");
-            if (foundPart != null)
+            switch (type)
             {
-               parts.Parts.Add(BuildPart(foundPart));
+               case ModuleType.ModuleCommand:
+                  part.Modules.Add(CommandModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleDataTransmitter:
+                  part.Modules.Add(CommsModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleEngines:
+                  part.Modules.Add(EngineModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleEnginesFX:
+                  part.Modules.Add(EngineModule.BuildModule(module));
+                  break;
+               case ModuleType.MultiModeEngine:
+                  part.Modules.Add(MultiModeEngineModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleReactionWheel:
+                  part.Modules.Add(ReactionWheelModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleScienceExperiment:
+                  part.Modules.Add(ScienceModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleDeployableSolarPanel:
+                  part.Modules.Add(SolarPanelModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleDecouple:
+                  part.Modules.Add(DecoupleModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleResourceIntake:
+                  part.Modules.Add(AirIntakeModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleAlternator:
+                  part.Modules.Add(AlternatorModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleGenerator:
+                  part.Modules.Add(GeneratorModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleResourceConverter:
+                  part.Modules.Add(ResourceConverterModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleResourceHarvester:
+                  part.Modules.Add(ResourceHarvesterModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleAsteroidDrill:
+                  part.Modules.Add(ResourceAsteroidHarvesterModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleActiveRadiator:
+                  part.Modules.Add(RadiatorModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleLight:
+                  part.Modules.Add(LightModule.BuildModule(module));
+                  break;
+               case ModuleType.ModuleRCSFX:
+                  part.Modules.Add(RCSModule.BuildModule(module));
+                  break;
+               default:
+                  break;
             }
          }
-
-
       }
 
-      private static Part BuildPart(BaseObject part)
+      private static List<BaseObject> GetModules(BaseObject baseModule, ModuleType type)
       {
-         var newPart = new Part();
-         var moduleData = part.GetChildren("MODULE");
-         var resourceData = part.GetChildren("RESOURCE");
-
-         foreach (var prop in part.Values)
-         {
-            if (Part.SearchProps.ContainsKey(prop.Key))
-            {
-               Part.SearchProps[prop.Key](prop.Value, newPart);
-            }
-         }
-
-         BuildModules(moduleData, newPart);
-         BuildResources(resourceData, newPart);
-
-         return newPart;
+         return baseModule.GetChildrenByProperty("name", type.ToString());
       }
 
-      public static void BuildModules(List<BaseObject> moduleData, Part part)
+      public static void BuildResources_2(BaseObject root, Part part)
       {
-         foreach (var rawModule in moduleData)
+         foreach (var obj in GetResources(root))
          {
-            foreach (var moduleType in (ModuleType[])Enum.GetValues(typeof(ModuleType)))
+            if (obj.Values.ContainsKey("name"))
             {
-               var newModule = ModuleFactory.Selector[moduleType]();
-               if (rawModule.Values.ContainsKey("name"))
+               bool success = Enum.TryParse(obj.Values["name"], out ResourceType type);
+               if (success)
                {
-                  if (rawModule.Values["name"] == Enum.GetName(typeof(ModuleType), moduleType))
+                  var newResource = ResourceFactory.Selector[type]();
+                  foreach (var kv in obj.Values)
                   {
-                     string newModuleName = rawModule.Values["name"];
-                     newModule.Name = newModuleName;
-                     foreach (var keyVal in rawModule.Values)
-                     {
-                        newModule.SetProp(keyVal.Key, keyVal.Value);
-                     }
-                     if (!part.Modules.ContainsKey(newModuleName))
-                     {
-                        part.Modules.Add(rawModule.Values["name"], newModule); 
-                     }
+                     newResource.SetProp(kv);
                   }
-               }
-
-               // Need to test ALL this
-               switch (moduleType)
-               {
-                  case ModuleType.ModuleEnginesFX:
-                     if (rawModule.Children.Count > 0)
-                     {
-                        var tempModule = newModule as EngineModule;
-                        foreach (var subModule in rawModule.Children)
-                        {
-                           if (subModule.Values.ContainsKey("name"))
-                           {
-                              if (subModule.Key == "PROPELLANT")
-                              {
-                                 if (tempModule != null)
-                                 {
-                                    var newPropModule = new PropellentModule();
-                                    newPropModule.Name = subModule.Values["name"];
-                                    foreach (var keyVal in subModule.Values)
-                                    {
-                                       newPropModule.SetProp(keyVal.Key, keyVal.Value);
-                                    }
-                                    tempModule.PropellentRequirements.Add(newPropModule);
-                                 }
-                              }
-                           }
-                           if (subModule.Key == "RESOURCE")
-                           {
-                              
-                           }
-                        }
-                     }
-                     break;
-                  case ModuleType.ModuleReactionWheel:
-                     if (rawModule.Children.Count > 0)
-                     {
-                        var tempModule = newModule as ReactionWheelModule;
-                        foreach (var subModule in rawModule.Children)
-                        {
-                           if (subModule.Key == "RESOURCE")
-                           {
-                              tempModule.Electrical = new ElectricalLoadModule();
-                              tempModule.Name = subModule.Values["name"];
-                              foreach (var keyVal in subModule.Values)
-                              {
-                                 tempModule.Electrical.SetProp(keyVal.Key, keyVal.Value);
-                              }
-                           }
-                        }
-                     }
-                     break;
-                  default:
-                     break;
+                  part.Resources.Add(newResource);
                }
             }
          }
       }
 
-      public static void BuildResources(List<BaseObject> moduleData, Part part)
+      private static List<BaseObject> GetResources(BaseObject root)
       {
-
-         foreach (var rawModule in moduleData)
-         {
-            foreach (var resourceType in (ResourceType[])Enum.GetValues(typeof(ResourceType)))
-            {
-               if (rawModule.Values.ContainsKey("name"))
-               {
-                  if (rawModule.Values["name"] == Enum.GetName(typeof(ResourceType), resourceType))
-                  {
-                     var newResource = ResourceFactory.Selector[resourceType]();
-                     newResource.Name = rawModule.Values["name"];
-                     foreach (var keyVal in rawModule.Values)
-                     {
-                        newResource.SetProp(keyVal.Key, keyVal.Value);
-                     }
-                     part.Resources.Add(rawModule.Values["name"], newResource);
-                  }
-               }
-            }
-         }
+         return root.GetChildren("RESOURCE");
       }
       #endregion
 

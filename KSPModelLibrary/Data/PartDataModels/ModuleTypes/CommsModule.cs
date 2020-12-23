@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfigReaderLibrary;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,35 +15,48 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
       public double AntennaPower { get; set; }
       public bool IsCombinable { get; set; }
 
-      public void SetProp(string prop, string value)
+      public void SetProp(KeyValuePair<string, string> keyVal)
       {
-         switch (prop)
+         switch (keyVal.Key)
          {
+            case "name":
+               Name = keyVal.Value;
+               break;
             case "antennaType":
-               bool success = Enum.TryParse(value, out AntennaType result);
+               bool success = Enum.TryParse(keyVal.Value, out AntennaType result);
                if (success)
                {
                   AntennaType = result;
                }
                break;
             case "packetInterval":
-               PacketInterval = ParseMethods.ParseDouble(value);
+               PacketInterval = ParseMethods.ParseDouble(keyVal.Value);
                break;
             case "packetSize":
-               PacketSize = ParseMethods.ParseDouble(value);
+               PacketSize = ParseMethods.ParseDouble(keyVal.Value);
                break;
             case "packetResourceCost":
-               PacketCost = ParseMethods.ParseDouble(value);
+               PacketCost = ParseMethods.ParseDouble(keyVal.Value);
                break;
             case "antennaPower":
-               AntennaPower = ParseMethods.ParseDouble(value);
+               AntennaPower = ParseMethods.ParseDouble(keyVal.Value);
                break;
             case "antennaCombinable":
-               IsCombinable = ParseMethods.ParseBool(value);
+               IsCombinable = ParseMethods.ParseBool(keyVal.Value);
                break;
             default:
                break;
          }
+      }
+
+      public static CommsModule BuildModule(BaseObject obj)
+      {
+         var newComms = new CommsModule();
+         foreach (var kv in obj.Values)
+         {
+            newComms.SetProp(kv);
+         }
+         return newComms;
       }
    }
 }

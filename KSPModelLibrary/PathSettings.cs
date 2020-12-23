@@ -16,7 +16,11 @@ namespace KSPModelLibrary
 
       public class PathSettingModel
       {
+         public string ProjectPath { get; set; }
+         public string PartDataSavePath { get; set; }
+         public string ScienceDataSavePath { get; set; }
          public string GameDataPath { get; set; }
+         public string ScienceDataPath { get; set; }
          public string[] AdditionalPartPaths { get; set; }
          public string VanillaPath { get; set; }
          public string[] DLCPaths { get; set; }
@@ -34,6 +38,7 @@ namespace KSPModelLibrary
          string projectDir = FindProjectDir(Environment.CurrentDirectory);
          SettingsModel = JsonReader.OpenJsonFile<PathSettingModel>(Path.Combine(projectDir, PathSettingLocation));
          BuildGameDataDirectories();
+         SettingsModel.ProjectPath = projectDir;
       }
 
       public static void OnExit()
@@ -53,6 +58,16 @@ namespace KSPModelLibrary
          {
             return FindProjectDir(currentDir.Parent.FullName);
          }
+      }
+
+      public static string GetNestedProjPath(string childPath)
+      {
+         return Path.Combine(SettingsModel.ProjectPath, childPath);
+      }
+
+      public static string GetNestedGamePath(string childPath)
+      {
+         return Path.Combine(SettingsModel.GameDataPath, childPath);
       }
 
       public static void BuildGameDataDirectories()
@@ -79,7 +94,29 @@ namespace KSPModelLibrary
       #endregion
 
       #region - Full Properties
+      public static string PartDataSavePath
+      {
+         get { return GetNestedProjPath(SettingsModel.PartDataSavePath); }
+         set
+         {
+            var t = Path.Combine(SettingsModel.ProjectPath, value);
+         }
+      }
 
+      public static string ScienceDataSavePath
+      {
+         get { return GetNestedProjPath(SettingsModel.ScienceDataSavePath); }
+      }
+
+      public static string GameDataPath { get; set; }
+      public static string ScienceDataPath
+      {
+         get => GetNestedGamePath(SettingsModel.ScienceDataPath); 
+         set
+         {
+            SettingsModel.ScienceDataPath = Path.Combine(SettingsModel.GameDataPath, value);
+         }
+      }
       #endregion
    }
 }
