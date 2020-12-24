@@ -4,48 +4,166 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KSPHelperWPF.Views"
-		xmlns:components="clr-namespace:KSPHelperWPF.Components"
+        xmlns:converters="clr-namespace:KSPHelperWPF.Converters"
         mc:Ignorable="d" Closing="SettingsWindow_Closing"
         Title="File Settings" Height="450" Width="800">
+    <Window.Resources>
+        <converters:PathConverter x:Key="pathConverter"/>
+    </Window.Resources>
     <Grid Grid.IsSharedSizeScope="True">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Padding" Value="0,0,4,0"/>
+                <Setter Property="Margin" Value="2"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Background" Value="AliceBlue"/>
+            </Style>
+            <Style TargetType="Border">
+                <Setter Property="Padding" Value="2"/>
+            </Style>
+            <Style TargetType="Border" x:Key="array_border">
+                <Setter Property="Padding" Value="4"/>
+            </Style>
+        </Grid.Resources>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-		</Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-		<components:PathSelector
-			Grid.Row="0"
-			Title="Game Data Path"
-			Path="{Binding GameDataPath}"
-			Type="Directory"
-		/>
-		<components:PathSelector
-			Grid.Row="1"
-			Title="Vanilla Part Path"
-			Path="{Binding VanillaPartPath}"
-			Type="Directory"
-		/>
-		<components:PathSelector
-			Grid.Row="2"
-			Title="Science Path"
-			Path="{Binding ScienceDataPath}"
-			Type="Directory"
-		/>
-		<components:PathSelector
-			Grid.Row="3"
-			Title="Part Data Save Path"
-			Path="{Binding PartDataSavePath}"
-			Type="Directory"
-		/>
-		<components:PathSelector
-			Grid.Row="4"
-			Title="Science Data Save Path"
-			Path="{Binding ScienceDataSavePath}"
-			Type="Directory"
-		/>
+        <Border Grid.Row="0" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="title"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0">Game Data Path</TextBlock>
+                <TextBox
+                    Grid.Column="1"
+                    Text="{Binding Path=GameDataPath, UpdateSourceTrigger=PropertyChanged}"
+                >
+                </TextBox>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="title"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0">Science Data Path</TextBlock>
+                <TextBox
+                    Grid.Column="1"
+                    Text="{Binding Path=ScienceDataPath, UpdateSourceTrigger=PropertyChanged}"
+                >
+                </TextBox>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="title"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0">Part Data Save Path</TextBlock>
+                <TextBox
+                    Grid.Column="1"
+                    Text="{Binding Path=PartDataSavePath, UpdateSourceTrigger=PropertyChanged}"
+                >
+                </TextBox>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="title"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0">Science Data Save Path</TextBlock>
+                <TextBox
+                    Grid.Column="1"
+                    Text="{Binding Path=ScienceDataSavePath, UpdateSourceTrigger=PropertyChanged}"
+                >
+                </TextBox>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="title"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0">Vanilla Parts Path</TextBlock>
+                <TextBox
+                    Grid.Column="1"
+                    Text="{Binding Path=VanillaPartPath, UpdateSourceTrigger=PropertyChanged}"
+                >
+                </TextBox>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="5" Style="{StaticResource array_border}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock>Additional Part Paths</TextBlock>
+                <ListBox Grid.Row="1" ItemsSource="{Binding Path=AdditionalPaths}"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="6" Style="{StaticResource array_border}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock>DLC Part Paths</TextBlock>
+                <ListBox Grid.Row="1" ItemsSource="{Binding Path=DLCPaths}" SelectionChanged="ListBox_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBox Padding="4" Text="{Binding Path=.}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Grid.Row="2" Click="Add_Button_Click" DataContext="{Binding Path=DLCPaths}">+</Button>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="7" Style="{StaticResource array_border}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock>Mod Part Paths</TextBlock>
+                <ListBox Grid.Row="1" ItemsSource="{Binding Path=ModPaths}"/>
+            </Grid>
+        </Border>
 	</Grid>
 </Window>

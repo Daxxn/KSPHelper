@@ -2,13 +2,23 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Text;
 
 using static KSPModelLibrary.PathSettings;
 
 namespace KSPHelperWPF.ViewModels
 {
+   public enum FileType
+   {
+      Directory,
+      File,
+      PartialDir,
+      PartialFile,
+   }
    public class SettingsDialogViewModel : ViewModel
    {
       #region Properties
@@ -20,14 +30,14 @@ namespace KSPHelperWPF.ViewModels
 
       private string _vanillaPartPath;
 
-      private string[] _additionalPaths;
-      private string[] _dlcPaths;
-      private string[] _modPaths;
-      private string[] _excludedDirPaths;
-      private string[] _excludedFilePaths;
+      private ObservableCollection<string> _additionalPaths;
+      private ObservableCollection<string> _dlcPaths;
+      private ObservableCollection<string> _modPaths;
+      private ObservableCollection<string> _excludedDirPaths;
+      private ObservableCollection<string> _excludedFilePaths;
 
-      private string[] _fileFilters;
-      private string[] _dirFilters;
+      private ObservableCollection<string> _fileFilters;
+      private ObservableCollection<string> _dirFilters;
       #endregion
 
       #region Constructors
@@ -41,14 +51,14 @@ namespace KSPHelperWPF.ViewModels
          _partDataSavePath = settings.PartDataSavePath;
          _scienceDataSavePath = settings.ScienceDataSavePath;
 
-         _additionalPaths = settings.AdditionalPartPaths;
-         _dlcPaths = settings.DLCPaths;
-         _modPaths = settings.ModPaths;
-         _excludedDirPaths = settings.ExcludedPaths;
-         _excludedFilePaths = settings.ExcludedFiles;
+         _additionalPaths = new ObservableCollection<string>(settings.AdditionalPartPaths);
+         _dlcPaths = new ObservableCollection<string>(settings.DLCPaths);
+         _modPaths = new ObservableCollection<string>(settings.ModPaths);
+         _excludedDirPaths = new ObservableCollection<string>(settings.ExcludedPaths);
+         _excludedFilePaths = new ObservableCollection<string>(settings.ExcludedFiles);
 
-         _fileFilters = settings.FileFilters;
-         _dirFilters = settings.DirFilters;
+         _fileFilters = new ObservableCollection<string>(settings.FileFilters);
+         _dirFilters = new ObservableCollection<string>(settings.DirFilters);
       }
       #endregion
 
@@ -62,14 +72,31 @@ namespace KSPHelperWPF.ViewModels
             PartDataSavePath = PartDataSavePath,
             ScienceDataSavePath = ScienceDataSavePath,
             VanillaPath = VanillaPartPath,
-            AdditionalPartPaths = AdditionalPaths,
-            DLCPaths = DLCPaths,
-            ModPaths = ModPaths,
-            ExcludedPaths = ExcludedDirPaths,
-            ExcludedFiles = ExcludedFilePaths,
-            FileFilters = FileFilters,
-            DirFilters = DirFilters,
+            AdditionalPartPaths = AdditionalPaths.ToArray(),
+            DLCPaths = DLCPaths.ToArray(),
+            ModPaths = ModPaths.ToArray(),
+            ExcludedPaths = ExcludedDirPaths.ToArray(),
+            ExcludedFiles = ExcludedFilePaths.ToArray(),
+            FileFilters = FileFilters.ToArray(),
+            DirFilters = DirFilters.ToArray(),
          };
+      }
+
+      public bool CheckPath(string input, FileType type)
+      {
+         switch (type)
+         {
+            case FileType.Directory:
+               return Directory.Exists(input);
+            case FileType.File:
+               return File.Exists(input);
+            case FileType.PartialDir:
+               return Directory.Exists(Path.Combine(GameDataPath, input));
+            case FileType.PartialFile:
+               return File.Exists(Path.Combine(GameDataPath, input));
+            default:
+               throw new ArgumentException("FileType not found");
+         }
       }
       #endregion
 
@@ -134,7 +161,7 @@ namespace KSPHelperWPF.ViewModels
             OnPropertyChanged(nameof(VanillaPartPath));
          }
       }
-      public string[] AdditionalPaths
+      public ObservableCollection<string> AdditionalPaths
       {
          get
          {
@@ -146,7 +173,7 @@ namespace KSPHelperWPF.ViewModels
             OnPropertyChanged(nameof(AdditionalPaths));
          }
       }
-      public string[] DLCPaths
+      public ObservableCollection<string> DLCPaths
       {
          get
          {
@@ -158,7 +185,7 @@ namespace KSPHelperWPF.ViewModels
             OnPropertyChanged(nameof(DLCPaths));
          }
       }
-      public string[] ModPaths
+      public ObservableCollection<string> ModPaths
       {
          get
          {
@@ -170,7 +197,7 @@ namespace KSPHelperWPF.ViewModels
             OnPropertyChanged(nameof(ModPaths));
          }
       }
-      public string[] ExcludedDirPaths
+      public ObservableCollection<string> ExcludedDirPaths
       {
          get
          {
@@ -182,7 +209,7 @@ namespace KSPHelperWPF.ViewModels
             OnPropertyChanged(nameof(ExcludedDirPaths));
          }
       }
-      public string[] ExcludedFilePaths
+      public ObservableCollection<string> ExcludedFilePaths
       {
          get
          {
@@ -194,7 +221,7 @@ namespace KSPHelperWPF.ViewModels
             OnPropertyChanged(nameof(ExcludedFilePaths));
          }
       }
-      public string[] FileFilters
+      public ObservableCollection<string> FileFilters
       {
          get
          {
@@ -206,7 +233,7 @@ namespace KSPHelperWPF.ViewModels
             OnPropertyChanged(nameof(FileFilters));
          }
       }
-      public string[] DirFilters
+      public ObservableCollection<string> DirFilters
       {
          get
          {

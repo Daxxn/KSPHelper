@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KSPHelperWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -24,8 +25,6 @@ namespace KSPHelperWPF.Components
    /// </summary>
    public partial class PathSelector : UserControl
    {
-
-
       public FileType Type
       {
          get { return (FileType)GetValue(TypeProperty); }

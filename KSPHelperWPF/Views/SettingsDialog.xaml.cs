@@ -29,12 +29,34 @@ namespace KSPHelperWPF.Views
 
       private void InitEvents(SettingsDialogViewModel vm )
       {
-         this.Closing += vm.WindowCloseEvent;
+         Closing += vm.WindowCloseEvent;
       }
 
       private void SettingsWindow_Closing( object sender, CancelEventArgs e )
       {
 
+      }
+
+      private void Add_Button_Click(object sender, RoutedEventArgs e)
+      {
+
+      }
+
+      private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+      {
+         var listBox = sender as ListBox;
+         if (listBox != null && e.AddedItems.Count > 0)
+         {
+            var newItems = new List<object>();
+            foreach (var item in listBox.Items)
+            {
+               if (!e.AddedItems.Contains(item))
+               {
+                  newItems.Add(item);
+               }
+            }
+            listBox.ItemsSource = newItems;
+         }
       }
    }
 }

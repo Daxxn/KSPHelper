@@ -7,8 +7,7 @@ using KSPModelLibrary.Data.ScienceDataModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json;
+
 using JsonReader = JsonReaderLibrary.JsonReader;
 
 namespace KSPModelLibrary
