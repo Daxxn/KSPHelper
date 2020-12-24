@@ -35,6 +35,7 @@
                 IsSelected="True"
             />
             <TabItem x:Name="CommsTab" Header="Comms" />
+            <TabItem x:Name="CalcTab" Header="Calculators" />
         </TabControl>
     </Grid>
 </Window>

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
@@ -18,5 +17,22 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
          { ModuleType.ModuleAlternator, () => new AlternatorModule() },
          { ModuleType.ModuleResourceIntake, () => new AirIntakeModule() }
       };
+
+      public static bool PartHasModule<TModule>(Part part) where TModule : IModule
+      {
+         bool result = false;
+         if (part.Modules.Count > 0)
+         {
+            foreach (var module in part.Modules)
+            {
+               if (module is TModule)
+               {
+                  result = true;
+                  break;
+               }
+            }
+         }
+         return result;
+      }
    }
 }

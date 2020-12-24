@@ -29,6 +29,43 @@ namespace KSPModelLibrary
       #endregion
 
       #region - Methods
+      public static string OnStartup()
+      {
+         if (File.Exists(PathSettings.PartDataSavePath))
+         {
+            try
+            {
+               LoadJsonParts();
+            }
+            catch (Exception)
+            {
+               return "Parts load failed.";
+            }
+
+            if (File.Exists(PathSettings.ScienceDataSavePath))
+            {
+               try
+               {
+                  LoadJsonScience();
+               }
+               catch (Exception)
+               {
+                  return "Science load failed.";
+               }
+            }
+            else
+            {
+               return "Science data not found.";
+            }
+         }
+         else
+         {
+            return "Parts data not found.";
+         }
+
+         return null;
+      }
+
       public static void ReadGameData(string rootPath)
       {
          try

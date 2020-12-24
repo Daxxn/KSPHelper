@@ -16,5 +16,22 @@ namespace KSPModelLibrary.Data.PartDataModels.ResourceTypes
          { ResourceType.IntakeAir, () => new AirIntakeResource() },
          { ResourceType.SolidFuel, () => new SolidFuelResource() },
       };
+
+      public static bool PartHasResource<TResource>(Part part) where TResource : IResource
+      {
+         bool result = false;
+         if (part.Resources.Count > 0)
+         {
+            foreach (var module in part.Resources)
+            {
+               if (module is TResource)
+               {
+                  result = true;
+                  break;
+               }
+            }
+         }
+         return result;
+      }
    }
 }

@@ -1,4 +1,5 @@
-﻿using KSPHelperWPF.Views;
+﻿using KSPHelperWPF.ViewModels.CalculatorViewModels;
+using KSPHelperWPF.Views;
 
 using KSPModelLibrary;
 using KSPModelLibrary.Data;
@@ -20,6 +21,7 @@ namespace KSPHelperWPF.ViewModels
       public ElectricalViewModel ElectricalVM { get; set; } = new ElectricalViewModel();
       public CommsViewModel CommsVM { get; set; } = new CommsViewModel();
       public SettingsDialogViewModel SettingsVM { get; set; } = new SettingsDialogViewModel(PathSettings.SettingsModel);
+      public CalculatorsViewModel CalcsVM { get; set; } = new CalculatorsViewModel();
       #endregion
 
       public PartData AllParts { get; set; } = GameDataReader.AllPartData;

@@ -53,5 +53,31 @@ namespace KSPModelLibrary.Data.PartDataModels
       public string TechRequired { get; set; }
       public List<IModule> Modules { get; set; } = new List<IModule>();
       public List<IResource> Resources { get; set; } = new List<IResource>();
+
+      public TModule GetModule<TModule>() where TModule : IModule
+      {
+         TModule output = default(TModule);
+         foreach (var module in Modules)
+         {
+            if (module is TModule)
+            {
+               output = (TModule)module;
+            }
+         }
+         return output;
+      }
+
+      public List<TResource> GetResources<TResource>() where TResource : IResource
+      {
+         var output = new List<TResource>();
+         foreach (var resource in Resources)
+         {
+            if (output is TResource)
+            {
+               output.Add((TResource)resource);
+            }
+         }
+         return output;
+      }
    }
 }

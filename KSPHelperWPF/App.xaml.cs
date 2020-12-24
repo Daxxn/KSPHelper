@@ -19,6 +19,11 @@ namespace KSPHelperWPF
       protected override void OnStartup(StartupEventArgs e)
       {
          PathSettings.OnStartup();
+         var dataMessage = GameDataReader.OnStartup();
+         if (dataMessage != null)
+         {
+            MessageBox.Show(dataMessage);
+         }
          var mainView = new MainWindow(MainViewModel.Instance);
          mainView.Show();
       }

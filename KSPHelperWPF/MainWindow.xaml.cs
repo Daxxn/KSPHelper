@@ -1,5 +1,6 @@
 ﻿using KSPHelperWPF.ViewModels;
 using KSPHelperWPF.Views;
+using KSPHelperWPF.Views.CalculatorViews;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace KSPHelperWPF
          DataContext = vm;
          ElectricalTab.Content = new ElectricalView(vm.ElectricalVM);
          CommsTab.Content = new CommsView(vm.CommsVM);
+         CalcTab.Content = new CalculatorsView(vm.CalcsVM);
          InitEvents(vm);
       }
 
