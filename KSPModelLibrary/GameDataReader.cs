@@ -32,36 +32,48 @@ namespace KSPModelLibrary
       #region - Methods
       public static void ReadGameData(string rootPath)
       {
-         //var d = CFGReader.ReadFiles(new string[] { @"B:\Games\steamapps\common\Kerbal Space Program\GameData\Squad\Parts\Resources\FuelCell\FuelCell.cfg" });
-         //PartDataBuilder.Build(d);
-         string[] files = GetFiles(rootPath);
-         List<BaseObject> data = CFGReader.ReadFiles(files);
-         AllPartData = PartDataBuilder.Build(data);
+         try
+         {
+            string[] files = GetFiles(rootPath);
+            List<BaseObject> data = CFGReader.ReadFiles(files);
+            AllPartData = PartDataBuilder.Build(data);
+         }
+         catch (Exception e)
+         {
+            throw new Exception("Part Config Reader Error", e);
+         }
 
          try
          {
             SaveData(DataType.PartData);
          }
-         catch (Exception)
+         catch (Exception e)
          {
-            throw;
+            throw new Exception("Part Data Save Error", e);
          }
       }
 
       public static void ReadScienceData()
       {
-         var reader = new CFGReader(PathSettings.SettingsModel.ScienceDataPath);
-         reader.ReadFile();
-         var data = reader.ParseFile();
-         AllScienceData = ScienceDataBuilder.BuildData(data);
+         try
+         {
+            var reader = new CFGReader(PathSettings.SettingsModel.ScienceDataPath);
+            reader.ReadFile();
+            var data = reader.ParseFile();
+            AllScienceData = ScienceDataBuilder.BuildData(data);
+         }
+         catch (Exception e)
+         {
+            throw new Exception("Science Config Reader Error", e);
+         }
 
          try
          {
             SaveData(DataType.ScienceData);
          }
-         catch (Exception)
+         catch (Exception e)
          {
-            throw;
+            throw new Exception("Science Data Save Error", e);
          }
       }
 
@@ -73,9 +85,9 @@ namespace KSPModelLibrary
                PathSettings.PartDataSavePath
             );
          }
-         catch (Exception)
+         catch (Exception e)
          {
-            throw;
+            throw new Exception("Json Parts Data Error", e);
          }
       }
 
@@ -87,9 +99,9 @@ namespace KSPModelLibrary
                PathSettings.ScienceDataSavePath
             );
          }
-         catch (Exception)
+         catch (Exception e)
          {
-            throw;
+            throw new Exception("Json Science Data Error", e);
          }
       }
 

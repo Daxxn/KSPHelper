@@ -13,8 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Libraries\FileSearchLibrary\FileSearchLibrary\FileSearchLibrary.csproj" />
-    <ProjectReference Include="..\..\..\..\Libraries\JsonReaderLibrary\JsonReaderLibrary\JsonReaderLibrary.csproj" />
+    <!--<ProjectReference Include="..\..\..\..\Libraries\FileSearchLibrary\FileSearchLibrary\FileSearchLibrary.csproj" />-->
+    <ProjectReference Include="C:\Users\Daxxn\Documents\GitHub Repositories\CSharpLibraries\FileSearchLibrary\FileSearchLibrary\FileSearchLibrary.csproj" />
+    <!--<ProjectReference Include="..\..\..\..\Libraries\JsonReaderLibrary\JsonReaderLibrary\JsonReaderLibrary.csproj" />-->
+    <ProjectReference Include="C:\Users\Daxxn\Documents\GitHub Repositories\CSharpLibraries\JsonReaderLibrary\JsonReaderLibrary\JsonReaderLibrary.csproj" />
     <ProjectReference Include="..\ConfigReaderLibrary\ConfigReaderLibrary.csproj" />
   </ItemGroup>
 
