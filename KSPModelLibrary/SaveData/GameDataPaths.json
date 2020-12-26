@@ -1,38 +1,43 @@
 ﻿{
+  "CraftFolder": "B:\\Games\\steamapps\\common\\Kerbal Space Program\\saves\\Here We Go Again\\Ships",
   "GameDataPath": "B:\\Games\\steamapps\\common\\Kerbal Space Program\\GameData",
-  "ScienceDataPath": "B:\\Games\\steamapps\\common\\Kerbal Space Program\\GameData\\Squad\\Resources\\ScienceDefs.cfg",
   "PartDataSavePath": "KSPModelLibrary\\SaveData\\PartData.json",
   "ScienceDataSavePath": "KSPModelLibrary\\SaveData\\ScienceData.json",
-  "AdditionalPartPaths": [],
-  "VanillaPath": "Squad\\Parts",
-  "DLCPaths": [
-    "SquadExpansion\\MakingHistory\\Parts",
-    "SquadExpansion\\Serenity\\Parts"
-  ],
-  "ModPaths": [
-    "TarsierSpaceTech\\Parts",
-    "PlanetaryBaseInc\\BaseSystem\\Parts",
-    "PlanetaryBaseInc\\ContainerSystem",
-    "SCANsat\\Parts"
-  ],
-  "ExcludedPaths": [
-    "Squad\\Parts\\Misc",
-    "PreBuilt",
-    "Squad\\Parts\\Cargo",
-    "Squad\\Parts\\CompoundParts",
-    "SharedAssets",
-    "MakingHistory\\Parts\\Utility"
+  "ExcludedDirs": [
+    "CommunityCategoryKit",
+    "CommunityResourcePack",
+    "Localization",
+    "ModSupport",
+    "MM_Parts",
+    "PluginData",
+    "Resources",
+    "Flags",
+    "Agencies",
+    "Contracts",
+    "Controls",
+    "Experience",
+    "Missions",
+    "PartList",
+    "Props",
+    "Spaces",
+    "Strategies",
+    "Tutorials",
+    "zDeprecated",
+    "Nodes",
+    "Potato"
   ],
   "ExcludedFiles": [
+    "KPBS_config",
     "_config",
     "VariantThemes",
     "flag",
     "kerbalEVA",
-    "kerbalEVAfemale"
+    "kerbalEVAfemale",
+    "localization",
+    "TST"
   ],
-  "FileFilters": [
-    ".cfg"
-  ],
-  "DirFilters": [
-  ]
+
+  "ScienceFilter": "ScienceDefs.cfg",
+  "PartFilter": "*.cfg",
+  "CraftDialogFilter": "craft File|*.craft|all|*.*"
 }

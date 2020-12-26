@@ -5,14 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CraftParser\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\CustomDataTypeLibrary\CustomDataTypeLibrary\CustomDataTypeLibrary.csproj" />
     <ProjectReference Include="B:\Code\C#\Libraries\FileSearchLibrary\FileSearchLibrary\FileSearchLibrary.csproj" />
     <ProjectReference Include="B:\Code\C#\Libraries\JsonReaderLibrary\JsonReaderLibrary\JsonReaderLibrary.csproj" />
 	<!--Desktop Refs-->

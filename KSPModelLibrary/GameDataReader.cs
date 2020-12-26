@@ -31,7 +31,7 @@ namespace KSPModelLibrary
       #region - Methods
       public static string OnStartup()
       {
-         if (File.Exists(PathSettings.PartDataSavePath))
+         if (File.Exists(Path.Combine(PathSettings.SettingsModel.ProjectPath, PathSettings.SettingsModel.PartDataSavePath)))
          {
             try
             {
@@ -42,7 +42,7 @@ namespace KSPModelLibrary
                return "Parts load failed.";
             }
 
-            if (File.Exists(PathSettings.ScienceDataSavePath))
+            if (File.Exists(Path.Combine(PathSettings.SettingsModel.ProjectPath, PathSettings.SettingsModel.ScienceDataSavePath)))
             {
                try
                {
@@ -70,8 +70,8 @@ namespace KSPModelLibrary
       {
          try
          {
-            string[] files = GetFiles(rootPath);
-            List<BaseObject> data = CFGReader.ReadFiles(files);
+            //string[] files = GetFiles(rootPath);
+            List<BaseObject> data = CFGReader.ReadFiles(PathSettings.PartPaths);
             AllPartData = PartDataBuilder.Build(data);
          }
          catch (Exception e)
@@ -93,9 +93,10 @@ namespace KSPModelLibrary
       {
          try
          {
-            var reader = new CFGReader(PathSettings.SettingsModel.ScienceDataPath);
-            reader.ReadFile();
-            var data = reader.ParseFile();
+            //var reader = new CFGReader("");
+            //reader.ReadFile();
+            //var data = reader.ParseLines();
+            List<BaseObject> data = CFGReader.ReadFiles(PathSettings.SciencePaths);
             AllScienceData = ScienceDataBuilder.BuildData(data);
          }
          catch (Exception e)
@@ -118,7 +119,7 @@ namespace KSPModelLibrary
          try
          {
             AllPartData = JsonReaderLibrary.JsonReader.OpenJsonFile<PartData>(
-               PathSettings.PartDataSavePath
+               Path.Combine(PathSettings.SettingsModel.ProjectPath, PathSettings.SettingsModel.PartDataSavePath)
             );
          }
          catch (Exception e)
@@ -132,7 +133,7 @@ namespace KSPModelLibrary
          try
          {
             AllScienceData = JsonReaderLibrary.JsonReader.OpenJsonFile<Science>(
-               PathSettings.ScienceDataSavePath
+               Path.Combine(PathSettings.SettingsModel.ProjectPath, PathSettings.SettingsModel.ScienceDataSavePath)
             );
          }
          catch (Exception e)
@@ -155,15 +156,16 @@ namespace KSPModelLibrary
             throw new DirectoryNotFoundException(root);
          }
 
-         string[] foundFiles = FileSearch_2.FilterFiles(
-            PathSettings.AllPaths,
-            PathSettings.SettingsModel.ExcludedFiles,
-            PathSettings.SettingsModel.ExcludedPaths,
-            PathSettings.SettingsModel.FileFilters,
-            PathSettings.SettingsModel.DirFilters
-         );
+         //string[] foundFiles = FileSearch_2.FilterFiles(
+         //   PathSettings.AllPaths,
+         //   PathSettings.SettingsModel.ExcludedFiles,
+         //   PathSettings.SettingsModel.ExcludedPaths,
+         //   PathSettings.SettingsModel.FileFilters,
+         //   PathSettings.SettingsModel.DirFilters
+         //);
 
-         return foundFiles;
+         //return foundFiles;
+         return null;
       }
 
       public static void SaveData(DataType type)
@@ -176,7 +178,7 @@ namespace KSPModelLibrary
                   return;
                }
                JsonReader.SaveJsonFile(
-                  PathSettings.PartDataSavePath,
+                  Path.Combine(PathSettings.SettingsModel.ProjectPath, PathSettings.SettingsModel.PartDataSavePath),
                   AllPartData,
                   true
                );
@@ -187,7 +189,7 @@ namespace KSPModelLibrary
                   return;
                }
                JsonReader.SaveJsonFile(
-                  PathSettings.ScienceDataSavePath,
+                  Path.Combine(PathSettings.SettingsModel.ProjectPath, PathSettings.SettingsModel.ScienceDataSavePath),
                   AllScienceData,
                   true
                );
@@ -212,15 +214,15 @@ namespace KSPModelLibrary
 
       public static void SaveParsedScienceData()
       {
-         if (AllScienceData is null)
-         {
-            return;
-         }
-         JsonReader.SaveJsonFile(
-            PathSettings.ScienceDataSavePath,
-            AllScienceData,
-            true
-         );
+         //if (AllScienceData is null)
+         //{
+         //   return;
+         //}
+         //JsonReader.SaveJsonFile(
+         //   PathSettings.ScienceDataSavePath,
+         //   AllScienceData,
+         //   true
+         //);
       }
       #endregion
 

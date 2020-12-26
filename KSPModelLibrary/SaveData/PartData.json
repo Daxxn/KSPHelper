@@ -3,6 +3,588 @@
   "Parts": [
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.storageend.title",
+      "Name": "KKAOSS_Storage_End_Cap_Storage",
+      "Category": "Payload",
+      "Cost": 250,
+      "Mass": 0.15,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advConstruction",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.storagebig.title",
+      "Name": "KKAOSS_Storage_g",
+      "Category": "Payload",
+      "Cost": 900,
+      "Mass": 0.4,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "largeVolumeContainment",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.storagemedium.title",
+      "Name": "KKAOSS_Storage_mid_g",
+      "Category": "Payload",
+      "Cost": 600,
+      "Mass": 0.25,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "specializedConstruction",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.storagesmall.title",
+      "Name": "KKAOSS_Storage_mini_g",
+      "Category": "Payload",
+      "Cost": 300,
+      "Mass": 0.15,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advConstruction",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.storagesize2big.title",
+      "Name": "KKAOSS_Storage_size2_m",
+      "Category": "Payload",
+      "Cost": 600,
+      "Mass": 0.3,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "largeVolumeContainment",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.storagesize2small.title",
+      "Name": "KKAOSS_Storage_size2_s",
+      "Category": "Payload",
+      "Cost": 600,
+      "Mass": 0.25,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advConstruction",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.containerbattery.title",
+      "Name": "KKAOSS_Battery_Tank",
+      "Category": "Electrical",
+      "Cost": 3900,
+      "Mass": 0.35,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "largeElectrics",
+      "Modules": [],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+          "Name": "ElectricCharge",
+          "Amount": 3500,
+          "MaxAmount": 3500,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.containerfuelcell.title",
+      "Name": "KKAOSS_Fuelcell_Tank",
+      "Category": "Electrical",
+      "Cost": 4500,
+      "Mass": 0.35,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "largeElectrics",
+      "Modules": [],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+          "Name": "ElectricCharge",
+          "Amount": 250,
+          "MaxAmount": 250,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.containerliquidfuel.title",
+      "Name": "KKAOSS_Liquid_Fuel_Tank",
+      "Category": "FuelTank",
+      "Cost": 2500,
+      "Mass": 0.25,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "fuelSystems",
+      "Modules": [],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.LiquidFuelResource, KSPModelLibrary",
+          "Name": "LiquidFuel",
+          "Amount": 200,
+          "MaxAmount": 200,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.containerore.title",
+      "Name": "KKAOSS_Ore_Tank",
+      "Category": "FuelTank",
+      "Cost": 2500,
+      "Mass": 0.55,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "experimentalScience",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.containeroresmall.title",
+      "Name": "KKAOSS_Small_Ore_Tank",
+      "Category": "FuelTank",
+      "Cost": 1300,
+      "Mass": 0.3,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advScienceTech",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.containerRCS.title",
+      "Name": "KKAOSS_RCS_Tank",
+      "Category": "FuelTank",
+      "Cost": 840,
+      "Mass": 0.26,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advFuelSystems",
+      "Modules": [],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.MonoPorpellentResource, KSPModelLibrary",
+          "Name": "MonoPropellant",
+          "Amount": 350,
+          "MaxAmount": 350,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.containerrocktfuelbig.title",
+      "Name": "KKAOSS_Rocket_Fuel_Tank",
+      "Category": "FuelTank",
+      "Cost": 550,
+      "Mass": 0.38,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "fuelSystems",
+      "Modules": [],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.LiquidFuelResource, KSPModelLibrary",
+          "Name": "LiquidFuel",
+          "Amount": 180,
+          "MaxAmount": 180,
+          "Rate": 0.0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.OxidizerResource, KSPModelLibrary",
+          "Name": "Oxidizer",
+          "Amount": 220,
+          "MaxAmount": 220,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.containerrocktfuelsmall.title",
+      "Name": "KKAOSS_small_Rocket_Fuel_Tank",
+      "Category": "FuelTank",
+      "Cost": 300,
+      "Mass": 0.2,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advFuelSystems",
+      "Modules": [],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.LiquidFuelResource, KSPModelLibrary",
+          "Name": "LiquidFuel",
+          "Amount": 90,
+          "MaxAmount": 90,
+          "Rate": 0.0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.OxidizerResource, KSPModelLibrary",
+          "Name": "Oxidizer",
+          "Amount": 110,
+          "MaxAmount": 110,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.containerscience.title",
+      "Name": "KKAOSS_ScienceJr_Tank",
+      "Category": "Science",
+      "Cost": 1000,
+      "Mass": 0.24,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "spaceExploration",
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ScienceModule, KSPModelLibrary",
+          "Name": "ModuleScienceExperiment",
+          "ExperimentID": "mobileMaterialsLab",
+          "Rerunable": false,
+          "TransmitScale": 0.35
+        }
+      ],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.containerxenon.title",
+      "Name": "KKAOSS_Xenon_Tank",
+      "Category": "FuelTank",
+      "Cost": 23000,
+      "Mass": 0.24,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "ionPropulsion",
+      "Modules": [],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.XenonResource, KSPModelLibrary",
+          "Name": "XenonGas",
+          "Amount": 5250,
+          "MaxAmount": 5250,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_BTDT_Title",
+      "Name": "SCANsat_Scanner32",
+      "Category": "none",
+      "Cost": 13000,
+      "Mass": 0.03,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "Unresearcheable",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "SCANMapTraq®",
+      "Name": "SCANsat_Tracker",
+      "Category": "none",
+      "Cost": 2500,
+      "Mass": 0.03,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "Unresearcheable",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_Multi_Title",
+      "Name": "SCANsat_Scanner24",
+      "Category": "none",
+      "Cost": 9000,
+      "Mass": 0.03,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "Unresearcheable",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_Radar_Title",
+      "Name": "SCANsat_Scanner",
+      "Category": "none",
+      "Cost": 3500,
+      "Mass": 0.03,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "Unresearcheable",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_SAR_Title",
+      "Name": "SCANsat_Scanner2",
+      "Category": "none",
+      "Cost": 25000,
+      "Mass": 0.03,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "Unresearcheable",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_BTDT_Title",
+      "Name": "scansat-exomars-1",
+      "Category": "Science",
+      "Cost": 13000,
+      "Mass": 0.02,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "fieldScience",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_Multi_MSR_Title",
+      "Name": "scansat-multi-abi-1",
+      "Category": "Science",
+      "Cost": 10000,
+      "Mass": 0.125,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "spaceExploration",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_Multi_MS1_Title",
+      "Name": "scansat-multi-modis-1",
+      "Category": "Science",
+      "Cost": 3000,
+      "Mass": 0.075,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "basicScience",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_Multi_MS2A_Title",
+      "Name": "scansat-multi-msi-1",
+      "Category": "Science",
+      "Cost": 15000,
+      "Mass": 0.25,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advUnmanned",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_Radar3B_Title",
+      "Name": "scansat-radar-poseidon-3b-1",
+      "Category": "Science",
+      "Cost": 3300,
+      "Mass": 0.075,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "basicScience",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_RadarEO_Title",
+      "Name": "scansat-radar-seasat-1",
+      "Category": "Science",
+      "Cost": 5500,
+      "Mass": 0.125,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "electrics",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_VS1_Title",
+      "Name": "scansat-recon-ikonos-1",
+      "Category": "Science",
+      "Cost": 7500,
+      "Mass": 0.05,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "precisionEngineering",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_VS11_Title",
+      "Name": "scansat-recon-kh11-1",
+      "Category": "Science",
+      "Cost": 25000,
+      "Mass": 1.75,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "largeUnmanned",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_VS3_Title",
+      "Name": "scansat-recon-worldview-3-1",
+      "Category": "Science",
+      "Cost": 18400,
+      "Mass": 0.3,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "unmannedTech",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_R_Title",
+      "Name": "scansat-resources-crism-1",
+      "Category": "Science",
+      "Cost": 15000,
+      "Mass": 0.1,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advExploration",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_RX_Title",
+      "Name": "scansat-resources-hyperion-1",
+      "Category": "Science",
+      "Cost": 17500,
+      "Mass": 0.5,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "experimentalScience",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_R2_Title",
+      "Name": "scansat-resources-mise-1",
+      "Category": "Science",
+      "Cost": 15000,
+      "Mass": 0.275,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "scienceTech",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_SARX_Title",
+      "Name": "scansat-sar-paz-1",
+      "Category": "Science",
+      "Cost": 8000,
+      "Mass": 0.18,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advElectrics",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_SARC_Title",
+      "Name": "scansat-sar-radarsat-2-1",
+      "Category": "Science",
+      "Cost": 9800,
+      "Mass": 0.4,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "largeElectrics",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_SCANsat_SARL_Title",
+      "Name": "scansat-sar-tandem-l-1",
+      "Category": "Science",
+      "Cost": 54000,
+      "Mass": 0.8,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "experimentalElectrics",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
       "Title": "TD-06Decoupler",
       "Name": "Decoupler_0",
       "Category": "Coupling",
@@ -159,6 +741,380 @@
           "EjectionForce": 200.0
         }
       ],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_TST_0221//DeepSpaceTelescope",
+      "Name": "tarsierAdvSpaceTelescope",
+      "Category": "Science",
+      "Cost": 25000,
+      "Mass": 1.25,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advScienceTech",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_TST_0053//ChemCam",
+      "Name": "tarsierChemCam",
+      "Category": "Science",
+      "Cost": 7000,
+      "Mass": 0.05,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "fieldScience",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_TST_0226//ScienceStorageDevice(Small)",
+      "Name": "scienceHardDrive",
+      "Category": "Science",
+      "Cost": 900,
+      "Mass": 0.1,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "precisionEngineering",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_TST_0229//ScienceStorageDevice(Large)",
+      "Name": "scienceHardDriveLarge",
+      "Category": "Science",
+      "Cost": 1800,
+      "Mass": 0.5,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "electronics",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_TST_0058//SpaceTelescope",
+      "Name": "tarsierSpaceTelescope",
+      "Category": "Science",
+      "Cost": 10000,
+      "Mass": 0.25,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "scienceTech",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.centrifuge.title",
+      "Name": "KKAOSS_Centrifuge",
+      "Category": "Utility",
+      "Cost": 240000,
+      "Mass": 5.25,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advScienceTech",
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
+          "Name": "ModuleResourceConverter",
+          "ConverterName": "#LOC_KPBS.centrifuge.reprocessor.name",
+          "FillAmount": 0.0,
+          "GeneratesHeat": true,
+          "UseEngineerBonus": true,
+          "ResourceInputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "DepletedFuel",
+              "Ratio": 0.06,
+              "FlowMode": 0
+            },
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "ElectricCharge",
+              "Ratio": 120.0,
+              "FlowMode": 0
+            }
+          ],
+          "ResourceOutputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "EnrichedUranium",
+              "Ratio": 0.03,
+              "DumpExcess": false
+            }
+          ]
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
+          "Name": "ModuleResourceConverter",
+          "ConverterName": "#LOC_KPBS.centrifuge.xenonextractor.name",
+          "FillAmount": 0.0,
+          "GeneratesHeat": true,
+          "UseEngineerBonus": true,
+          "ResourceInputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "DepletedFuel",
+              "Ratio": 0.006,
+              "FlowMode": 0
+            },
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "ElectricCharge",
+              "Ratio": 60.0,
+              "FlowMode": 0
+            }
+          ],
+          "ResourceOutputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "XenonGas",
+              "Ratio": 0.15,
+              "DumpExcess": false
+            }
+          ]
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
+          "Name": "ModuleResourceConverter",
+          "ConverterName": "#LOC_KPBS.centrifuge.uraniumextractor.name",
+          "FillAmount": 0.0,
+          "GeneratesHeat": true,
+          "UseEngineerBonus": true,
+          "ResourceInputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "Ore",
+              "Ratio": 0.6,
+              "FlowMode": 0
+            },
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "ElectricCharge",
+              "Ratio": 120.0,
+              "FlowMode": 0
+            }
+          ],
+          "ResourceOutputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "EnrichedUranium",
+              "Ratio": 0.0006,
+              "DumpExcess": false
+            }
+          ]
+        }
+      ],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.nuclearfuel.title",
+      "Name": "KKAOSS_Nuclear_Fuel",
+      "Category": "FuelTank",
+      "Cost": 1000000,
+      "Mass": 3.0,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "nuclearPropulsion",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.reactor.title",
+      "Name": "KKAOSS_Nuclear_Reactor",
+      "Category": "Electrical",
+      "Cost": 430000,
+      "Mass": 0.6,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "veryHeavyRocketry",
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
+          "Name": "ModuleResourceConverter",
+          "ConverterName": "#LOC_KPBS.reactor.converter.name",
+          "FillAmount": 1.0,
+          "GeneratesHeat": true,
+          "UseEngineerBonus": true,
+          "ResourceInputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "EnrichedUranium",
+              "Ratio": 2.4E-06,
+              "FlowMode": 0
+            }
+          ],
+          "ResourceOutputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "DepletedFuel",
+              "Ratio": 2.4E-06,
+              "DumpExcess": false
+            },
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "ElectricCharge",
+              "Ratio": 1350.0,
+              "DumpExcess": true
+            }
+          ]
+        }
+      ],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+          "Name": "ElectricCharge",
+          "Amount": 800,
+          "MaxAmount": 800,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.fueltank.title",
+      "Name": "KKAOSS_Fuel_Tank",
+      "Category": "FuelTank",
+      "Cost": 2000,
+      "Mass": 1.1,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "fuelSystems",
+      "Modules": [],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.LiquidFuelResource, KSPModelLibrary",
+          "Name": "LiquidFuel",
+          "Amount": 720,
+          "MaxAmount": 720,
+          "Rate": 0.0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.OxidizerResource, KSPModelLibrary",
+          "Name": "Oxidizer",
+          "Amount": 880,
+          "MaxAmount": 880,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.fueltanksmall.title",
+      "Name": "KKAOSS_Fuel_Tank_small",
+      "Category": "FuelTank",
+      "Cost": 1000,
+      "Mass": 0.6,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "fuelSystems",
+      "Modules": [],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.LiquidFuelResource, KSPModelLibrary",
+          "Name": "LiquidFuel",
+          "Amount": 360,
+          "MaxAmount": 360,
+          "Rate": 0.0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.OxidizerResource, KSPModelLibrary",
+          "Name": "Oxidizer",
+          "Amount": 440,
+          "MaxAmount": 440,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.lab.title",
+      "Name": "KKAOSS_Science_g",
+      "Category": "Science",
+      "Cost": 4200,
+      "Mass": 3.55,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 2,
+      "TechRequired": "advExploration",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.landinggear.title",
+      "Name": "KKAOSS_Landing_Gear2_g",
+      "Category": "Ground",
+      "Cost": 650,
+      "Mass": 0.09,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advancedMotors",
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.DecoupleModule, KSPModelLibrary",
+          "Name": "ModuleDecouple",
+          "EjectionForce": 40.0
+        }
+      ],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.bigfoot.title",
+      "Name": "KKAOSS_Landing_Leg_g",
+      "Category": "Ground",
+      "Cost": 400,
+      "Mass": 0.08,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "landing",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#LOC_KPBS.littlefoot.title",
+      "Name": "KKAOSS_Landing_Leg2_g",
+      "Category": "Ground",
+      "Cost": 450,
+      "Mass": 0.075,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advLanding",
+      "Modules": [],
       "Resources": []
     },
     {
@@ -1164,6 +2120,132 @@
       "WetMass": 0.0,
       "CrewCapacity": 0,
       "TechRequired": "aerodynamicSystems",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "SEQ-9ContainerModule",
+      "Name": "cargoContainer",
+      "Category": "Cargo",
+      "Cost": 600,
+      "Mass": 0.15,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advExploration",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "SEQ-3CargoStorageUnit",
+      "Name": "smallCargoContainer",
+      "Category": "Cargo",
+      "Cost": 200,
+      "Mass": 0.05,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "spaceExploration",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "EVAFuelCylinders",
+      "Name": "evaCylinder",
+      "Category": "Cargo",
+      "Cost": 50,
+      "Mass": 0.005,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advExploration",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "EVAJetpack",
+      "Name": "evaJetpack",
+      "Category": "Cargo",
+      "Cost": 25,
+      "Mass": 0.02,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "start",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "PersonalParachute",
+      "Name": "evaChute",
+      "Category": "Cargo",
+      "Cost": 10,
+      "Mass": 0.004,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "start",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "EVARepairKit",
+      "Name": "evaRepairKit",
+      "Category": "Cargo",
+      "Cost": 75,
+      "Mass": 0.005,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "spaceExploration",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "EVAExperimentsKit",
+      "Name": "evaScienceKit",
+      "Category": "Cargo",
+      "Cost": 150,
+      "Mass": 0.015,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "miniaturization",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "SEQ-24CargoStorageUnit",
+      "Name": "CargoStorageUnit",
+      "Category": "Cargo",
+      "Cost": 1500,
+      "Mass": 0.4,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advExploration",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "SEQ-3CConformalStorageUnit",
+      "Name": "ConformalStorageUnit",
+      "Category": "Cargo",
+      "Cost": 100,
+      "Mass": 0.02,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "spaceExploration",
       "Modules": [],
       "Resources": []
     },
@@ -2902,6 +3984,34 @@
           "Rate": 0.0
         }
       ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "FTX-2ExternalFuelDuct",
+      "Name": "fuelLine",
+      "Category": "FuelTank",
+      "Cost": 150,
+      "Mass": 0.05,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "fuelSystems",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "EAS-4StrutConnector",
+      "Name": "strutConnector",
+      "Category": "Structural",
+      "Cost": 42,
+      "Mass": 0.05,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "generalConstruction",
+      "Modules": [],
+      "Resources": []
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
@@ -6402,588 +7512,122 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FuelCell",
-      "Name": "FuelCell",
-      "Category": "Electrical",
-      "Cost": 750,
-      "Mass": 0.05,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "largeElectrics",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "FuelCell",
-          "FillAmount": 0.95,
-          "GeneratesHeat": false,
-          "UseEngineerBonus": false,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "LiquidFuel",
-              "Ratio": 0.0016875,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Oxidizer",
-              "Ratio": 0.0020625,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 1.5,
-              "DumpExcess": false
-            }
-          ]
-        }
-      ],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
-          "Name": "ElectricCharge",
-          "Amount": 50,
-          "MaxAmount": 50,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FuelCellArray",
-      "Name": "FuelCellArray",
-      "Category": "Electrical",
-      "Cost": 4500,
-      "Mass": 0.24,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "specializedElectrics",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "FuelCell",
-          "FillAmount": 0.95,
-          "GeneratesHeat": false,
-          "UseEngineerBonus": false,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "LiquidFuel",
-              "Ratio": 0.02025,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Oxidizer",
-              "Ratio": 0.02475,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 18.0,
-              "DumpExcess": false
-            }
-          ]
-        }
-      ],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
-          "Name": "ElectricCharge",
-          "Amount": 300,
-          "MaxAmount": 300,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Convert-O-Tron250",
-      "Name": "ISRU",
-      "Category": "Utility",
-      "Cost": 8000,
-      "Mass": 4.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "Lf+Ox",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 0.5,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 30.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "LiquidFuel",
-              "Ratio": 0.45,
-              "DumpExcess": false
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Oxidizer",
-              "Ratio": 0.55,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "Monoprop",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 0.5,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 30.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "MonoPropellant",
-              "Ratio": 1.0,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "LiquidFuel",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 0.45,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 30.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "LiquidFuel",
-              "Ratio": 0.9,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "Oxidizer",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 0.55,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 30.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Oxidizer",
-              "Ratio": 1.1,
-              "DumpExcess": false
-            }
-          ]
-        }
-      ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LargeHoldingTank",
-      "Name": "LargeTank",
-      "Category": "FuelTank",
-      "Cost": 3000,
-      "Mass": 2.0,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "experimentalScience",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Drill-O-MaticJunior'MiningExcavator",
-      "Name": "MiniDrill",
-      "Category": "Utility",
-      "Cost": 1000,
-      "Mass": 0.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceHarvesterModule, KSPModelLibrary",
-          "Name": null,
-          "Efficiency": 0.0,
-          "EfficiencyBonus": 0.0,
-          "GeneratesHeat": false,
-          "UseEngineerBonus": false,
-          "UseEngineerHeatBonus": false,
-          "EngineerBonusBase": 0.0,
-          "EngineerEfficiencyFactor": 0.0,
-          "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceHarvesterModule, KSPModelLibrary",
-          "Name": null,
-          "Efficiency": 0.0,
-          "EfficiencyBonus": 0.0,
-          "GeneratesHeat": false,
-          "UseEngineerBonus": false,
-          "UseEngineerHeatBonus": false,
-          "EngineerBonusBase": 0.0,
-          "EngineerEfficiencyFactor": 0.0,
-          "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
-        }
-      ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Convert-O-Tron125",
-      "Name": "MiniISRU",
-      "Category": "Utility",
-      "Cost": 1000,
-      "Mass": 1.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "Lf+Ox",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 2.5,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 30.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "LiquidFuel",
-              "Ratio": 0.225,
-              "DumpExcess": false
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Oxidizer",
-              "Ratio": 0.275,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "LiquidFuel",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 2.25,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 30.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "LiquidFuel",
-              "Ratio": 0.45,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "Oxidizer",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 2.75,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 30.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Oxidizer",
-              "Ratio": 0.55,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "MonoPropellant",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 2.5,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 30.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "MonoPropellant",
-              "Ratio": 0.5,
-              "DumpExcess": false
-            }
-          ]
-        }
-      ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "M4435Narrow-BandScanner",
-      "Name": "OrbitalScanner",
+      "Title": "SENTINELInfraredTelescope",
+      "Name": "InfraredTelescope",
       "Category": "Science",
-      "Cost": 1000,
+      "Cost": 4500,
       "Mass": 0.1,
       "DryMass": 0.0,
       "WetMass": 0.0,
       "CrewCapacity": 0,
-      "TechRequired": "experimentalScience",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Drill-O-Matic'MiningExcavator",
-      "Name": "RadialDrill",
-      "Category": "Utility",
-      "Cost": 6000,
-      "Mass": 1.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
+      "TechRequired": "scienceTech",
       "Modules": [
         {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceHarvesterModule, KSPModelLibrary",
-          "Name": null,
-          "Efficiency": 0.0,
-          "EfficiencyBonus": 0.0,
-          "GeneratesHeat": false,
-          "UseEngineerBonus": false,
-          "UseEngineerHeatBonus": false,
-          "EngineerBonusBase": 0.0,
-          "EngineerEfficiencyFactor": 0.0,
-          "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceHarvesterModule, KSPModelLibrary",
-          "Name": null,
-          "Efficiency": 0.0,
-          "EfficiencyBonus": 0.0,
-          "GeneratesHeat": false,
-          "UseEngineerBonus": false,
-          "UseEngineerHeatBonus": false,
-          "EngineerBonusBase": 0.0,
-          "EngineerEfficiencyFactor": 0.0,
-          "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ScienceModule, KSPModelLibrary",
+          "Name": "ModuleScienceExperiment",
+          "ExperimentID": "infraredTelescope",
+          "Rerunable": true,
+          "TransmitScale": 0.4
         }
       ],
       "Resources": []
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RadialHoldingTank",
-      "Name": "RadialOreTank",
-      "Category": "FuelTank",
-      "Cost": 300,
-      "Mass": 0.125,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SmallHoldingTank",
-      "Name": "SmallTank",
-      "Category": "FuelTank",
-      "Cost": 1000,
-      "Mass": 0.5,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SurfaceScanningModule",
-      "Name": "SurfaceScanner",
-      "Category": "Science",
-      "Cost": 800,
-      "Mass": 0.005,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "scienceTech",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "M700SurveyScanner",
-      "Name": "SurveyScanner",
-      "Category": "Science",
-      "Cost": 1500,
+      "Title": "ProbodobodyneHECS2",
+      "Name": "HECS2_ProbeCore",
+      "Category": "Pods",
+      "Cost": 7500,
       "Mass": 0.2,
       "DryMass": 0.0,
       "WetMass": 0.0,
       "CrewCapacity": 0,
-      "TechRequired": "scienceTech",
-      "Modules": [],
+      "TechRequired": "advUnmanned",
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.CommandModule, KSPModelLibrary",
+          "Name": "ModuleCommand",
+          "CrewCapacity": 0,
+          "MinimumCrew": 0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.CommsModule, KSPModelLibrary",
+          "Name": "ModuleDataTransmitter",
+          "AntennaType": 0,
+          "PacketInterval": 1.0,
+          "PacketSize": 2.0,
+          "PacketCost": 12.0,
+          "AntennaPower": 5000.0,
+          "IsCombinable": false
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ReactionWheelModule, KSPModelLibrary",
+          "Name": null,
+          "PitchTorque": 10,
+          "YawTorque": 10,
+          "RollTorque": 10,
+          "TorqueResponseSpeed": 0.0,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ElectricalLoadModule, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "DrawRate": 0.0,
+            "Rate": 0.5
+          }
+        }
+      ],
+      "Resources": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+          "Name": "ElectricCharge",
+          "Amount": 1000,
+          "MaxAmount": 1000,
+          "Rate": 0.0
+        }
+      ]
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "CommunotronHG-55",
+      "Name": "HighGainAntenna",
+      "Category": "Communication",
+      "Cost": 1200,
+      "Mass": 0.075,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "electronics",
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.CommsModule, KSPModelLibrary",
+          "Name": "ModuleDataTransmitter",
+          "AntennaType": 1,
+          "PacketInterval": 0.15,
+          "PacketSize": 3.0,
+          "PacketCost": 20.0,
+          "AntennaPower": 15000000000.0,
+          "IsCombinable": true
+        }
+      ],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "OX-STAT-XLPhotovoltaicPanels",
+      "Name": "LgRadialSolarPanel",
+      "Category": "Electrical",
+      "Cost": 600,
+      "Mass": 0.04,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advElectrics",
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SolarPanelModule, KSPModelLibrary",
+          "Name": "ModuleDeployableSolarPanel",
+          "ChargeRate": 2.8
+        }
+      ],
       "Resources": []
     },
     {
@@ -10802,74 +11446,6 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProtectiveNoseConeMk16A",
-      "Name": "rocketNoseConeSize4",
-      "Category": "Aero",
-      "Cost": 1700,
-      "Mass": 0.8,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "metaMaterials",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProtectiveRocketNoseconeMk5A",
-      "Name": "Size_1_5_Cone",
-      "Category": "Aero",
-      "Cost": 160,
-      "Mass": 0.12,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advConstruction",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "THK\"Pollux\"SolidFuelBooster",
-      "Name": "Pollux",
-      "Category": "Engine",
-      "Cost": 6000,
-      "Mass": 8.0,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "heavyRocketry",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.EngineModule, KSPModelLibrary",
-          "Name": "ModuleEngines",
-          "MinThrust": 0.0,
-          "MaxThrust": 1300.0,
-          "EngineType": 1,
-          "IsGimbal": false,
-          "PropellentRequirements": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.PropellantModule, KSPModelLibrary",
-              "Name": null,
-              "Ratio": 1.0,
-              "DrawGauge": true,
-              "MinReserve": 0.0
-            }
-          ]
-        }
-      ],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.SolidFuelResource, KSPModelLibrary",
-          "Name": "SolidFuel",
-          "Amount": 5800,
-          "MaxAmount": 5800,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
       "Title": "#autoLOC_6011113//S-062FanShroud",
       "Name": "FanShroud_01",
       "Category": "Aero",
@@ -11509,725 +12085,6 @@
       "WetMass": 0.0,
       "CrewCapacity": 0,
       "TechRequired": "actuators",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KAL-1000Controller",
-      "Name": "controller1000",
-      "Category": "Robotics",
-      "Cost": 1000,
-      "Mass": 0.01,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advElectrics",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "CRSYLightScanningArm",
-      "Name": "RobotArmScanner_S1",
-      "Category": "Science",
-      "Cost": 400,
-      "Mass": 0.06,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advExploration",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ScienceModule, KSPModelLibrary",
-          "Name": "ModuleScienceExperiment",
-          "ExperimentID": "ROCScience",
-          "Rerunable": true,
-          "TransmitScale": 1.0
-        }
-      ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SPRTMediumScanningArm",
-      "Name": "RobotArmScanner_S2",
-      "Category": "Science",
-      "Cost": 600,
-      "Mass": 0.14,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "scienceTech",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ScienceModule, KSPModelLibrary",
-          "Name": "ModuleScienceExperiment",
-          "ExperimentID": "ROCScience",
-          "Rerunable": true,
-          "TransmitScale": 1.0
-        }
-      ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "OPPOLargeScanningArm",
-      "Name": "RobotArmScanner_S3",
-      "Category": "Science",
-      "Cost": 800,
-      "Mass": 0.3,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ScienceModule, KSPModelLibrary",
-          "Name": "ModuleScienceExperiment",
-          "ExperimentID": "ROCScience",
-          "Rerunable": true,
-          "TransmitScale": 1.0
-        }
-      ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011087//GP-156GripPad",
-      "Name": "lGripPad",
-      "Category": "Structural",
-      "Cost": 300,
-      "Mass": 0.078,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "specializedConstruction",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011093//GPS-156GripStrip",
-      "Name": "lGripStrip",
-      "Category": "Structural",
-      "Cost": 300,
-      "Mass": 0.078,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "specializedConstruction",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011089//GP-036GripPad",
-      "Name": "mGripPad",
-      "Category": "Structural",
-      "Cost": 75,
-      "Mass": 0.018,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advancedMotors",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011091//GP-004GripPad",
-      "Name": "sGripPad",
-      "Category": "Structural",
-      "Cost": 30,
-      "Mass": 0.002,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advancedMotors",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011095//GPS025",
-      "Name": "sGripStrip",
-      "Category": "Structural",
-      "Cost": 50,
-      "Mass": 0.012,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advancedMotors",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_TST_0221//DeepSpaceTelescope",
-      "Name": "tarsierAdvSpaceTelescope",
-      "Category": "Science",
-      "Cost": 25000,
-      "Mass": 1.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_TST_0053//ChemCam",
-      "Name": "tarsierChemCam",
-      "Category": "Science",
-      "Cost": 7000,
-      "Mass": 0.05,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "fieldScience",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_TST_0226//ScienceStorageDevice(Small)",
-      "Name": "scienceHardDrive",
-      "Category": "Science",
-      "Cost": 900,
-      "Mass": 0.1,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "precisionEngineering",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_TST_0229//ScienceStorageDevice(Large)",
-      "Name": "scienceHardDriveLarge",
-      "Category": "Science",
-      "Cost": 1800,
-      "Mass": 0.5,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "electronics",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_TST_0058//SpaceTelescope",
-      "Name": "tarsierSpaceTelescope",
-      "Category": "Science",
-      "Cost": 10000,
-      "Mass": 0.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "scienceTech",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.centrifuge.title",
-      "Name": "KKAOSS_Centrifuge",
-      "Category": "Utility",
-      "Cost": 240000,
-      "Mass": 5.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "#LOC_KPBS.centrifuge.reprocessor.name",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "DepletedFuel",
-              "Ratio": 0.06,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 120.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "EnrichedUranium",
-              "Ratio": 0.03,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "#LOC_KPBS.centrifuge.xenonextractor.name",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "DepletedFuel",
-              "Ratio": 0.006,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 60.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "XenonGas",
-              "Ratio": 0.15,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "#LOC_KPBS.centrifuge.uraniumextractor.name",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 0.6,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 120.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "EnrichedUranium",
-              "Ratio": 0.0006,
-              "DumpExcess": false
-            }
-          ]
-        }
-      ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.nuclearfuel.title",
-      "Name": "KKAOSS_Nuclear_Fuel",
-      "Category": "FuelTank",
-      "Cost": 1000000,
-      "Mass": 3.0,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "nuclearPropulsion",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.reactor.title",
-      "Name": "KKAOSS_Nuclear_Reactor",
-      "Category": "Electrical",
-      "Cost": 430000,
-      "Mass": 0.6,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "veryHeavyRocketry",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "#LOC_KPBS.reactor.converter.name",
-          "FillAmount": 1.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "EnrichedUranium",
-              "Ratio": 2.4E-06,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "DepletedFuel",
-              "Ratio": 2.4E-06,
-              "DumpExcess": false
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 1350.0,
-              "DumpExcess": true
-            }
-          ]
-        }
-      ],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
-          "Name": "ElectricCharge",
-          "Amount": 800,
-          "MaxAmount": 800,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.fueltank.title",
-      "Name": "KKAOSS_Fuel_Tank",
-      "Category": "FuelTank",
-      "Cost": 2000,
-      "Mass": 1.1,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "fuelSystems",
-      "Modules": [],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.LiquidFuelResource, KSPModelLibrary",
-          "Name": "LiquidFuel",
-          "Amount": 720,
-          "MaxAmount": 720,
-          "Rate": 0.0
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.OxidizerResource, KSPModelLibrary",
-          "Name": "Oxidizer",
-          "Amount": 880,
-          "MaxAmount": 880,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.fueltanksmall.title",
-      "Name": "KKAOSS_Fuel_Tank_small",
-      "Category": "FuelTank",
-      "Cost": 1000,
-      "Mass": 0.6,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "fuelSystems",
-      "Modules": [],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.LiquidFuelResource, KSPModelLibrary",
-          "Name": "LiquidFuel",
-          "Amount": 360,
-          "MaxAmount": 360,
-          "Rate": 0.0
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.OxidizerResource, KSPModelLibrary",
-          "Name": "Oxidizer",
-          "Amount": 440,
-          "MaxAmount": 440,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.drill.title",
-      "Name": "KKAOSS_drill",
-      "Category": "Utility",
-      "Cost": 4600,
-      "Mass": 0.9,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceHarvesterModule, KSPModelLibrary",
-          "Name": null,
-          "Efficiency": 0.0,
-          "EfficiencyBonus": 0.0,
-          "GeneratesHeat": false,
-          "UseEngineerBonus": false,
-          "UseEngineerHeatBonus": false,
-          "EngineerBonusBase": 0.0,
-          "EngineerEfficiencyFactor": 0.0,
-          "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceHarvesterModule, KSPModelLibrary",
-          "Name": null,
-          "Efficiency": 0.0,
-          "EfficiencyBonus": 0.0,
-          "GeneratesHeat": false,
-          "UseEngineerBonus": false,
-          "UseEngineerHeatBonus": false,
-          "EngineerBonusBase": 0.0,
-          "EngineerEfficiencyFactor": 0.0,
-          "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
-        }
-      ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.isru.title",
-      "Name": "KKAOSS_ISRU_g",
-      "Category": "Utility",
-      "Cost": 6500,
-      "Mass": 3.56,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "#autoLOC_502026",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 0.4,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 24.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "LiquidFuel",
-              "Ratio": 0.36,
-              "DumpExcess": false
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Oxidizer",
-              "Ratio": 0.44,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "#autoLOC_502029",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 0.4,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 24.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "MonoPropellant",
-              "Ratio": 0.8,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "#autoLOC_502032",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 0.36,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 24.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "LiquidFuel",
-              "Ratio": 0.72,
-              "DumpExcess": false
-            }
-          ]
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
-          "Name": "ModuleResourceConverter",
-          "ConverterName": "#autoLOC_502035",
-          "FillAmount": 0.0,
-          "GeneratesHeat": true,
-          "UseEngineerBonus": true,
-          "ResourceInputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Ore",
-              "Ratio": 0.44,
-              "FlowMode": 0
-            },
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "ElectricCharge",
-              "Ratio": 24.0,
-              "FlowMode": 0
-            }
-          ],
-          "ResourceOutputs": [
-            {
-              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.OutputResourceModule, KSPModelLibrary",
-              "Name": null,
-              "ResourceName": "Oxidizer",
-              "Ratio": 0.88,
-              "DumpExcess": false
-            }
-          ]
-        }
-      ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.lab.title",
-      "Name": "KKAOSS_Science_g",
-      "Category": "Science",
-      "Cost": 4200,
-      "Mass": 3.55,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 2,
-      "TechRequired": "advExploration",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.landinggear.title",
-      "Name": "KKAOSS_Landing_Gear2_g",
-      "Category": "Ground",
-      "Cost": 650,
-      "Mass": 0.09,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advancedMotors",
-      "Modules": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.DecoupleModule, KSPModelLibrary",
-          "Name": "ModuleDecouple",
-          "EjectionForce": 40.0
-        }
-      ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.bigfoot.title",
-      "Name": "KKAOSS_Landing_Leg_g",
-      "Category": "Ground",
-      "Cost": 400,
-      "Mass": 0.08,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "landing",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.littlefoot.title",
-      "Name": "KKAOSS_Landing_Leg2_g",
-      "Category": "Ground",
-      "Cost": 450,
-      "Mass": 0.075,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advLanding",
       "Modules": [],
       "Resources": []
     },
@@ -13069,11 +12926,25 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.storageend.title",
-      "Name": "KKAOSS_Storage_End_Cap_Storage",
-      "Category": "Payload",
-      "Cost": 250,
-      "Mass": 0.15,
+      "Title": "ProtectiveNoseConeMk16A",
+      "Name": "rocketNoseConeSize4",
+      "Category": "Aero",
+      "Cost": 1700,
+      "Mass": 0.8,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "metaMaterials",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "ProtectiveRocketNoseconeMk5A",
+      "Name": "Size_1_5_Cone",
+      "Category": "Aero",
+      "Cost": 160,
+      "Mass": 0.12,
       "DryMass": 0.0,
       "WetMass": 0.0,
       "CrewCapacity": 0,
@@ -13083,537 +12954,51 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.storagebig.title",
-      "Name": "KKAOSS_Storage_g",
-      "Category": "Payload",
-      "Cost": 900,
-      "Mass": 0.4,
+      "Title": "THK\"Pollux\"SolidFuelBooster",
+      "Name": "Pollux",
+      "Category": "Engine",
+      "Cost": 6000,
+      "Mass": 8.0,
       "DryMass": 0.0,
       "WetMass": 0.0,
       "CrewCapacity": 0,
-      "TechRequired": "largeVolumeContainment",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.storagemedium.title",
-      "Name": "KKAOSS_Storage_mid_g",
-      "Category": "Payload",
-      "Cost": 600,
-      "Mass": 0.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "specializedConstruction",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.storagesmall.title",
-      "Name": "KKAOSS_Storage_mini_g",
-      "Category": "Payload",
-      "Cost": 300,
-      "Mass": 0.15,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advConstruction",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.storagesize2big.title",
-      "Name": "KKAOSS_Storage_size2_m",
-      "Category": "Payload",
-      "Cost": 600,
-      "Mass": 0.3,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "largeVolumeContainment",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.storagesize2small.title",
-      "Name": "KKAOSS_Storage_size2_s",
-      "Category": "Payload",
-      "Cost": 600,
-      "Mass": 0.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advConstruction",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.containerbattery.title",
-      "Name": "KKAOSS_Battery_Tank",
-      "Category": "Electrical",
-      "Cost": 3900,
-      "Mass": 0.35,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "largeElectrics",
-      "Modules": [],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
-          "Name": "ElectricCharge",
-          "Amount": 3500,
-          "MaxAmount": 3500,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.containerfuelcell.title",
-      "Name": "KKAOSS_Fuelcell_Tank",
-      "Category": "Electrical",
-      "Cost": 4500,
-      "Mass": 0.35,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "largeElectrics",
-      "Modules": [],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
-          "Name": "ElectricCharge",
-          "Amount": 250,
-          "MaxAmount": 250,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.containerliquidfuel.title",
-      "Name": "KKAOSS_Liquid_Fuel_Tank",
-      "Category": "FuelTank",
-      "Cost": 2500,
-      "Mass": 0.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "fuelSystems",
-      "Modules": [],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.LiquidFuelResource, KSPModelLibrary",
-          "Name": "LiquidFuel",
-          "Amount": 200,
-          "MaxAmount": 200,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.containerore.title",
-      "Name": "KKAOSS_Ore_Tank",
-      "Category": "FuelTank",
-      "Cost": 2500,
-      "Mass": 0.55,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "experimentalScience",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.containeroresmall.title",
-      "Name": "KKAOSS_Small_Ore_Tank",
-      "Category": "FuelTank",
-      "Cost": 1300,
-      "Mass": 0.3,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advScienceTech",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.containerRCS.title",
-      "Name": "KKAOSS_RCS_Tank",
-      "Category": "FuelTank",
-      "Cost": 840,
-      "Mass": 0.26,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advFuelSystems",
-      "Modules": [],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.MonoPorpellentResource, KSPModelLibrary",
-          "Name": "MonoPropellant",
-          "Amount": 350,
-          "MaxAmount": 350,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.containerrocktfuelbig.title",
-      "Name": "KKAOSS_Rocket_Fuel_Tank",
-      "Category": "FuelTank",
-      "Cost": 550,
-      "Mass": 0.38,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "fuelSystems",
-      "Modules": [],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.LiquidFuelResource, KSPModelLibrary",
-          "Name": "LiquidFuel",
-          "Amount": 180,
-          "MaxAmount": 180,
-          "Rate": 0.0
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.OxidizerResource, KSPModelLibrary",
-          "Name": "Oxidizer",
-          "Amount": 220,
-          "MaxAmount": 220,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.containerrocktfuelsmall.title",
-      "Name": "KKAOSS_small_Rocket_Fuel_Tank",
-      "Category": "FuelTank",
-      "Cost": 300,
-      "Mass": 0.2,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advFuelSystems",
-      "Modules": [],
-      "Resources": [
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.LiquidFuelResource, KSPModelLibrary",
-          "Name": "LiquidFuel",
-          "Amount": 90,
-          "MaxAmount": 90,
-          "Rate": 0.0
-        },
-        {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.OxidizerResource, KSPModelLibrary",
-          "Name": "Oxidizer",
-          "Amount": 110,
-          "MaxAmount": 110,
-          "Rate": 0.0
-        }
-      ]
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.containerscience.title",
-      "Name": "KKAOSS_ScienceJr_Tank",
-      "Category": "Science",
-      "Cost": 1000,
-      "Mass": 0.24,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "spaceExploration",
+      "TechRequired": "heavyRocketry",
       "Modules": [
         {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ScienceModule, KSPModelLibrary",
-          "Name": "ModuleScienceExperiment",
-          "ExperimentID": "mobileMaterialsLab",
-          "Rerunable": false,
-          "TransmitScale": 0.35
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.EngineModule, KSPModelLibrary",
+          "Name": "ModuleEngines",
+          "MinThrust": 0.0,
+          "MaxThrust": 1300.0,
+          "EngineType": 1,
+          "IsGimbal": false,
+          "PropellentRequirements": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.PropellantModule, KSPModelLibrary",
+              "Name": null,
+              "Ratio": 1.0,
+              "DrawGauge": true,
+              "MinReserve": 0.0
+            }
+          ]
         }
       ],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#LOC_KPBS.containerxenon.title",
-      "Name": "KKAOSS_Xenon_Tank",
-      "Category": "FuelTank",
-      "Cost": 23000,
-      "Mass": 0.24,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "ionPropulsion",
-      "Modules": [],
       "Resources": [
         {
-          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.XenonResource, KSPModelLibrary",
-          "Name": "XenonGas",
-          "Amount": 5250,
-          "MaxAmount": 5250,
+          "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.SolidFuelResource, KSPModelLibrary",
+          "Name": "SolidFuel",
+          "Amount": 5800,
+          "MaxAmount": 5800,
           "Rate": 0.0
         }
       ]
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_BTDT_Title",
-      "Name": "SCANsat_Scanner32",
-      "Category": "none",
-      "Cost": 13000,
-      "Mass": 0.03,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "Unresearcheable",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SCANMapTraq®",
-      "Name": "SCANsat_Tracker",
-      "Category": "none",
-      "Cost": 2500,
-      "Mass": 0.03,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "Unresearcheable",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_Multi_Title",
-      "Name": "SCANsat_Scanner24",
-      "Category": "none",
-      "Cost": 9000,
-      "Mass": 0.03,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "Unresearcheable",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_Radar_Title",
-      "Name": "SCANsat_Scanner",
-      "Category": "none",
-      "Cost": 3500,
-      "Mass": 0.03,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "Unresearcheable",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_SAR_Title",
-      "Name": "SCANsat_Scanner2",
-      "Category": "none",
-      "Cost": 25000,
-      "Mass": 0.03,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "Unresearcheable",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_BTDT_Title",
-      "Name": "scansat-exomars-1",
-      "Category": "Science",
-      "Cost": 13000,
-      "Mass": 0.02,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "fieldScience",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_Multi_MSR_Title",
-      "Name": "scansat-multi-abi-1",
-      "Category": "Science",
-      "Cost": 10000,
-      "Mass": 0.125,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "spaceExploration",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_Multi_MS1_Title",
-      "Name": "scansat-multi-modis-1",
-      "Category": "Science",
-      "Cost": 3000,
-      "Mass": 0.075,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "basicScience",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_Multi_MS2A_Title",
-      "Name": "scansat-multi-msi-1",
-      "Category": "Science",
-      "Cost": 15000,
-      "Mass": 0.25,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advUnmanned",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_Radar3B_Title",
-      "Name": "scansat-radar-poseidon-3b-1",
-      "Category": "Science",
-      "Cost": 3300,
-      "Mass": 0.075,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "basicScience",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_RadarEO_Title",
-      "Name": "scansat-radar-seasat-1",
-      "Category": "Science",
-      "Cost": 5500,
-      "Mass": 0.125,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "electrics",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_VS1_Title",
-      "Name": "scansat-recon-ikonos-1",
-      "Category": "Science",
-      "Cost": 7500,
-      "Mass": 0.05,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "precisionEngineering",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_VS11_Title",
-      "Name": "scansat-recon-kh11-1",
-      "Category": "Science",
-      "Cost": 25000,
-      "Mass": 1.75,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "largeUnmanned",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_VS3_Title",
-      "Name": "scansat-recon-worldview-3-1",
-      "Category": "Science",
-      "Cost": 18400,
-      "Mass": 0.3,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "unmannedTech",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_R_Title",
-      "Name": "scansat-resources-crism-1",
-      "Category": "Science",
-      "Cost": 15000,
-      "Mass": 0.1,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "advExploration",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_RX_Title",
-      "Name": "scansat-resources-hyperion-1",
-      "Category": "Science",
-      "Cost": 17500,
-      "Mass": 0.5,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "experimentalScience",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_R2_Title",
-      "Name": "scansat-resources-mise-1",
-      "Category": "Science",
-      "Cost": 15000,
-      "Mass": 0.275,
-      "DryMass": 0.0,
-      "WetMass": 0.0,
-      "CrewCapacity": 0,
-      "TechRequired": "scienceTech",
-      "Modules": [],
-      "Resources": []
-    },
-    {
-      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_SARX_Title",
-      "Name": "scansat-sar-paz-1",
-      "Category": "Science",
-      "Cost": 8000,
-      "Mass": 0.18,
+      "Title": "KAL-1000Controller",
+      "Name": "controller1000",
+      "Category": "Robotics",
+      "Cost": 1000,
+      "Mass": 0.01,
       "DryMass": 0.0,
       "WetMass": 0.0,
       "CrewCapacity": 0,
@@ -13623,29 +13008,137 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_SARC_Title",
-      "Name": "scansat-sar-radarsat-2-1",
+      "Title": "CRSYLightScanningArm",
+      "Name": "RobotArmScanner_S1",
       "Category": "Science",
-      "Cost": 9800,
-      "Mass": 0.4,
+      "Cost": 400,
+      "Mass": 0.06,
       "DryMass": 0.0,
       "WetMass": 0.0,
       "CrewCapacity": 0,
-      "TechRequired": "largeElectrics",
+      "TechRequired": "advExploration",
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ScienceModule, KSPModelLibrary",
+          "Name": "ModuleScienceExperiment",
+          "ExperimentID": "ROCScience",
+          "Rerunable": true,
+          "TransmitScale": 1.0
+        }
+      ],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "SPRTMediumScanningArm",
+      "Name": "RobotArmScanner_S2",
+      "Category": "Science",
+      "Cost": 600,
+      "Mass": 0.14,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "scienceTech",
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ScienceModule, KSPModelLibrary",
+          "Name": "ModuleScienceExperiment",
+          "ExperimentID": "ROCScience",
+          "Rerunable": true,
+          "TransmitScale": 1.0
+        }
+      ],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "OPPOLargeScanningArm",
+      "Name": "RobotArmScanner_S3",
+      "Category": "Science",
+      "Cost": 800,
+      "Mass": 0.3,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advScienceTech",
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ScienceModule, KSPModelLibrary",
+          "Name": "ModuleScienceExperiment",
+          "ExperimentID": "ROCScience",
+          "Rerunable": true,
+          "TransmitScale": 1.0
+        }
+      ],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_6011087//GP-156GripPad",
+      "Name": "lGripPad",
+      "Category": "Structural",
+      "Cost": 300,
+      "Mass": 0.078,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "specializedConstruction",
       "Modules": [],
       "Resources": []
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_SCANsat_SARL_Title",
-      "Name": "scansat-sar-tandem-l-1",
-      "Category": "Science",
-      "Cost": 54000,
-      "Mass": 0.8,
+      "Title": "#autoLOC_6011093//GPS-156GripStrip",
+      "Name": "lGripStrip",
+      "Category": "Structural",
+      "Cost": 300,
+      "Mass": 0.078,
       "DryMass": 0.0,
       "WetMass": 0.0,
       "CrewCapacity": 0,
-      "TechRequired": "experimentalElectrics",
+      "TechRequired": "specializedConstruction",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_6011089//GP-036GripPad",
+      "Name": "mGripPad",
+      "Category": "Structural",
+      "Cost": 75,
+      "Mass": 0.018,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advancedMotors",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_6011091//GP-004GripPad",
+      "Name": "sGripPad",
+      "Category": "Structural",
+      "Cost": 30,
+      "Mass": 0.002,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advancedMotors",
+      "Modules": [],
+      "Resources": []
+    },
+    {
+      "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
+      "Title": "#autoLOC_6011095//GPS025",
+      "Name": "sGripStrip",
+      "Category": "Structural",
+      "Cost": 50,
+      "Mass": 0.012,
+      "DryMass": 0.0,
+      "WetMass": 0.0,
+      "CrewCapacity": 0,
+      "TechRequired": "advancedMotors",
       "Modules": [],
       "Resources": []
     }

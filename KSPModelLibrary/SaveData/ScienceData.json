@@ -3,6 +3,46 @@
   "Experiments": [
     {
       "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "SCANsatAltimetryLoRes",
+      "Title": "#autoLOC_SCANsat_Science_Lo_Title",
+      "BaseValue": 10,
+      "ScienceCap": 10,
+      "DataScale": 2.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "SCANsatAltimetryHiRes",
+      "Title": "#autoLOC_SCANsat_Science_Hi_Title",
+      "BaseValue": 20,
+      "ScienceCap": 20,
+      "DataScale": 4.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "SCANsatBiomeAnomaly",
+      "Title": "#autoLOC_SCANsat_Science_Multi_Title",
+      "BaseValue": 15,
+      "ScienceCap": 15,
+      "DataScale": 3.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "SCANsatResources",
+      "Title": "#autoLOC_SCANsat_Science_Resource_Title",
+      "BaseValue": 10,
+      "ScienceCap": 10,
+      "DataScale": 2.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "SCANsatVisual",
+      "Title": "#autoLOC_SCANsat_Science_Visual_Title",
+      "BaseValue": 12,
+      "ScienceCap": 12,
+      "DataScale": 4.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
       "Id": "crewReport",
       "Title": "CrewReport",
       "BaseValue": 5,
@@ -143,6 +183,326 @@
       "Title": "EVAScienceExperiment",
       "BaseValue": 25,
       "ScienceCap": 25,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "TarsierSpaceTech.SpaceTelescope",
+      "Title": "#autoLOC_TST_0248//SpaceTelescope",
+      "BaseValue": 20,
+      "ScienceCap": 25,
+      "DataScale": 3.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "TarsierSpaceTech.ChemCam",
+      "Title": "#autoLOC_TST_0053//ChemCam",
+      "BaseValue": 15,
+      "ScienceCap": 18,
+      "DataScale": 2.5
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "deployedSeismicSensor",
+      "Title": "SurfaceDeployedSeismicSensor",
+      "BaseValue": 0,
+      "ScienceCap": 0,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "deployedWeatherReport",
+      "Title": "SurfaceDeployedWeatherObservations",
+      "BaseValue": 0,
+      "ScienceCap": 0,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "deployedGooObservation",
+      "Title": "SurfaceDeployedMysteryGooObservations",
+      "BaseValue": 0,
+      "ScienceCap": 0,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "deployedIONCollector",
+      "Title": "SurfaceDeployedIonCollector",
+      "BaseValue": 0,
+      "ScienceCap": 0,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_KerbinBaobabTree",
+      "Title": "BaobabTreeScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_KerbinGiantQuartz",
+      "Title": "GiantQuartzScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_GillyRidgeline",
+      "Title": "GillyRidgelineScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_DunaEjectaOnIke",
+      "Title": "DunaEjectaScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_BopGravelPile",
+      "Title": "GravelPileScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_PolYellowStones",
+      "Title": "YellowStonesScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_MinmusGreenSandstone",
+      "Title": "GreenSandstoneScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_MinmusOlivineFormation",
+      "Title": "OlivineFormationScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_MohoStone",
+      "Title": "MohoStoneScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_MohoWrinkleRidge",
+      "Title": "WrinkleRidgeScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_EveVolcanicRock",
+      "Title": "VolcanicRockScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_EveBasaltFormation",
+      "Title": "BasaltFormationScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_EvePancakeDome",
+      "Title": "PancakeDomeScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_DunaStone",
+      "Title": "DunaStoneScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_DunaMeteorite",
+      "Title": "DunaMeteoriteScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_DunaDune",
+      "Title": "DunaDuneScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_DunaBlueberries",
+      "Title": "BlueberriesScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_DresMeteorite",
+      "Title": "DresMeteoriteScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_DresCrater",
+      "Title": "DresCraterScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_MunStone",
+      "Title": "MunStoneScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_MunCrater",
+      "Title": "MunCraterScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_MunLargeCrater",
+      "Title": "MunLargeCraterScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_LaytheStone",
+      "Title": "LaytheStoneScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_LaytheBoulder",
+      "Title": "LaytheBoulderScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_LaytheGeyser",
+      "Title": "LaytheGeyserScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_VallIceChunk",
+      "Title": "VallIceChunkScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_VallStone",
+      "Title": "VallStoneScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_VallCryovolcano",
+      "Title": "CryovolcanoScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_TyloLightStone",
+      "Title": "TyloLightStoneScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_TyloDarkBoulder",
+      "Title": "TyloDarkBoulderScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_TyloCheckerboard",
+      "Title": "TyloCheckerboardScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_EelooIceChunk",
+      "Title": "EelooIceChunkScanReport",
+      "BaseValue": 30,
+      "ScienceCap": 30,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_EelooBrownBoulder",
+      "Title": "EelooBrownBoulderScanReport",
+      "BaseValue": 45,
+      "ScienceCap": 45,
+      "DataScale": 1.0
+    },
+    {
+      "$type": "KSPModelLibrary.Data.ScienceDataModels.Experiment, KSPModelLibrary",
+      "Id": "ROCScience_EelooBerg",
+      "Title": "EelooBergScanReport",
+      "BaseValue": 60,
+      "ScienceCap": 60,
       "DataScale": 1.0
     }
   ]

@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSearchLibrary", "..\..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonReaderLibrary", "..\..\..\Libraries\JsonReaderLibrary\JsonReaderLibrary\JsonReaderLibrary.csproj", "{722D7329-2F28-49FF-A72B-4139F8BEF551}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomDataTypeLibrary", "..\..\..\Libraries\CustomDataTypeLibrary\CustomDataTypeLibrary\CustomDataTypeLibrary.csproj", "{5F508962-A8EC-4F1C-91F6-55DE6CCEA3B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{722D7329-2F28-49FF-A72B-4139F8BEF551}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{722D7329-2F28-49FF-A72B-4139F8BEF551}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{722D7329-2F28-49FF-A72B-4139F8BEF551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F508962-A8EC-4F1C-91F6-55DE6CCEA3B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F508962-A8EC-4F1C-91F6-55DE6CCEA3B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F508962-A8EC-4F1C-91F6-55DE6CCEA3B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F508962-A8EC-4F1C-91F6-55DE6CCEA3B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

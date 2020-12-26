@@ -1,4 +1,5 @@
 ﻿using KSPHelperWPF.ViewModels.CalculatorViewModels;
+using KSPModelLibrary.Data.WorldDataModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,14 +25,22 @@ namespace KSPHelperWPF.Views.CalculatorViews
          InitializeComponent();
          DataContext = vm;
          InitEvents(vm);
+
+         TrackingStationLevel.ItemsSource = KerbalSpaceCenter.DSNRanges.Keys;
       }
 
       private void InitEvents(AntennaRangeCalcViewModel vm)
       {
          AllPartsListView.MouseDoubleClick += vm.AddPartEvent;
-         AddPartButton.Click += vm.AddPartEvent;
+         AllPartsListView.MouseDoubleClick += vm.CalcVesselRangeEvent;
+         CalcPartsListView.MouseDoubleClick += vm.RemovePartEvent;
+         CalcPartsListView.MouseDoubleClick += vm.CalcVesselRangeEvent;
+         
+         AddPartButton.Click += vm.AddPartButtonEvent;
+         AddPartButton.Click += vm.CalcVesselRangeEvent;
          AddCountUpButton.Click += vm.AddCountUpEvent;
          AddCountDownButton.Click += vm.AddCountDownEvent;
+         ManualCalcButton.Click += vm.CalcVesselRangeEvent;
       }
    }
 }

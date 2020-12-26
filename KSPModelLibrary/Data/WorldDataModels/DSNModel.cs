@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KSPModelLibrary.Data
+namespace KSPModelLibrary.Data.WorldDataModels
 {
    public class DSNModel
    {

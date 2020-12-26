@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KSPModelLibrary.Data
+namespace KSPModelLibrary.Data.WorldDataModels
 {
    public class KerbalSpaceCenter
    {
@@ -13,6 +13,7 @@ namespace KSPModelLibrary.Data
          { 2, new DSNModel{Range=50000000, UpgradeCost=150000, OtherPerks="Orbital Tracks Visible, Maneuver nodes" } },
          { 3, new DSNModel{Range=250000000, UpgradeCost=563000, OtherPerks="Track unknown objects" } }
       };
+
       #endregion
 
       #region - Constructors

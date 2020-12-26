@@ -27,6 +27,7 @@ namespace KSPHelperWPF
       {
          InitializeComponent();
          DataContext = vm;
+         PartsTab.Content = new PartsView(vm.PartsVM);
          ElectricalTab.Content = new ElectricalView(vm.ElectricalVM);
          CommsTab.Content = new CommsView(vm.CommsVM);
          CalcTab.Content = new CalculatorsView(vm.CalcsVM);
@@ -38,6 +39,7 @@ namespace KSPHelperWPF
          // Only for testing.
          ModuleTestButton.Click += vm.ModuleTestEvent;
 
+         OpenCraftButton.Click += vm.OpenCraftEvent;
          GameDataReaderButton.Click += vm.GameDataReadEvent;
          ExperimentReaderButton.Click += vm.ExperimentReadEvent;
          PartsJsonReadButton.Click += vm.PartJsonReadEvent;

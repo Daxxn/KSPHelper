@@ -50,7 +50,7 @@ namespace ConfigReaderLibrary
             {
                var newReader = new CFGReader(file);
                newReader.ReadFile();
-               output.Add(newReader.ParseFile());
+               output.Add(newReader.ParseLines());
             }
             return output;
          }
@@ -88,10 +88,27 @@ namespace ConfigReaderLibrary
       }
 
       /// <summary>
+      /// Reads and parses the file.
+      /// </summary>
+      /// <returns>The root node of the file.</returns>
+      public BaseObject ParseFile()
+      {
+         try
+         {
+            ReadFile();
+            return ParseLines();
+         }
+         catch (Exception)
+         {
+            throw;
+         }
+      }
+
+      /// <summary>
       /// Parses the config file.
       /// </summary>
       /// <returns>The ROOT node of the config file.</returns>
-      public BaseObject ParseFile()
+      public BaseObject ParseLines()
       {
          try
          {

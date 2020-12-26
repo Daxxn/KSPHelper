@@ -20,10 +20,12 @@ namespace KSPHelperWPF.Views
    /// </summary>
    public partial class SettingsDialog : Window
    {
+      public SettingsDialogViewModel VM { get; }
       public SettingsDialog( SettingsDialogViewModel vm )
       {
          InitializeComponent();
          DataContext = vm;
+         VM = vm;
          InitEvents(vm);
       }
 
@@ -39,24 +41,12 @@ namespace KSPHelperWPF.Views
 
       private void Add_Button_Click(object sender, RoutedEventArgs e)
       {
-
+         VM.AddEvent(sender, e);
       }
 
-      private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+      private void Button_Click(object sender, RoutedEventArgs e)
       {
-         var listBox = sender as ListBox;
-         if (listBox != null && e.AddedItems.Count > 0)
-         {
-            var newItems = new List<object>();
-            foreach (var item in listBox.Items)
-            {
-               if (!e.AddedItems.Contains(item))
-               {
-                  newItems.Add(item);
-               }
-            }
-            listBox.ItemsSource = newItems;
-         }
+         VM.ListDeleteEvent(sender, e);
       }
    }
 }

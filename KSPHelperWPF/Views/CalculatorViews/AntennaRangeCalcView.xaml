@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KSPHelperWPF.Views.CalculatorViews"
+             xmlns:components="clr-namespace:KSPHelperWPF.Components"
              mc:Ignorable="d" Background="Wheat"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -11,13 +12,67 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <!--<RowDefinition Height="Auto"/>-->
         </Grid.RowDefinitions>
 
-        <Border Padding="10">
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Padding="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.ColumnSpan="2" FontSize="14">Tracking Station</TextBlock>
+
+                <Border Grid.Row="1" Padding="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="1">Station Level</TextBlock>
+                        <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="0" x:Name="TrackingStationLevel" SelectedItem="{Binding Path=SelectedTSLevel}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </Grid>
+                </Border>
+
+                <Expander Grid.Row="1" Grid.Column="1" Header="DSN Info">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0" Grid.Row="0">Range</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding Path=SelectedTSLevelModel.Range}"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0">Cost</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Path=SelectedTSLevelModel.UpgradeCost}"/>
+                        <TextBlock Grid.Column="2" Grid.Row="0">Other Perks</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding Path=SelectedTSLevelModel.OtherPerks}"/>
+                    </Grid>
+                </Expander>
+            </Grid>
+        </Border>
+
+        <Border Padding="10" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -57,8 +112,8 @@
             </Grid>
         </Border>
 
-        <Border Grid.Column="1" Grid.Row="0" Margin="10">
-            <Grid>
+        <Border Grid.Column="1" Grid.Row="1" Margin="10">
+            <Grid VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
@@ -74,6 +129,8 @@
                 <TextBlock
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
+                    FontSize="14"
+                    HorizontalAlignment="Center"
                 >
                     Selected Part
                 </TextBlock>
@@ -155,7 +212,8 @@
             </Grid>
         </Border>
 
-        <Border Grid.Column="2">
+        <!--What???-->
+        <Border Grid.Column="2" Grid.Row="1">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -167,7 +225,7 @@
             </Grid>
         </Border>
 
-        <Border Grid.Column="2" Padding="10">
+        <Border Grid.Column="2" Grid.Row="1" Padding="10">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -185,25 +243,76 @@
                 >
                     <ListView
                         x:Name="CalcPartsListView"
-                        ItemsSource="{Binding Path=AllAntennas}"
-                        SelectedItem="{Binding Path=SelectedAntenna}">
+                        ItemsSource="{Binding Path=CalcAntennas, UpdateSourceTrigger=PropertyChanged}"
+                        SelectedItem="{Binding Path=SelectedCalcAntenna, UpdateSourceTrigger=PropertyChanged}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Border>
                                     <Grid Grid.IsSharedSizeScope="True">
                                         <Grid.ColumnDefinitions>
+                                            <ColumnDefinition SharedSizeGroup="count_title"/>
+                                            <ColumnDefinition SharedSizeGroup="count_value"/>
                                             <ColumnDefinition SharedSizeGroup="name_title"/>
                                             <ColumnDefinition SharedSizeGroup="name_value"/>
+                                            <ColumnDefinition SharedSizeGroup="power_title"/>
+                                            <ColumnDefinition SharedSizeGroup="power_value"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Grid.Column="0" Margin="0,0,10,0">Name</TextBlock>
-                                        <TextBlock Grid.Column="1" Text="{Binding Path=Part.Title}"/>
+                                        <TextBlock Grid.Column="0" Margin="0,0,5,0">#</TextBlock>
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=Count, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBlock Grid.Column="2" Margin="5,0,5,0">Name</TextBlock>
+                                        <TextBlock Grid.Column="3" Text="{Binding Path=Part.Title}"/>
+                                        <TextBlock Grid.Column="4" Margin="5,0,5,0">Power</TextBlock>
+                                        <TextBlock Grid.Column="5" Text="{Binding Path=AntennaModule.AntennaPower}"/>
                                     </Grid>
                                 </Border>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </ScrollViewer>
+            </Grid>
+        </Border>
+
+        <Border Grid.Column="3" Grid.Row="0" Grid.RowSpan="2">
+            <Grid Grid.IsSharedSizeScope="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="title"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    FontSize="14"
+                >
+                    Calcuations
+                </TextBlock>
+
+                <TextBlock Grid.Column="0" Grid.Row="1">Strongest Antenna</TextBlock>
+                <Border Grid.Column="1" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,0,10,0" Text="{Binding Path=StrongestAntenna.Part.Title}"/>
+                        <TextBlock Text="{Binding Path=StrongestAntenna.AntennaModule.AntennaPower}"/>
+                    </StackPanel>
+                </Border>
+                <TextBlock Grid.Column="0" Grid.Row="2">Vessel Range</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Path=VesselRange}"/>
+                <TextBlock Grid.Column="0" Grid.Row="3">Total Range</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Path=TotalRange}"/>
+                
+
+                <Button x:Name="ManualCalcButton" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
+                    Calc
+                </Button>
             </Grid>
         </Border>
     </Grid>

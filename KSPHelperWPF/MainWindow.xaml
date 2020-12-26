@@ -13,7 +13,9 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0">
-            <MenuItem Header="File" />
+            <MenuItem Header="File">
+                <MenuItem Header="Open Craft" Name="OpenCraftButton"/>
+            </MenuItem>
             <MenuItem Header="Readers">
                 <MenuItem Header="Part Reader" Name="GameDataReaderButton" ToolTip="This may take a while..." />
                 <MenuItem Header="Experiment Reader" Name="ExperimentReaderButton"/>
@@ -29,10 +31,10 @@
         </Menu>
 
         <TabControl Grid.Row="1">
+            <TabItem x:Name="PartsTab" Header="Parts" IsSelected="True"/>
             <TabItem
                 x:Name="ElectricalTab"
                 Header="Electrical"
-                IsSelected="True"
             />
             <TabItem x:Name="CommsTab" Header="Comms" />
             <TabItem x:Name="CalcTab" Header="Calculators" />

@@ -1,10 +1,13 @@
-﻿using KSPHelperWPF.ViewModels.CalculatorViewModels;
+﻿using KSPHelperWPF.Dialogs;
+using KSPHelperWPF.ViewModels.CalculatorViewModels;
 using KSPHelperWPF.Views;
 
 using KSPModelLibrary;
+using KSPModelLibrary.CraftParser;
 using KSPModelLibrary.Data;
 using KSPModelLibrary.Data.PartDataModels;
 using KSPModelLibrary.Data.ScienceDataModels;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,6 +21,7 @@ namespace KSPHelperWPF.ViewModels
       private static MainViewModel _instance = new MainViewModel();
 
       #region View Models
+      public PartsViewModel PartsVM { get; set; } = new PartsViewModel();
       public ElectricalViewModel ElectricalVM { get; set; } = new ElectricalViewModel();
       public CommsViewModel CommsVM { get; set; } = new CommsViewModel();
       public SettingsDialogViewModel SettingsVM { get; set; } = new SettingsDialogViewModel(PathSettings.SettingsModel);
@@ -28,6 +32,8 @@ namespace KSPHelperWPF.ViewModels
       public Science AllScience { get; set; } = GameDataReader.AllScienceData;
       public PartData AllPartsTest { get; set; } = GameDataReader.AllPartDataTest;
       public Science AllScienceTest { get; set; } = GameDataReader.AllScienceDataTest;
+
+      //public CraftModel OpenedCraft { get; set; } = CraftDataReader.Craft;
       #endregion
 
       #region - Constructors
@@ -81,30 +87,43 @@ namespace KSPHelperWPF.ViewModels
          }
          catch (Exception ex)
          {
-            //if (ex.InnerException != null)
-            //{
-            //   MessageBox.Show(ex.InnerException.Message, $"ERROR!! {ex.Message}");
-            //}
-            //else
-            //{
-            //   MessageBox.Show(ex.InnerException.Message, "Error!");
-            //}
             ExceptionHandler.ShowException(ex);
          }
       }
 
       public void ModuleTestEvent(object sender, EventArgs e)
       {
-         //var parsedParts = GameDataReader.AllPartData.Parts.FindAll((part) => part.Category == "Electrical");
-         //var ex = new Exception("Test Outer Exception", new Exception("Test Inner Exception"));
-         //ExceptionHandler.ShowException(ex);
-         MessageBox.Show("Test");
+         //OpenFileDialog dialog = new OpenFileDialog()
+         //{
+         //   Multiselect = false,
+         //   InitialDirectory = PathSettings.SettingsModel.CraftFolder,
+         //   Filter = PathSettings.SettingsModel.CraftDialogFilter,
+         //   DefaultExt = ".craft",
+         //   Title = "Open a craft file."
+         //};
+         //if (dialog.ShowDialog() == true)
+         //{
+         //   CraftDataReader.ParseCraftFile(dialog.FileName);
+         //}
+         //string[] files = FileSearchLibrary.FileSearch_2.GetFiles()
       }
 
       public void OpenPathSettingsEvent(object sender, EventArgs e )
       {
          SettingsDialog d = new SettingsDialog(SettingsVM);
          d.Show();
+      }
+
+      public void OpenCraftEvent(object sender, EventArgs e)
+      {
+         try
+         {
+            OpenCraft.OpenDialog();
+         }
+         catch (Exception ex)
+         {
+            ExceptionHandler.ShowException(ex);
+         }
       }
       #endregion
 

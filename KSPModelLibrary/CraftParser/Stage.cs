@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KSPModelLibrary.Models.ElectricalModels
+namespace KSPModelLibrary.CraftParser
 {
-   public class EngineGenerator : IGenerator
+   public class Stage
    {
       #region - Fields & Properties
-      public double GenRate { get; set; }
-      public TimeDivision TimeDiv { get; set; }
-      public double Mass { get; set; }
-
+      public int StageNumber { get; set; }
+      public List<PartRef> Parts { get; set; } = new List<PartRef>();
       #endregion
 
       #region - Constructors
-      public EngineGenerator() { }
+      public Stage(int stageNumber) => StageNumber = stageNumber;
       #endregion
 
       #region - Methods

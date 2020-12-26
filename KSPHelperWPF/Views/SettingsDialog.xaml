@@ -40,6 +40,8 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <TextBlock FontSize="40">BROKE</TextBlock>
+        
         <Border Grid.Row="0" >
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -51,7 +53,7 @@
                 <TextBlock Grid.Column="0">Game Data Path</TextBlock>
                 <TextBox
                     Grid.Column="1"
-                    Text="{Binding Path=GameDataPath, UpdateSourceTrigger=PropertyChanged}"
+                    Text="{Binding Path=GameDataPath.FilePath, UpdateSourceTrigger=PropertyChanged}"
                 >
                 </TextBox>
             </Grid>
@@ -68,7 +70,7 @@
                 <TextBlock Grid.Column="0">Science Data Path</TextBlock>
                 <TextBox
                     Grid.Column="1"
-                    Text="{Binding Path=ScienceDataPath, UpdateSourceTrigger=PropertyChanged}"
+                    Text="{Binding Path=ScienceDataPath.FilePath, UpdateSourceTrigger=PropertyChanged}"
                 >
                 </TextBox>
             </Grid>
@@ -85,7 +87,7 @@
                 <TextBlock Grid.Column="0">Part Data Save Path</TextBlock>
                 <TextBox
                     Grid.Column="1"
-                    Text="{Binding Path=PartDataSavePath, UpdateSourceTrigger=PropertyChanged}"
+                    Text="{Binding Path=PartDataSavePath.FilePath, UpdateSourceTrigger=PropertyChanged}"
                 >
                 </TextBox>
             </Grid>
@@ -102,7 +104,7 @@
                 <TextBlock Grid.Column="0">Science Data Save Path</TextBlock>
                 <TextBox
                     Grid.Column="1"
-                    Text="{Binding Path=ScienceDataSavePath, UpdateSourceTrigger=PropertyChanged}"
+                    Text="{Binding Path=ScienceDataSavePath.FilePath, UpdateSourceTrigger=PropertyChanged}"
                 >
                 </TextBox>
             </Grid>
@@ -119,7 +121,7 @@
                 <TextBlock Grid.Column="0">Vanilla Parts Path</TextBlock>
                 <TextBox
                     Grid.Column="1"
-                    Text="{Binding Path=VanillaPartPath, UpdateSourceTrigger=PropertyChanged}"
+                    Text="{Binding Path=VanillaPartPath.FilePath, UpdateSourceTrigger=PropertyChanged}"
                 >
                 </TextBox>
             </Grid>
@@ -144,14 +146,21 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <TextBlock>DLC Part Paths</TextBlock>
-                <ListBox Grid.Row="1" ItemsSource="{Binding Path=DLCPaths}" SelectionChanged="ListBox_SelectionChanged">
+                <ListBox Grid.Row="1" x:Name="DLCPathsList" ItemsSource="{Binding Path=DLCPaths}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBox Padding="4" Text="{Binding Path=.}"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0" Padding="4" Text="{Binding Path=FilePath, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button Grid.Column="1" Click="Button_Click" DataContext="{Binding}">Delete</Button>
+                            </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <Button Grid.Row="2" Click="Add_Button_Click" DataContext="{Binding Path=DLCPaths}">+</Button>
+                <Button Grid.Row="2" DataContext="{Binding ElementName=DLCPathsList}" Click="Add_Button_Click">+</Button>
             </Grid>
         </Border>
 

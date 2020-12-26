@@ -79,5 +79,10 @@ namespace KSPModelLibrary.Data.PartDataModels
          }
          return output;
       }
+
+      public override string ToString()
+      {
+         return $"{Title} {Category}";
+      }
    }
 }

@@ -31,6 +31,28 @@ namespace KSPModelLibrary.Data
             return null;
          }
       }
+
+      public static Science BuildData(List<BaseObject> rootObjects)
+      {
+         if (rootObjects != null || rootObjects.Count > 0)
+         {
+            var newScience = new Science();
+
+            foreach (var scienceData in rootObjects)
+            {
+               foreach (var experimentData in scienceData.Children)
+               {
+                  newScience.Experiments.Add(Experiment.Build(experimentData));
+               }
+            }
+
+            return newScience;
+         }
+         else
+         {
+            return null;
+         }
+      }
       #endregion
 
       #region - Full Properties
