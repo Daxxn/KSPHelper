@@ -39,7 +39,7 @@ namespace KSPHelperWPF
          // Only for testing.
          ModuleTestButton.Click += vm.ModuleTestEvent;
 
-         OpenCraftButton.Click += vm.OpenCraftEvent;
+         OpenCraftButton.Click += vm.OpenCraftClickEvent;
          GameDataReaderButton.Click += vm.GameDataReadEvent;
          ExperimentReaderButton.Click += vm.ExperimentReadEvent;
          PartsJsonReadButton.Click += vm.PartJsonReadEvent;

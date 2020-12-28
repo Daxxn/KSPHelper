@@ -1,4 +1,5 @@
 ﻿using KSPHelperWPF.Dialogs;
+using KSPHelperWPF.Events;
 using KSPHelperWPF.ViewModels.CalculatorViewModels;
 using KSPHelperWPF.Views;
 
@@ -20,6 +21,8 @@ namespace KSPHelperWPF.ViewModels
       #region - Fields & Properties
       private static MainViewModel _instance = new MainViewModel();
 
+      public static event EventHandler<OpenCraftEventArgs> OpenNewCraftEvent;
+
       #region View Models
       public PartsViewModel PartsVM { get; set; } = new PartsViewModel();
       public ElectricalViewModel ElectricalVM { get; set; } = new ElectricalViewModel();
@@ -33,14 +36,21 @@ namespace KSPHelperWPF.ViewModels
       public PartData AllPartsTest { get; set; } = GameDataReader.AllPartDataTest;
       public Science AllScienceTest { get; set; } = GameDataReader.AllScienceDataTest;
 
-      //public CraftModel OpenedCraft { get; set; } = CraftDataReader.Craft;
+      public CraftModel OpenedCraft { get; set; } = CraftDataReader.Craft;
       #endregion
 
       #region - Constructors
-      private MainViewModel() { }
+      private MainViewModel()
+      {
+         OpenNewCraftEvent += MainViewModel_OpenNewCraftEvent;
+      }
       #endregion
 
       #region - Methods
+      private void MainViewModel_OpenNewCraftEvent(object sender, OpenCraftEventArgs e)
+      {
+         OpenedCraft = e.Craft;
+      }
       public void GameDataReadEvent(object sender, EventArgs e)
       {
          // Move to either an AppSetting or to a settings view.
@@ -93,19 +103,7 @@ namespace KSPHelperWPF.ViewModels
 
       public void ModuleTestEvent(object sender, EventArgs e)
       {
-         //OpenFileDialog dialog = new OpenFileDialog()
-         //{
-         //   Multiselect = false,
-         //   InitialDirectory = PathSettings.SettingsModel.CraftFolder,
-         //   Filter = PathSettings.SettingsModel.CraftDialogFilter,
-         //   DefaultExt = ".craft",
-         //   Title = "Open a craft file."
-         //};
-         //if (dialog.ShowDialog() == true)
-         //{
-         //   CraftDataReader.ParseCraftFile(dialog.FileName);
-         //}
-         //string[] files = FileSearchLibrary.FileSearch_2.GetFiles()
+         MessageBox.Show("Testing Event Only");
       }
 
       public void OpenPathSettingsEvent(object sender, EventArgs e )
@@ -114,11 +112,13 @@ namespace KSPHelperWPF.ViewModels
          d.Show();
       }
 
-      public void OpenCraftEvent(object sender, EventArgs e)
+      public void OpenCraftClickEvent(object sender, EventArgs e)
       {
          try
          {
-            PartsVM.Craft = OpenCraft.OpenDialog();
+            var newCraft = OpenCraft.OpenDialog();
+            //PartsVM.Craft = newCraft;
+            OpenNewCraftEvent?.Invoke(this, new OpenCraftEventArgs(newCraft));
          }
          catch (Exception ex)
          {

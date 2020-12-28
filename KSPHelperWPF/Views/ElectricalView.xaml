@@ -13,10 +13,62 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <!--<RowDefinition Height="Auto"/>-->
         </Grid.RowDefinitions>
-        
-        
+
+        <Border Grid.Column="0" Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" FontSize="13">Craft</TextBlock>
+                <ListView
+                    ItemsSource="{Binding Path=ElectricalCraft.Stages.Values}"
+                    SelectedItem="{Binding Path=SelectedStage}"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ListViewItem>
+                                <Expander Header="{Binding Path=StageNumber}">
+                                    <Grid
+                                        Grid.IsSharedSizeScope="True"
+                                    >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition SharedSizeGroup="title"/>
+                                            <ColumnDefinition SharedSizeGroup="value"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="0">Part</TextBlock>
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=Title}"/>
+                                    </Grid>
+                                </Expander>
+                            </ListViewItem>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="0" Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock>Stage</TextBlock>
+                <TextBlock Grid.Column="1" Text="{Binding Path=SelectedStage.StageNumber}"/>
+                
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>

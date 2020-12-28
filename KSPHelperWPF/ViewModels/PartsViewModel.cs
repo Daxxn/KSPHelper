@@ -20,7 +20,16 @@ namespace KSPHelperWPF.ViewModels
       #endregion
 
       #region - Constructors
-      public PartsViewModel() { }
+      public PartsViewModel()
+      {
+         MainViewModel.OpenNewCraftEvent += OpenNewCraftEvent;
+      }
+
+      private void OpenNewCraftEvent(object sender, Events.OpenCraftEventArgs e)
+      {
+         Craft = e.Craft;
+         GetCraftCategories(e.Craft);
+      }
       #endregion
 
       #region - Methods
@@ -74,7 +83,7 @@ namespace KSPHelperWPF.ViewModels
          set
          {
             _craft = value;
-            GetCraftCategories(value);
+            //GetCraftCategories(value);
             OnPropertyChanged(nameof(Craft));
          }
       }
