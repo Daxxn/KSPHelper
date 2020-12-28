@@ -56,7 +56,7 @@ namespace KSPModelLibrary.Data.PartDataModels
 
       public TModule GetModule<TModule>() where TModule : IModule
       {
-         TModule output = default(TModule);
+         TModule output = default;
          foreach (var module in Modules)
          {
             if (module is TModule)

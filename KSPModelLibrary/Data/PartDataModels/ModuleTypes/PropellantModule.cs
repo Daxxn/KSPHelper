@@ -16,6 +16,9 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
       {
          switch (keyVal.Key)
          {
+            case "name":
+               Name = keyVal.Value;
+               break;
             case "ratio":
                Ratio = ParseMethods.ParseDouble(keyVal.Value);
                break;
