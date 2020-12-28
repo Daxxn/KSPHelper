@@ -4,44 +4,48 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KSPHelperWPF.Views"
-             mc:Ignorable="d" 
+             mc:Ignorable="d" Background="Wheat"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible">
         <Border Grid.Row="1">
-            <ListView ItemsSource="{Binding Path=Craft.Stages}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Border>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
+                <ListView ItemsSource="{Binding Path=Craft.Stages.Values}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
 
-                                <Border>
-                                    <ListView ItemsSource="{Binding Path=Values}">
-                                        <ListView.ItemTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Text="{Binding Path=Parts}"/>
-                                            </DataTemplate>
-                                        </ListView.ItemTemplate>
-                                    </ListView>
-                                </Border>
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                    <!--<TextBlock Grid.Row="0" Text="{Binding Path=StageNumber}"/>-->
+                                    <Expander Header="{Binding Path=StageNumber, StringFormat=Stage {0:C}}">
+                                        <ListView
+                                            Grid.Row="1"
+                                            ItemsSource="{Binding Path=Parts}"
+                                            SelectedItem="{Binding Path=SelectedPart}"
+                                        >
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Path=Name}"/>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </Expander>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
         </Border>
+            </ScrollViewer>
     </Grid>
 </UserControl>

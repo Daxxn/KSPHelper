@@ -14,7 +14,7 @@ namespace KSPHelperWPF.Dialogs
       #endregion
 
       #region - Methods
-      public static void OpenDialog()
+      public static CraftModel OpenDialog()
       {
          OpenFileDialog dialog = new OpenFileDialog()
          {
@@ -26,7 +26,11 @@ namespace KSPHelperWPF.Dialogs
          };
          if (dialog.ShowDialog() == true)
          {
-            CraftDataReader.ParseCraftFile(dialog.FileName);
+            return CraftDataReader.ParseCraftFile(dialog.FileName);
+         }
+         else
+         {
+            return null;
          }
       }
       #endregion

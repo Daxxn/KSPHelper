@@ -9,6 +9,7 @@ namespace KSPHelperWPF.ViewModels
    {
       #region - Fields & Properties
       private CraftModel _craft = CraftDataReader.Craft;
+      private PartRef _selectedPart;
       #endregion
 
       #region - Constructors
@@ -27,6 +28,16 @@ namespace KSPHelperWPF.ViewModels
          {
             _craft = value;
             OnPropertyChanged(nameof(Craft));
+         }
+      }
+
+      public PartRef SelectedPart
+      {
+         get { return _selectedPart; }
+         set
+         {
+            _selectedPart = value;
+            OnPropertyChanged(nameof(SelectedPart));
          }
       }
       #endregion

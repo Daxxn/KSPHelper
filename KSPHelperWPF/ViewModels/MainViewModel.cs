@@ -118,7 +118,7 @@ namespace KSPHelperWPF.ViewModels
       {
          try
          {
-            OpenCraft.OpenDialog();
+            PartsVM.Craft = OpenCraft.OpenDialog();
          }
          catch (Exception ex)
          {
