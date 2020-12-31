@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class SolarPanelModule : IModule
+   public class SolarPanelModule : IModule, IEGenModule
    {
       public string Name { get; set; }
       public double ChargeRate { get; set; }
@@ -30,6 +30,14 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
             newInst.SetProp(kv);
          }
          return newInst;
+      }
+
+      public double Charge
+      {
+         get
+         {
+            return ChargeRate;
+         }
       }
    }
 }

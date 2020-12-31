@@ -22,10 +22,8 @@ namespace KSPModelLibrary
          { "exts", new string[] {".cfg"} }
       };
 
-      public static PartData AllPartData { get; set; }
-      public static PartData AllPartDataTest { get; set; }
-      public static Science AllScienceData { get; set; }
-      public static Science AllScienceDataTest { get; set; }
+      public static PartData AllPartData { get; set; } = new PartData();
+      public static Science AllScienceData { get; set; } = new Science();
       #endregion
 
       #region - Methods
@@ -118,9 +116,17 @@ namespace KSPModelLibrary
       {
          try
          {
-            AllPartData = JsonReaderLibrary.JsonReader.OpenJsonFile<PartData>(
+            var newPartData = JsonReaderLibrary.JsonReader.OpenJsonFile<PartData>(
                Path.Combine(PathSettings.SettingsModel.ProjectPath, PathSettings.SettingsModel.PartDataSavePath)
             );
+            if (newPartData is null)
+            {
+               throw new Exception("No part data loaded.");
+            }
+            else
+            {
+               AllPartData = newPartData;
+            }
          }
          catch (Exception e)
          {
@@ -132,9 +138,17 @@ namespace KSPModelLibrary
       {
          try
          {
-            AllScienceData = JsonReaderLibrary.JsonReader.OpenJsonFile<Science>(
+            var newScienceData = JsonReaderLibrary.JsonReader.OpenJsonFile<Science>(
                Path.Combine(PathSettings.SettingsModel.ProjectPath, PathSettings.SettingsModel.ScienceDataSavePath)
             );
+            if (newScienceData is null)
+            {
+               throw new Exception("No science data loaded.");
+            }
+            else
+            {
+               AllScienceData = newScienceData;
+            }
          }
          catch (Exception e)
          {

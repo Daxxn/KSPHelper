@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ResourceTypes
 {
-   public class ElectricalResource : BaseResource, IResource { }
+   public class ElectricalResource : BaseResource, IResource, IElectrical { }
    public class LiquidFuelResource : BaseResource, IResource { }
    public class MonoPorpellentResource : BaseResource, IResource { }
    public class OxidizerResource : BaseResource, IResource { }

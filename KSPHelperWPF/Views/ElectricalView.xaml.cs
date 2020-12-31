@@ -23,6 +23,12 @@ namespace KSPHelperWPF.Views
       {
          InitializeComponent();
          DataContext = vm;
+         InitEvents(vm);
+      }
+
+      private void InitEvents(ElectricalViewModel vm)
+      {
+         //CalcTestButton.Click += vm.CalcTestEvent;
       }
    }
 }

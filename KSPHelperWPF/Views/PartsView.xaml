@@ -40,9 +40,9 @@
                                             <!--<TextBlock Grid.Row="0" Text="{Binding Path=StageNumber}"/>-->
                                             <Expander Header="{Binding Path=StageNumber, StringFormat=Stage {0:C}}">
                                                 <ListView
-                                            Grid.Row="1"
-                                            ItemsSource="{Binding Path=Parts}"
-                                        >
+                                                    Grid.Row="1"
+                                                    ItemsSource="{Binding Path=Parts}"
+                                                >
                                                     <ListView.ItemTemplate>
                                                         <DataTemplate>
                                                             <TextBlock Text="{Binding Path=Name}"/>

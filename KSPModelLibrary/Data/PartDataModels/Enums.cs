@@ -76,4 +76,12 @@ namespace KSPModelLibrary.Data.PartDataModels
       PartData,
       ScienceData,
    }
+
+   public enum VesselType
+   {
+      Probe,
+      Lander,
+      Rover,
+      Ship,
+   }
 }

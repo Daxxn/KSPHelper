@@ -5,12 +5,12 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class CommandModule : IModule
+   public class CommandModule : IModule, IELoadModule
    {
       public string Name { get; set; }
       public int CrewCapacity { get; set; }
       public int MinimumCrew { get; set; }
-
+      public ElectricalLoadModule Electrical { get; set; }
 
       public void SetProp(KeyValuePair<string, string> keyVal)
       {
@@ -38,7 +38,30 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
          {
             newCommand.SetProp(keyVal);
          }
+         if (obj.Children.Count > 0)
+         {
+            var electricalChild = obj.Children.Find(child => child.Key == "RESOURCE");
+            if (electricalChild != null)
+            {
+               newCommand.Electrical = ElectricalLoadModule.BuildModule(electricalChild);
+            }
+         }
          return newCommand;
+      }
+
+      public double Load
+      {
+         get
+         {
+            if (Electrical != null)
+            {
+               return Electrical.Rate;
+            }
+            else
+            {
+               return 0;
+            }
+         }
       }
    }
 }

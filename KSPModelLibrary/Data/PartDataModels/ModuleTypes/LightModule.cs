@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class LightModule : IModule
+   public class LightModule : IModule, IELoadModule
    {
       public string Name { get; set; }
       public double ElectricalLoad { get; set; }
@@ -37,6 +37,14 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
             newInst.SetProp(kv);
          }
          return newInst;
+      }
+
+      public double Load
+      {
+         get
+         {
+            return ElectricalLoad;
+         }
       }
    }
 }

@@ -10,6 +10,7 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
       public string Name { get; set; }
       public string ResourceName { get; set; }
       public double Ratio { get; set; }
+      public double Rate { get; set; }
       public bool DumpExcess { get; set; }
 
       public void SetProp(KeyValuePair<string, string> keyVal)
@@ -24,6 +25,9 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
                break;
             case "Ratio":
                Ratio = ParseMethods.ParseDouble(keyVal.Value);
+               break;
+            case "rate":
+               Rate = ParseMethods.ParseDouble(keyVal.Value);
                break;
             case "DumpExcess":
                DumpExcess = ParseMethods.ParseBool(keyVal.Value);

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class GeneratorModule : IModule
+   public class GeneratorModule : IModule, IElectrical, IEGenModule
    {
       public string Name { get; set; } = "ModuleGenerator";
       public bool IsAlwaysActive { get; set; }
@@ -38,6 +38,25 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
             newInst.ResourceOutput.Add(OutputResourceModule.BuildModule(mod));
          }
          return newInst;
+      }
+
+      public double Charge
+      {
+         get
+         {
+            double output = 0;
+            if (ResourceOutput.Count > 0)
+            {
+               foreach (var resOutput in ResourceOutput)
+               {
+                  if (resOutput.Name == "ElectricCharge")
+                  {
+                     output += resOutput.Rate;
+                  }
+               }
+            }
+            return output;
+         }
       }
    }
 }

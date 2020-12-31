@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace KSPModelLibrary.CalculatorModels.AntennaCalcModels
+namespace KSPModelLibrary.CalculatorModels
 {
    public class BaseModel : INotifyPropertyChanged
    {

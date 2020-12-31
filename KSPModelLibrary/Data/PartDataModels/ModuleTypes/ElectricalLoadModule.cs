@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class ElectricalLoadModule : IModule
+   public class ElectricalLoadModule : IModule, IElectrical
    {
       public string Name { get; set; }
       public double DrawRate { get; set; }

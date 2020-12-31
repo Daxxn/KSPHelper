@@ -7,10 +7,6 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
    public class AirIntakeModule : IModule
    {
-      public AirIntakeModule()
-      {
-      }
-
       public string Name { get; set; }
       public double Area { get; set; }
       public double IntakeSpeed { get; set; }

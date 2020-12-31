@@ -6,10 +6,9 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class ReactionWheelModule : IModule
+   public class ReactionWheelModule : IModule, IELoadModule
    {
       public string Name { get; set; }
-
       public int PitchTorque { get; set; }
       public int YawTorque { get; set; }
       public int RollTorque { get; set; }
@@ -51,6 +50,14 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
             newInst.Electrical.SetProp(kv);
          }
          return newInst;
+      }
+
+      public double Load
+      {
+         get
+         {
+            return Electrical.Rate;
+         }
       }
    }
 }

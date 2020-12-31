@@ -33,8 +33,6 @@ namespace KSPHelperWPF.ViewModels
 
       public PartData AllParts { get; set; } = GameDataReader.AllPartData;
       public Science AllScience { get; set; } = GameDataReader.AllScienceData;
-      public PartData AllPartsTest { get; set; } = GameDataReader.AllPartDataTest;
-      public Science AllScienceTest { get; set; } = GameDataReader.AllScienceDataTest;
 
       public CraftModel OpenedCraft { get; set; } = CraftDataReader.Craft;
       #endregion
@@ -118,7 +116,10 @@ namespace KSPHelperWPF.ViewModels
          {
             var newCraft = OpenCraft.OpenDialog();
             //PartsVM.Craft = newCraft;
-            OpenNewCraftEvent?.Invoke(this, new OpenCraftEventArgs(newCraft));
+            if (newCraft != null)
+            {
+               OpenNewCraftEvent?.Invoke(this, new OpenCraftEventArgs(newCraft));
+            }
          }
          catch (Exception ex)
          {

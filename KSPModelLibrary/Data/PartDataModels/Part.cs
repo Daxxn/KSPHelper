@@ -38,6 +38,16 @@ namespace KSPModelLibrary.Data.PartDataModels
             {
                part.TechRequired = prop;
             }
+         },
+         {
+            "vesselType", (string prop, Part part) =>
+            {
+               bool success = Enum.TryParse(prop, out VesselType result);
+               if (success)
+               {
+                  part.VesselType = result;
+	            }
+            }
          }
       };
 
@@ -51,6 +61,7 @@ namespace KSPModelLibrary.Data.PartDataModels
       public double WetMass { get; set; }
       public int CrewCapacity { get; set; }
       public string TechRequired { get; set; }
+      public VesselType VesselType { get; set; }
       public List<IModule> Modules { get; set; } = new List<IModule>();
       public List<IResource> Resources { get; set; } = new List<IResource>();
 
@@ -59,9 +70,23 @@ namespace KSPModelLibrary.Data.PartDataModels
          TModule output = default;
          foreach (var module in Modules)
          {
-            if (module is TModule)
+            if (module is TModule foundModule)
             {
-               output = (TModule)module;
+               output = foundModule;
+               break;
+            }
+         }
+         return output;
+      }
+
+      public List<TModule> GetModules<TModule>()
+      {
+         var output = new List<TModule>();
+         foreach (var module in Modules)
+         {
+            if (module is TModule foundModule)
+            {
+               output.Add(foundModule);
             }
          }
          return output;
@@ -72,9 +97,23 @@ namespace KSPModelLibrary.Data.PartDataModels
          var output = new List<TResource>();
          foreach (var resource in Resources)
          {
-            if (output is TResource)
+            if (resource is TResource foundResource)
             {
-               output.Add((TResource)resource);
+               output.Add(foundResource);
+            }
+         }
+         return output;
+      }
+
+      public TResource GetResource<TResource>() where TResource : IResource
+      {
+         TResource output = default;
+         foreach (var resource in Resources)
+         {
+            if (resource is TResource foundResource)
+            {
+               output = foundResource;
+               break;
             }
          }
          return output;

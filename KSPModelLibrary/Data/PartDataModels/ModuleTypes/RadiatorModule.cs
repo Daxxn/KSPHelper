@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class RadiatorModule : IModule
+   public class RadiatorModule : IModule, IELoadModule
    {
       public string Name { get; set; }
       public int MaxEnergyTransfer { get; set; }
@@ -43,6 +43,14 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
          }
          newInst.Electrical = ElectricalLoadModule.BuildModule(obj.FindChildByProperty("name", "ElectricCharge"));
          return newInst;
+      }
+
+      public double Load
+      {
+         get
+         {
+            return Electrical.Rate;
+         }
       }
    }
 }

@@ -1,15 +1,17 @@
 ﻿using ConfigReaderLibrary;
+using KSPModelLibrary.Data.PartDataModels.ResourceTypes;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class AlternatorModule : IModule
+   public class AlternatorModule : IModule, IEAltModule
    {
       public string Name { get; set; }
       public string EngineName { get; set; }
       public double ChargeRate { get; set; }
+      public ElectricalResource Electrical { get; set; }
 
       public void SetProp(KeyValuePair<string, string> keyVal)
       {
@@ -34,7 +36,23 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
          {
             newAlt.SetProp(kv);
          }
+         if (obj.Children.Count == 1)
+         {
+            newAlt.Electrical = new ElectricalResource();
+            foreach (var eleKV in obj.Children[0].Values)
+            {
+               newAlt.Electrical.SetProp(eleKV);
+            }
+         }
          return newAlt;
+      }
+
+      public double Charge
+      {
+         get
+         {
+            return Electrical.Rate;
+         }
       }
    }
 }

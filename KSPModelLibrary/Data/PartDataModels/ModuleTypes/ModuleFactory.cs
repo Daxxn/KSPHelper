@@ -34,5 +34,10 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
          }
          return result;
       }
+
+      public static bool IsElectricalModule(IModule module)
+      {
+         return module is ElectricalLoadModule || module is CommsModule || module is ReactionWheelModule;
+      }
    }
 }

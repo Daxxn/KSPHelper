@@ -16,7 +16,10 @@ namespace KSPModelLibrary.CraftParser
       #endregion
 
       #region - Methods
-
+      public override string ToString()
+      {
+         return $"Stage {StageNumber} : Parts {Parts.Count}";
+      }
       #endregion
 
       #region - Full Properties

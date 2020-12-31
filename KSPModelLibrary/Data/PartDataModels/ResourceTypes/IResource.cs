@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ResourceTypes
 {
-   public interface IResource
+   public interface IResource : IPartDataType
    {
       string Name { get; set; }
       int Amount { get; set; }
