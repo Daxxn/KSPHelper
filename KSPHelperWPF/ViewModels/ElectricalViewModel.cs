@@ -36,8 +36,6 @@ namespace KSPHelperWPF.ViewModels
       private double _altTotal;
 
       private double _passivechargeRateTotal;
-      //private double _throttleChargeRateTotal;
-      private TimeSpan _chargeTime;
 
       private ObservableCollection<StageTotal> _individualStageTotals;
       private ObservableCollection<StageTotal> _linearStageTotals;
@@ -76,7 +74,6 @@ namespace KSPHelperWPF.ViewModels
          GenTotal = IndividualStageTotals.Sum(stage => stage.Generators);
          AltTotal = IndividualStageTotals.Sum(stage => stage.Alternators);
          PassiveChargeRateTotal = ElectricalCalcMethods.ChargeRate(GenTotal, LoadTotal);
-         //ThrottleChargeRateTotal = ElectricalCalcMethods.ThrottleChargeRate(AltTotal, LoadTotal, ThrottleSetting);
       }
       #endregion
 

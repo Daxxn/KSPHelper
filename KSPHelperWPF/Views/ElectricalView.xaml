@@ -6,6 +6,8 @@
              xmlns:local="clr-namespace:KSPHelperWPF.Views"
              xmlns:components="clr-namespace:KSPHelperWPF.Components"
              mc:Ignorable="d"
+             KeyDown="UserControl_KeyDown"
+             KeyUp="UserControl_KeyUp"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary>
@@ -24,12 +26,12 @@
         <!--#region Parts Lists-->
         <ScrollViewer
             x:Name="PartsListScrollViewer"
-            PreviewMouseWheel="ListViewScrollViewer_PreviewMouseWheel"
+            PreviewMouseWheel="PartsListScrollViewer_PreviewMouseWheel"
             Grid.Column="0"
             HorizontalScrollBarVisibility="Auto"
             VerticalScrollBarVisibility="Auto"
         >
-            <Border PreviewMouseWheel="ListViewScrollViewer_PreviewMouseWheel">
+            <Border>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -52,7 +54,6 @@
                                 Craft
                             </TextBlock>
                             <ListView
-                                PreviewMouseWheel="ListViewScrollViewer_PreviewMouseWheel"
                                 Grid.Row="1"
                                 x:Name="mainCraftList"
                                 ItemsSource="{Binding Path=Craft.Stages.Values}"
@@ -460,7 +461,12 @@
                             Grid.ColumnSpan="2"
                             Header="Stage totals"
                         >
-                            <ScrollViewer>
+                            <ScrollViewer
+                                x:Name="StagesScrollViewer"
+                                PreviewMouseWheel="StagesListScrollViewer_PreviewMouseWheel"
+                                HorizontalScrollBarVisibility="Auto"
+                                VerticalScrollBarVisibility="Auto"
+                            >
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
