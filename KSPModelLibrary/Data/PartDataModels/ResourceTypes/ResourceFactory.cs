@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfigReaderLibrary;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -16,6 +17,16 @@ namespace KSPModelLibrary.Data.PartDataModels.ResourceTypes
          { ResourceType.IntakeAir, () => new AirIntakeResource() },
          { ResourceType.SolidFuel, () => new SolidFuelResource() },
       };
+
+      public static TResource BuildResource<TResource>(BaseObject obj) where TResource : IResource, new()
+      {
+         var newInst = new TResource();
+         foreach (var kv in obj.Values)
+         {
+            newInst.SetProp(kv);
+         }
+         return newInst;
+      }
 
       public static bool PartHasResource<TResource>(Part part) where TResource : IResource
       {

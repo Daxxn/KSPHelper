@@ -27,6 +27,8 @@ namespace KSPModelLibrary.Data.PartDataModels
       ModuleActiveRadiator,
       ModuleLight,
       ModuleRCSFX,
+      SCANsat,
+      SCANexperiment,
    }
 
    /// <summary>

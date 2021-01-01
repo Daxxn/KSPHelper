@@ -331,12 +331,32 @@
       "CrewCapacity": 0,
       "TechRequired": "Unresearcheable",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 32,
+          "FOV": 1.0,
+          "MinAltitude": 0,
+          "MaxAltitude": 2000,
+          "BestAltitude": 0,
+          "ScanName": "BTDT",
+          "RequireLight": false,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 0.1
+          },
+          "Load": 0.1
+        }
+      ],
       "Resources": []
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SCANMapTraq®",
+      "Title": "SCAN MapTraq®",
       "Name": "SCANsat_Tracker",
       "Category": "none",
       "Cost": 2500,
@@ -346,7 +366,27 @@
       "CrewCapacity": 0,
       "TechRequired": "Unresearcheable",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 0,
+          "FOV": 0.0,
+          "MinAltitude": 0,
+          "MaxAltitude": 0,
+          "BestAltitude": 0,
+          "ScanName": "Eyeball Scan",
+          "RequireLight": false,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 0.05
+          },
+          "Load": 0.05
+        }
+      ],
       "Resources": []
     },
     {
@@ -361,7 +401,32 @@
       "CrewCapacity": 0,
       "TechRequired": "Unresearcheable",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 24,
+          "FOV": 4.0,
+          "MinAltitude": 5000,
+          "MaxAltitude": 500000,
+          "BestAltitude": 250000,
+          "ScanName": "Multispectral",
+          "RequireLight": true,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 1.0
+          },
+          "Load": 1.0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatBiomeAnomaly"
+        }
+      ],
       "Resources": []
     },
     {
@@ -376,7 +441,32 @@
       "CrewCapacity": 0,
       "TechRequired": "Unresearcheable",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 1,
+          "FOV": 5.0,
+          "MinAltitude": 5000,
+          "MaxAltitude": 500000,
+          "BestAltitude": 5000,
+          "ScanName": "RADAR",
+          "RequireLight": false,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 0.1
+          },
+          "Load": 0.1
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatAltimetryLoRes"
+        }
+      ],
       "Resources": []
     },
     {
@@ -391,7 +481,32 @@
       "CrewCapacity": 0,
       "TechRequired": "Unresearcheable",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 2,
+          "FOV": 2.0,
+          "MinAltitude": 5000,
+          "MaxAltitude": 800000,
+          "BestAltitude": 750000,
+          "ScanName": "SAR",
+          "RequireLight": false,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 1.5
+          },
+          "Load": 1.5
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatAltimetryHiRes"
+        }
+      ],
       "Resources": []
     },
     {
@@ -406,7 +521,27 @@
       "CrewCapacity": 0,
       "TechRequired": "fieldScience",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 32,
+          "FOV": 1.0,
+          "MinAltitude": 0,
+          "MaxAltitude": 2000,
+          "BestAltitude": 0,
+          "ScanName": "BTDT",
+          "RequireLight": false,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 0.1
+          },
+          "Load": 0.1
+        }
+      ],
       "Resources": []
     },
     {
@@ -421,7 +556,32 @@
       "CrewCapacity": 0,
       "TechRequired": "spaceExploration",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 140,
+          "FOV": 1.5,
+          "MinAltitude": 70000,
+          "MaxAltitude": 400000,
+          "BestAltitude": 300000,
+          "ScanName": "Multispectral",
+          "RequireLight": true,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 1.0
+          },
+          "Load": 1.0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatBiomeAnomaly"
+        }
+      ],
       "Resources": []
     },
     {
@@ -436,7 +596,32 @@
       "CrewCapacity": 0,
       "TechRequired": "basicScience",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 12,
+          "FOV": 3.0,
+          "MinAltitude": 20000,
+          "MaxAltitude": 250000,
+          "BestAltitude": 70000,
+          "ScanName": "Multispectral",
+          "RequireLight": true,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 0.75
+          },
+          "Load": 0.75
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatBiomeAnomaly"
+        }
+      ],
       "Resources": []
     },
     {
@@ -451,7 +636,32 @@
       "CrewCapacity": 0,
       "TechRequired": "advUnmanned",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 140,
+          "FOV": 4.0,
+          "MinAltitude": 100000,
+          "MaxAltitude": 750000,
+          "BestAltitude": 500000,
+          "ScanName": "Multispectral",
+          "RequireLight": true,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 1.5
+          },
+          "Load": 1.5
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatBiomeAnomaly"
+        }
+      ],
       "Resources": []
     },
     {
@@ -466,7 +676,32 @@
       "CrewCapacity": 0,
       "TechRequired": "basicScience",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 1,
+          "FOV": 1.5,
+          "MinAltitude": 5000,
+          "MaxAltitude": 250000,
+          "BestAltitude": 70000,
+          "ScanName": "RADAR",
+          "RequireLight": false,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 1.0
+          },
+          "Load": 1.0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatAltimetryLoRes"
+        }
+      ],
       "Resources": []
     },
     {
@@ -481,7 +716,32 @@
       "CrewCapacity": 0,
       "TechRequired": "electrics",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 1,
+          "FOV": 3.5,
+          "MinAltitude": 50000,
+          "MaxAltitude": 500000,
+          "BestAltitude": 100000,
+          "ScanName": "RADAR",
+          "RequireLight": false,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 1.0
+          },
+          "Load": 1.0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatAltimetryLoRes"
+        }
+      ],
       "Resources": []
     },
     {
@@ -496,7 +756,32 @@
       "CrewCapacity": 0,
       "TechRequired": "precisionEngineering",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 64,
+          "FOV": 1.5,
+          "MinAltitude": 20000,
+          "MaxAltitude": 250000,
+          "BestAltitude": 70000,
+          "ScanName": "Visual",
+          "RequireLight": true,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 0.75
+          },
+          "Load": 0.75
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatVisual"
+        }
+      ],
       "Resources": []
     },
     {
@@ -511,7 +796,32 @@
       "CrewCapacity": 0,
       "TechRequired": "largeUnmanned",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 80,
+          "FOV": 4.0,
+          "MinAltitude": 100000,
+          "MaxAltitude": 1000000,
+          "BestAltitude": 200000,
+          "ScanName": "Visual",
+          "RequireLight": true,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 2.0
+          },
+          "Load": 2.0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatVisual"
+        }
+      ],
       "Resources": []
     },
     {
@@ -526,7 +836,32 @@
       "CrewCapacity": 0,
       "TechRequired": "unmannedTech",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 80,
+          "FOV": 2.5,
+          "MinAltitude": 70000,
+          "MaxAltitude": 500000,
+          "BestAltitude": 350000,
+          "ScanName": "Visual",
+          "RequireLight": true,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 1.5
+          },
+          "Load": 1.5
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatVisual"
+        }
+      ],
       "Resources": []
     },
     {
@@ -541,7 +876,32 @@
       "CrewCapacity": 0,
       "TechRequired": "advExploration",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 256,
+          "FOV": 1.0,
+          "MinAltitude": 20000,
+          "MaxAltitude": 250000,
+          "BestAltitude": 70000,
+          "ScanName": "Resource",
+          "RequireLight": true,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 1.75
+          },
+          "Load": 1.75
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatResources"
+        }
+      ],
       "Resources": []
     },
     {
@@ -556,7 +916,32 @@
       "CrewCapacity": 0,
       "TechRequired": "experimentalScience",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 256,
+          "FOV": 3.0,
+          "MinAltitude": 100000,
+          "MaxAltitude": 750000,
+          "BestAltitude": 500000,
+          "ScanName": "Resource",
+          "RequireLight": true,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 1.25
+          },
+          "Load": 1.25
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatResources"
+        }
+      ],
       "Resources": []
     },
     {
@@ -571,7 +956,32 @@
       "CrewCapacity": 0,
       "TechRequired": "scienceTech",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 256,
+          "FOV": 2.5,
+          "MinAltitude": 70000,
+          "MaxAltitude": 500000,
+          "BestAltitude": 250000,
+          "ScanName": "Resource",
+          "RequireLight": true,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 1.5
+          },
+          "Load": 1.5
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatResources"
+        }
+      ],
       "Resources": []
     },
     {
@@ -586,7 +996,32 @@
       "CrewCapacity": 0,
       "TechRequired": "advElectrics",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 2,
+          "FOV": 1.5,
+          "MinAltitude": 70000,
+          "MaxAltitude": 500000,
+          "BestAltitude": 250000,
+          "ScanName": "SAR",
+          "RequireLight": false,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 2.0
+          },
+          "Load": 2.0
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatAltimetryHiRes"
+        }
+      ],
       "Resources": []
     },
     {
@@ -601,7 +1036,32 @@
       "CrewCapacity": 0,
       "TechRequired": "largeElectrics",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 2,
+          "FOV": 3.0,
+          "MinAltitude": 500000,
+          "MaxAltitude": 750000,
+          "BestAltitude": 700000,
+          "ScanName": "SAR",
+          "RequireLight": false,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 2.5
+          },
+          "Load": 2.5
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatAltimetryHiRes"
+        }
+      ],
       "Resources": []
     },
     {
@@ -616,12 +1076,37 @@
       "CrewCapacity": 0,
       "TechRequired": "experimentalElectrics",
       "VesselType": 0,
-      "Modules": [],
+      "Modules": [
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANSatModule, KSPModelLibrary",
+          "Name": "SCANsat",
+          "SensorType": 10,
+          "FOV": 4.0,
+          "MinAltitude": 250000,
+          "MaxAltitude": 1000000,
+          "BestAltitude": 500000,
+          "ScanName": "SAR",
+          "RequireLight": false,
+          "Electrical": {
+            "$type": "KSPModelLibrary.Data.PartDataModels.ResourceTypes.ElectricalResource, KSPModelLibrary",
+            "Name": "ElectricCharge",
+            "Amount": 0,
+            "MaxAmount": 0,
+            "Rate": 4.5
+          },
+          "Load": 4.5
+        },
+        {
+          "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.SCANExperimentModule, KSPModelLibrary",
+          "Name": "SCANexperiment",
+          "ExperimentType": "SCANsatAltimetryHiRes"
+        }
+      ],
       "Resources": []
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TD-06Decoupler",
+      "Title": "TD-06 Decoupler",
       "Name": "Decoupler_0",
       "Category": "Coupling",
       "Cost": 150,
@@ -642,7 +1127,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TD-12Decoupler",
+      "Title": "TD-12 Decoupler",
       "Name": "Decoupler_1",
       "Category": "Coupling",
       "Cost": 200,
@@ -663,7 +1148,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TD-25Decoupler",
+      "Title": "TD-25 Decoupler",
       "Name": "Decoupler_2",
       "Category": "Coupling",
       "Cost": 300,
@@ -684,7 +1169,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TD-37Decoupler",
+      "Title": "TD-37 Decoupler",
       "Name": "Decoupler_3",
       "Category": "Coupling",
       "Cost": 375,
@@ -705,7 +1190,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TS-06StackSeparator",
+      "Title": "TS-06 Stack Separator",
       "Name": "Separator_0",
       "Category": "Coupling",
       "Cost": 215,
@@ -726,7 +1211,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TS-12StackSeparator",
+      "Title": "TS-12 Stack Separator",
       "Name": "Separator_1",
       "Category": "Coupling",
       "Cost": 275,
@@ -747,7 +1232,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TS-25StackSeparator",
+      "Title": "TS-25 Stack Separator",
       "Name": "Separator_2",
       "Category": "Coupling",
       "Cost": 400,
@@ -768,7 +1253,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TS-37StackSeparator",
+      "Title": "TS-37 Stack Separator",
       "Name": "Separator_3",
       "Category": "Coupling",
       "Cost": 500,
@@ -789,7 +1274,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_TST_0221//DeepSpaceTelescope",
+      "Title": "#autoLOC_TST_0221",
       "Name": "tarsierAdvSpaceTelescope",
       "Category": "Science",
       "Cost": 25000,
@@ -804,7 +1289,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_TST_0053//ChemCam",
+      "Title": "#autoLOC_TST_0053",
       "Name": "tarsierChemCam",
       "Category": "Science",
       "Cost": 7000,
@@ -819,7 +1304,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_TST_0226//ScienceStorageDevice(Small)",
+      "Title": "#autoLOC_TST_0226",
       "Name": "scienceHardDrive",
       "Category": "Science",
       "Cost": 900,
@@ -834,7 +1319,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_TST_0229//ScienceStorageDevice(Large)",
+      "Title": "#autoLOC_TST_0229",
       "Name": "scienceHardDriveLarge",
       "Category": "Science",
       "Cost": 1800,
@@ -849,7 +1334,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_TST_0058//SpaceTelescope",
+      "Title": "#autoLOC_TST_0058",
       "Name": "tarsierSpaceTelescope",
       "Category": "Science",
       "Cost": 10000,
@@ -908,7 +1393,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 120.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -943,7 +1429,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 60.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -978,7 +1465,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 120.0
         }
       ],
       "Resources": []
@@ -1045,7 +1533,8 @@
               "DumpExcess": true
             }
           ],
-          "Charge": 0.0
+          "Charge": 1350.0,
+          "Load": 0.0
         }
       ],
       "Resources": [
@@ -1142,7 +1631,16 @@
           "EngineerBonusBase": 0.0,
           "EngineerEfficiencyFactor": 0.0,
           "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
+          "ResourceInputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "ElectricCharge",
+              "Ratio": 7.5,
+              "FlowMode": 0
+            }
+          ],
+          "Load": 7.5
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceHarvesterModule, KSPModelLibrary",
@@ -1155,7 +1653,8 @@
           "EngineerBonusBase": 0.0,
           "EngineerEfficiencyFactor": 0.0,
           "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
+          "ResourceInputs": [],
+          "Load": 0.0
         }
       ],
       "Resources": []
@@ -1214,7 +1713,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 24.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -1249,7 +1749,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 24.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -1284,7 +1785,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 24.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -1319,7 +1821,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 24.0
         }
       ],
       "Resources": []
@@ -1392,7 +1895,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AerodynamicNoseCone",
+      "Title": "Aerodynamic Nose Cone",
       "Name": "noseCone",
       "Category": "Aero",
       "Cost": 240,
@@ -1422,7 +1925,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "XM-G50RadialAirIntake",
+      "Title": "XM-G50 Radial Air Intake",
       "Name": "airScoop",
       "Category": "Aero",
       "Cost": 250,
@@ -1452,7 +1955,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FAT-455AeroplaneControlSurface",
+      "Title": "FAT-455 Aeroplane Control Surface",
       "Name": "airlinerCtrlSrf",
       "Category": "Aero",
       "Cost": 800,
@@ -1467,7 +1970,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FAT-455AeroplaneMainWing",
+      "Title": "FAT-455 Aeroplane Main Wing",
       "Name": "airlinerMainWing",
       "Category": "Aero",
       "Cost": 2800,
@@ -1490,7 +1993,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FAT-455AeroplaneTailFin",
+      "Title": "FAT-455 Aeroplane Tail Fin",
       "Name": "airlinerTailFin",
       "Category": "Aero",
       "Cost": 1000,
@@ -1505,7 +2008,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AdvancedCanard",
+      "Title": "Advanced Canard",
       "Name": "AdvancedCanard",
       "Category": "Aero",
       "Cost": 800,
@@ -1520,7 +2023,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "StandardCanard",
+      "Title": "Standard Canard",
       "Name": "CanardController",
       "Category": "Aero",
       "Cost": 720,
@@ -1535,7 +2038,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SweptWings",
+      "Title": "Swept Wings",
       "Name": "sweptWing",
       "Category": "Aero",
       "Cost": 620,
@@ -1550,7 +2053,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TailFin",
+      "Title": "Tail Fin",
       "Name": "tailfin",
       "Category": "Aero",
       "Cost": 600,
@@ -1565,7 +2068,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "BasicFin",
+      "Title": "Basic Fin",
       "Name": "basicFin",
       "Category": "Aero",
       "Cost": 25,
@@ -1580,7 +2083,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "CircularIntake",
+      "Title": "Circular Intake",
       "Name": "CircularIntake",
       "Category": "Aero",
       "Cost": 680,
@@ -1610,7 +2113,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ShockConeIntake",
+      "Title": "Shock Cone Intake",
       "Name": "shockConeIntake",
       "Category": "Aero",
       "Cost": 3050,
@@ -1640,7 +2143,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "CH-J3Fly-By-WireAvionicsHub",
+      "Title": "CH-J3 Fly-By-Wire Avionics Hub",
       "Name": "avionicsNoseCone",
       "Category": "Control",
       "Cost": 5200,
@@ -1655,7 +2158,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AdvancedNoseCone-TypeA",
+      "Title": "Advanced Nose Cone - Type A",
       "Name": "pointyNoseConeA",
       "Category": "Aero",
       "Cost": 320,
@@ -1670,7 +2173,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AdvancedNoseCone-TypeB",
+      "Title": "Advanced Nose Cone - Type B",
       "Name": "pointyNoseConeB",
       "Category": "Aero",
       "Cost": 320,
@@ -1685,7 +2188,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "NCSAdapter",
+      "Title": "NCS Adapter",
       "Name": "noseConeAdapter",
       "Category": "Propulsion",
       "Cost": 320,
@@ -1708,7 +2211,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProtectiveRocketNoseConeMk7",
+      "Title": "Protective Rocket Nose Cone Mk7",
       "Name": "rocketNoseCone_v2",
       "Category": "Aero",
       "Cost": 450,
@@ -1723,7 +2226,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProtectiveRocketNoseConeMk12A",
+      "Title": "Protective Rocket Nose Cone Mk12A",
       "Name": "rocketNoseConeSize3",
       "Category": "Aero",
       "Cost": 850,
@@ -1738,7 +2241,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SmallNoseCone",
+      "Title": "Small Nose Cone",
       "Name": "standardNoseCone",
       "Category": "Aero",
       "Cost": 180,
@@ -1753,7 +2256,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TailConnectorA",
+      "Title": "Tail Connector A",
       "Name": "airplaneTail",
       "Category": "Aero",
       "Cost": 675,
@@ -1768,7 +2271,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TailConnectorB",
+      "Title": "Tail Connector B",
       "Name": "airplaneTailB",
       "Category": "Aero",
       "Cost": 675,
@@ -1783,7 +2286,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AE-FF1AirstreamProtectiveShell(1.25m)",
+      "Title": "AE-FF1 Airstream Protective Shell (1.25m)",
       "Name": "fairingSize1",
       "Category": "Payload",
       "Cost": 300,
@@ -1798,7 +2301,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AE-FF2AirstreamProtectiveShell(2.5m)",
+      "Title": "AE-FF2 Airstream Protective Shell (2.5m)",
       "Name": "fairingSize2",
       "Category": "Payload",
       "Cost": 600,
@@ -1813,7 +2316,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AE-FF3AirstreamProtectiveShell(3.75m)",
+      "Title": "AE-FF3 Airstream Protective Shell (3.75m)",
       "Name": "fairingSize3",
       "Category": "Payload",
       "Cost": 900,
@@ -1828,7 +2331,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HeatShield(0.625m)",
+      "Title": "Heat Shield (0.625m)",
       "Name": "HeatShield0",
       "Category": "Thermal",
       "Cost": 150,
@@ -1849,7 +2352,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HeatShield(1.25m)",
+      "Title": "Heat Shield (1.25m)",
       "Name": "HeatShield1",
       "Category": "Thermal",
       "Cost": 300,
@@ -1870,7 +2373,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HeatShield(2.5m)",
+      "Title": "Heat Shield (2.5m)",
       "Name": "HeatShield2",
       "Category": "Thermal",
       "Cost": 600,
@@ -1891,7 +2394,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HeatShield(3.75m)",
+      "Title": "Heat Shield (3.75m)",
       "Name": "HeatShield3",
       "Category": "Thermal",
       "Cost": 1100,
@@ -1912,7 +2415,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HeatShield(10m)",
+      "Title": "Heat Shield (10m)",
       "Name": "InflatableHeatShield",
       "Category": "Thermal",
       "Cost": 2400,
@@ -1933,7 +2436,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AdjustableRampIntake(Radial)",
+      "Title": "Adjustable Ramp Intake (Radial)",
       "Name": "IntakeRadialLong",
       "Category": "Aero",
       "Cost": 900,
@@ -1963,7 +2466,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SmallCircularIntake",
+      "Title": "Small Circular Intake",
       "Name": "miniIntake",
       "Category": "Aero",
       "Cost": 250,
@@ -1993,7 +2496,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProtectiveRocketNoseConeMk7",
+      "Title": "Protective Rocket Nose Cone Mk7",
       "Name": "rocketNoseCone",
       "Category": "none",
       "Cost": 450,
@@ -2008,7 +2511,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AdjustableRampIntake",
+      "Title": "Adjustable Ramp Intake",
       "Name": "ramAirIntake",
       "Category": "Aero",
       "Cost": 2680,
@@ -2038,7 +2541,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Big-SDeltaWing",
+      "Title": "Big-S Delta Wing",
       "Name": "wingShuttleDelta",
       "Category": "Aero",
       "Cost": 3000,
@@ -2061,7 +2564,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Big-SElevon1",
+      "Title": "Big-S Elevon 1",
       "Name": "wingShuttleElevon1",
       "Category": "Aero",
       "Cost": 950,
@@ -2076,7 +2579,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Big-SElevon2",
+      "Title": "Big-S Elevon 2",
       "Name": "wingShuttleElevon2",
       "Category": "Aero",
       "Cost": 1300,
@@ -2091,7 +2594,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Big-SSpaceplaneTailFin",
+      "Title": "Big-S Spaceplane Tail Fin",
       "Name": "wingShuttleRudder",
       "Category": "Aero",
       "Cost": 2500,
@@ -2106,7 +2609,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Big-SWingStrake",
+      "Title": "Big-S Wing Strake",
       "Name": "wingShuttleStrake",
       "Category": "Aero",
       "Cost": 1000,
@@ -2129,7 +2632,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AV-R8Winglet",
+      "Title": "AV-R8 Winglet",
       "Name": "R8winglet",
       "Category": "Aero",
       "Cost": 640,
@@ -2144,7 +2647,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AV-T1Winglet",
+      "Title": "AV-T1 Winglet",
       "Name": "winglet",
       "Category": "Aero",
       "Cost": 500,
@@ -2159,7 +2662,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Delta-DeluxeWinglet",
+      "Title": "Delta-Deluxe Winglet",
       "Name": "winglet3",
       "Category": "Aero",
       "Cost": 600,
@@ -2174,7 +2677,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "WingConnectorTypeA",
+      "Title": "Wing Connector Type A",
       "Name": "wingConnector",
       "Category": "Aero",
       "Cost": 500,
@@ -2189,7 +2692,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "WingConnectorTypeB",
+      "Title": "Wing Connector Type B",
       "Name": "wingConnector2",
       "Category": "Aero",
       "Cost": 500,
@@ -2204,7 +2707,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "WingConnectorTypeC",
+      "Title": "Wing Connector Type C",
       "Name": "wingConnector3",
       "Category": "Aero",
       "Cost": 250,
@@ -2219,7 +2722,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "WingConnectorTypeD",
+      "Title": "Wing Connector Type D",
       "Name": "wingConnector4",
       "Category": "Aero",
       "Cost": 100,
@@ -2234,7 +2737,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "WingConnectorTypeE",
+      "Title": "Wing Connector Type E",
       "Name": "wingConnector5",
       "Category": "Aero",
       "Cost": 100,
@@ -2249,7 +2752,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "DeltaWing",
+      "Title": "Delta Wing",
       "Name": "deltaWing",
       "Category": "Aero",
       "Cost": 600,
@@ -2264,7 +2767,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SmallDeltaWing",
+      "Title": "Small Delta Wing",
       "Name": "delta_small",
       "Category": "Aero",
       "Cost": 200,
@@ -2279,7 +2782,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Elevon1",
+      "Title": "Elevon 1",
       "Name": "StandardCtrlSrf",
       "Category": "Aero",
       "Cost": 400,
@@ -2294,7 +2797,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Elevon2",
+      "Title": "Elevon 2",
       "Name": "elevon2",
       "Category": "Aero",
       "Cost": 550,
@@ -2309,7 +2812,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Elevon3",
+      "Title": "Elevon 3",
       "Name": "elevon3",
       "Category": "Aero",
       "Cost": 650,
@@ -2324,7 +2827,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Elevon4",
+      "Title": "Elevon 4",
       "Name": "smallCtrlSrf",
       "Category": "Aero",
       "Cost": 400,
@@ -2339,7 +2842,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Elevon5",
+      "Title": "Elevon 5",
       "Name": "elevon5",
       "Category": "Aero",
       "Cost": 800,
@@ -2354,7 +2857,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "WingStrake",
+      "Title": "Wing Strake",
       "Name": "wingStrake",
       "Category": "Aero",
       "Cost": 400,
@@ -2369,7 +2872,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "StructuralWingTypeA",
+      "Title": "Structural Wing Type A",
       "Name": "structuralWing",
       "Category": "Aero",
       "Cost": 500,
@@ -2384,7 +2887,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "StructuralWingTypeB",
+      "Title": "Structural Wing Type B",
       "Name": "structuralWing2",
       "Category": "Aero",
       "Cost": 500,
@@ -2399,7 +2902,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "StructuralWingTypeC",
+      "Title": "Structural Wing Type C",
       "Name": "structuralWing3",
       "Category": "Aero",
       "Cost": 300,
@@ -2414,7 +2917,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "StructuralWingTypeD",
+      "Title": "Structural Wing Type D",
       "Name": "structuralWing4",
       "Category": "Aero",
       "Cost": 150,
@@ -2429,7 +2932,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SweptWingTypeA",
+      "Title": "Swept Wing Type A",
       "Name": "sweptWing1",
       "Category": "Aero",
       "Cost": 500,
@@ -2444,7 +2947,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SweptWingTypeB",
+      "Title": "Swept Wing Type B",
       "Name": "sweptWing2",
       "Category": "Aero",
       "Cost": 500,
@@ -2459,7 +2962,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SEQ-9ContainerModule",
+      "Title": "#autoLOC_6012021",
       "Name": "cargoContainer",
       "Category": "Cargo",
       "Cost": 600,
@@ -2474,7 +2977,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SEQ-3CargoStorageUnit",
+      "Title": "#autoLOC_8004433",
       "Name": "smallCargoContainer",
       "Category": "Cargo",
       "Cost": 200,
@@ -2489,7 +2992,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EVAFuelCylinders",
+      "Title": "EVA Fuel Cylinders",
       "Name": "evaCylinder",
       "Category": "Cargo",
       "Cost": 50,
@@ -2504,7 +3007,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EVAJetpack",
+      "Title": "EVA Jetpack",
       "Name": "evaJetpack",
       "Category": "Cargo",
       "Cost": 25,
@@ -2519,7 +3022,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PersonalParachute",
+      "Title": "Personal Parachute",
       "Name": "evaChute",
       "Category": "Cargo",
       "Cost": 10,
@@ -2534,7 +3037,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EVARepairKit",
+      "Title": "EVA Repair Kit",
       "Name": "evaRepairKit",
       "Category": "Cargo",
       "Cost": 75,
@@ -2549,7 +3052,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EVAExperimentsKit",
+      "Title": "EVA Experiments Kit",
       "Name": "evaScienceKit",
       "Category": "Cargo",
       "Cost": 150,
@@ -2564,7 +3067,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SEQ-24CargoStorageUnit",
+      "Title": "#autoLOC_8012054",
       "Name": "CargoStorageUnit",
       "Category": "Cargo",
       "Cost": 1500,
@@ -2579,7 +3082,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SEQ-3CConformalStorageUnit",
+      "Title": "#autoLOC_8012057",
       "Name": "ConformalStorageUnit",
       "Category": "Cargo",
       "Cost": 100,
@@ -2594,7 +3097,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AdvancedReactionWheelModule,Large",
+      "Title": "Advanced Reaction Wheel Module, Large",
       "Name": "asasmodule1-2",
       "Category": "Control",
       "Cost": 2100,
@@ -2625,7 +3128,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PPD-12CupolaModule",
+      "Title": "PPD-12 Cupola Module",
       "Name": "cupola",
       "Category": "Pods",
       "Cost": 1600,
@@ -2696,7 +3199,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EAS-1ExternalCommandSeat",
+      "Title": "EAS-1 External Command Seat",
       "Name": "seatExternalCmd",
       "Category": "Pods",
       "Cost": 200,
@@ -2711,7 +3214,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PPD-10HitchhikerStorageContainer",
+      "Title": "PPD-10 Hitchhiker Storage Container",
       "Name": "crewCabin",
       "Category": "Utility",
       "Cost": 4000,
@@ -2734,7 +3237,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AdvancedInlineStabilizer",
+      "Title": "Advanced Inline Stabilizer",
       "Name": "advSasModule",
       "Category": "Control",
       "Cost": 1200,
@@ -2765,7 +3268,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SmallInlineReactionWheel",
+      "Title": "Small Inline Reaction Wheel",
       "Name": "sasModule",
       "Category": "Control",
       "Cost": 600,
@@ -2796,7 +3299,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk1-3CommandPod",
+      "Title": "Mk1-3 Command Pod",
       "Name": "mk1-3pod",
       "Category": "Pods",
       "Cost": 3800,
@@ -2873,7 +3376,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk1Cockpit",
+      "Title": "Mk1 Cockpit",
       "Name": "Mark1Cockpit",
       "Category": "Pods",
       "Cost": 1250,
@@ -2944,7 +3447,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk1CrewCabin",
+      "Title": "Mk1 Crew Cabin",
       "Name": "MK1CrewCabin",
       "Category": "Utility",
       "Cost": 550,
@@ -2977,7 +3480,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk1InlineCockpit",
+      "Title": "Mk1 Inline Cockpit",
       "Name": "Mark2Cockpit",
       "Category": "Pods",
       "Cost": 1600,
@@ -3048,7 +3551,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk1LanderCan",
+      "Title": "Mk1 Lander Can",
       "Name": "landerCabinSmall",
       "Category": "Pods",
       "Cost": 1500,
@@ -3119,7 +3622,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk1CommandPod",
+      "Title": "Mk1 Command Pod",
       "Name": "mk1pod",
       "Category": "none",
       "Cost": 600,
@@ -3190,7 +3693,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk1CommandPod",
+      "Title": "Mk1 Command Pod",
       "Name": "mk1pod_v2",
       "Category": "Pods",
       "Cost": 600,
@@ -3261,7 +3764,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2InlineCockpit",
+      "Title": "Mk2 Inline Cockpit",
       "Name": "mk2Cockpit_Inline",
       "Category": "Pods",
       "Cost": 3500,
@@ -3332,7 +3835,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2Cockpit",
+      "Title": "Mk2 Cockpit",
       "Name": "mk2Cockpit_Standard",
       "Category": "Pods",
       "Cost": 3500,
@@ -3403,7 +3906,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "MK2DroneCore",
+      "Title": "MK2 Drone Core",
       "Name": "mk2DroneCore",
       "Category": "Pods",
       "Cost": 2700,
@@ -3465,7 +3968,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2LanderCan",
+      "Title": "Mk2 Lander Can",
       "Name": "mk2LanderCabin",
       "Category": "none",
       "Cost": 3250,
@@ -3536,11 +4039,11 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2LanderCan",
+      "Title": "Mk2 Lander Can",
       "Name": "mk2LanderCabin_v2",
       "Category": "Pods",
       "Cost": 3250,
-      "Mass": 0.0,
+      "Mass": 1.355,
       "DryMass": 0.0,
       "WetMass": 0.0,
       "CrewCapacity": 2,
@@ -3607,7 +4110,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3Cockpit",
+      "Title": "Mk3 Cockpit",
       "Name": "mk3Cockpit_Shuttle",
       "Category": "Pods",
       "Cost": 10000,
@@ -3678,7 +4181,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "MPOProbe",
+      "Title": "MPO Probe",
       "Name": "MpoProbe",
       "Category": "Pods",
       "Cost": 9900,
@@ -3754,7 +4257,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "MTMStage",
+      "Title": "MTM Stage",
       "Name": "MtmStage",
       "Category": "Pods",
       "Cost": 21500,
@@ -3823,7 +4326,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneQBE",
+      "Title": "Probodobodyne QBE",
       "Name": "probeCoreCube",
       "Category": "Pods",
       "Cost": 360,
@@ -3870,7 +4373,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneHECS",
+      "Title": "Probodobodyne HECS",
       "Name": "probeCoreHex",
       "Category": "none",
       "Cost": 650,
@@ -3932,7 +4435,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneHECS",
+      "Title": "Probodobodyne HECS",
       "Name": "probeCoreHex_v2",
       "Category": "Pods",
       "Cost": 650,
@@ -3994,7 +4497,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneOKTO",
+      "Title": "Probodobodyne OKTO",
       "Name": "probeCoreOcto",
       "Category": "none",
       "Cost": 450,
@@ -4056,7 +4559,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneOKTO2",
+      "Title": "Probodobodyne OKTO2",
       "Name": "probeCoreOcto2",
       "Category": "none",
       "Cost": 1480,
@@ -4103,7 +4606,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneOKTO2",
+      "Title": "Probodobodyne OKTO2",
       "Name": "probeCoreOcto2_v2",
       "Category": "Pods",
       "Cost": 1480,
@@ -4150,7 +4653,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneOKTO",
+      "Title": "Probodobodyne OKTO",
       "Name": "probeCoreOcto_v2",
       "Category": "Pods",
       "Cost": 450,
@@ -4212,7 +4715,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneRoveMate",
+      "Title": "Probodobodyne RoveMate",
       "Name": "roverBody",
       "Category": "none",
       "Cost": 800,
@@ -4259,7 +4762,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneRoveMate",
+      "Title": "Probodobodyne RoveMate",
       "Name": "roverBody_v2",
       "Category": "Pods",
       "Cost": 800,
@@ -4306,7 +4809,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RC-L01RemoteGuidanceUnit",
+      "Title": "RC-L01 Remote Guidance Unit",
       "Name": "probeStackLarge",
       "Category": "Pods",
       "Cost": 3400,
@@ -4368,7 +4871,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RC-001SRemoteGuidanceUnit",
+      "Title": "RC-001S Remote Guidance Unit",
       "Name": "probeStackSmall",
       "Category": "Pods",
       "Cost": 2250,
@@ -4430,7 +4933,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneStayputnik",
+      "Title": "Probodobodyne Stayputnik",
       "Name": "probeCoreSphere",
       "Category": "none",
       "Cost": 300,
@@ -4477,7 +4980,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneStayputnik",
+      "Title": "Probodobodyne Stayputnik",
       "Name": "probeCoreSphere_v2",
       "Category": "Pods",
       "Cost": 300,
@@ -4524,7 +5027,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FTX-2ExternalFuelDuct",
+      "Title": "FTX-2 External Fuel Duct",
       "Name": "fuelLine",
       "Category": "FuelTank",
       "Cost": 150,
@@ -4539,7 +5042,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EAS-4StrutConnector",
+      "Title": "EAS-4 Strut Connector",
       "Name": "strutConnector",
       "Category": "Structural",
       "Cost": 42,
@@ -4554,7 +5057,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-L1x6PhotovoltaicPanels",
+      "Title": "SP-L 1x6 Photovoltaic Panels",
       "Name": "solarPanels2",
       "Category": "Electrical",
       "Cost": 440,
@@ -4576,7 +5079,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "OX-4L1x6PhotovoltaicPanels",
+      "Title": "OX-4L 1x6 Photovoltaic Panels",
       "Name": "solarPanels4",
       "Category": "Electrical",
       "Cost": 380,
@@ -4598,7 +5101,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-W3x2PhotovoltaicPanels",
+      "Title": "SP-W 3x2 Photovoltaic Panels",
       "Name": "solarPanels1",
       "Category": "Electrical",
       "Cost": 440,
@@ -4620,7 +5123,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "OX-4W3x2PhotovoltaicPanels",
+      "Title": "OX-4W 3x2 Photovoltaic Panels",
       "Name": "solarPanels3",
       "Category": "Electrical",
       "Cost": 380,
@@ -4642,7 +5145,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "GigantorXLSolarArray",
+      "Title": "Gigantor XL Solar Array",
       "Name": "largeSolarPanel",
       "Category": "Electrical",
       "Cost": 3000,
@@ -4664,7 +5167,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "OX-STATPhotovoltaicPanels",
+      "Title": "OX-STAT Photovoltaic Panels",
       "Name": "solarPanels5",
       "Category": "Electrical",
       "Cost": 75,
@@ -4686,7 +5189,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PB-NUKRadioisotopeThermoelectricGenerator",
+      "Title": "PB-NUK Radioisotope Thermoelectric Generator",
       "Name": "rtg",
       "Category": "Electrical",
       "Cost": 23300,
@@ -4718,7 +5221,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Z-100RechargeableBatteryPack",
+      "Title": "Z-100 Rechargeable Battery Pack",
       "Name": "batteryPack",
       "Category": "Electrical",
       "Cost": 80,
@@ -4741,7 +5244,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Z-1kRechargeableBatteryBank",
+      "Title": "Z-1k Rechargeable Battery Bank",
       "Name": "batteryBank",
       "Category": "Electrical",
       "Cost": 880,
@@ -4764,7 +5267,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Z-200RechargeableBatteryBank",
+      "Title": "Z-200 Rechargeable Battery Bank",
       "Name": "batteryBankMini",
       "Category": "Electrical",
       "Cost": 360,
@@ -4787,7 +5290,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Z-400RechargeableBattery",
+      "Title": "Z-400 Rechargeable Battery",
       "Name": "ksp_r_largeBatteryPack",
       "Category": "Electrical",
       "Cost": 550,
@@ -4810,7 +5313,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Z-4KRechargeableBatteryBank",
+      "Title": "Z-4K Rechargeable Battery Bank",
       "Name": "batteryBankLarge",
       "Category": "Electrical",
       "Cost": 4500,
@@ -4833,7 +5336,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "IX-6315\"Dawn\"ElectricPropulsionSystem",
+      "Title": "IX-6315 \"Dawn\" Electric Propulsion System",
       "Name": "ionEngine",
       "Category": "Engine",
       "Cost": 8000,
@@ -4873,7 +5376,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "J-404\"Panther\"AfterburningTurbofan",
+      "Title": "J-404 \"Panther\" Afterburning Turbofan",
       "Name": "turboJet",
       "Category": "Engine",
       "Cost": 2000,
@@ -4969,7 +5472,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "J-33\"Wheesley\"TurbofanEngine",
+      "Title": "J-33 \"Wheesley\" Turbofan Engine",
       "Name": "JetEngine",
       "Category": "Engine",
       "Cost": 1400,
@@ -5023,7 +5526,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "J-90\"Goliath\"TurbofanEngine",
+      "Title": "J-90 \"Goliath\" Turbofan Engine",
       "Name": "turboFanSize2",
       "Category": "Engine",
       "Cost": 2600,
@@ -5091,7 +5594,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "J-X4\"Whiplash\"TurboRamjetEngine",
+      "Title": "J-X4 \"Whiplash\" Turbo Ramjet Engine",
       "Name": "turboFanEngine",
       "Category": "Engine",
       "Cost": 2250,
@@ -5145,7 +5648,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "24-77\"Twitch\"LiquidFuelEngine",
+      "Title": "24-77 \"Twitch\" Liquid Fuel Engine",
       "Name": "smallRadialEngine",
       "Category": "none",
       "Cost": 400,
@@ -5185,7 +5688,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "24-77\"Twitch\"LiquidFuelEngine",
+      "Title": "24-77 \"Twitch\" Liquid Fuel Engine",
       "Name": "smallRadialEngine_v2",
       "Category": "Engine",
       "Cost": 230,
@@ -5225,7 +5728,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "48-7S\"Spark\"LiquidFuelEngine",
+      "Title": "48-7S \"Spark\" Liquid Fuel Engine",
       "Name": "liquidEngineMini",
       "Category": "none",
       "Cost": 240,
@@ -5265,7 +5768,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "48-7S\"Spark\"LiquidFuelEngine",
+      "Title": "48-7S \"Spark\" Liquid Fuel Engine",
       "Name": "liquidEngineMini_v2",
       "Category": "Engine",
       "Cost": 240,
@@ -5305,7 +5808,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "T-1ToroidalAerospike\"Dart\"LiquidFuelEngine",
+      "Title": "T-1 Toroidal Aerospike \"Dart\" Liquid Fuel Engine",
       "Name": "toroidalAerospike",
       "Category": "Engine",
       "Cost": 3850,
@@ -5359,7 +5862,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-1\"Ant\"LiquidFuelEngine",
+      "Title": "LV-1 \"Ant\" Liquid Fuel Engine",
       "Name": "microEngine",
       "Category": "none",
       "Cost": 110,
@@ -5399,7 +5902,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-1R\"Spider\"LiquidFuelEngine",
+      "Title": "LV-1R \"Spider\" Liquid Fuel Engine",
       "Name": "radialEngineMini",
       "Category": "none",
       "Cost": 120,
@@ -5439,7 +5942,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-1R\"Spider\"LiquidFuelEngine",
+      "Title": "LV-1R \"Spider\" Liquid Fuel Engine",
       "Name": "radialEngineMini_v2",
       "Category": "Engine",
       "Cost": 120,
@@ -5479,7 +5982,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-1\"Ant\"LiquidFuelEngine",
+      "Title": "LV-1 \"Ant\" Liquid Fuel Engine",
       "Name": "microEngine_v2",
       "Category": "Engine",
       "Cost": 110,
@@ -5519,7 +6022,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-909\"Terrier\"LiquidFuelEngine",
+      "Title": "LV-909 \"Terrier\" Liquid Fuel Engine",
       "Name": "liquidEngine3",
       "Category": "none",
       "Cost": 390,
@@ -5559,7 +6062,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-909\"Terrier\"LiquidFuelEngine",
+      "Title": "LV-909 \"Terrier\" Liquid Fuel Engine",
       "Name": "liquidEngine3_v2",
       "Category": "Engine",
       "Cost": 390,
@@ -5599,7 +6102,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-N\"Nerv\"AtomicRocketMotor",
+      "Title": "LV-N \"Nerv\" Atomic Rocket Motor",
       "Name": "nuclearEngine",
       "Category": "Engine",
       "Cost": 10000,
@@ -5646,7 +6149,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-T30\"Reliant\"LiquidFuelEngine",
+      "Title": "LV-T30 \"Reliant\" Liquid Fuel Engine",
       "Name": "liquidEngine",
       "Category": "Engine",
       "Cost": 1100,
@@ -5700,7 +6203,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-T45\"Swivel\"LiquidFuelEngine",
+      "Title": "LV-T45 \"Swivel\" Liquid Fuel Engine",
       "Name": "liquidEngine2",
       "Category": "Engine",
       "Cost": 1200,
@@ -5754,7 +6257,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RE-M3\"Mainsail\"LiquidFuelEngine",
+      "Title": "RE-M3 \"Mainsail\" Liquid Fuel Engine",
       "Name": "liquidEngine1-2",
       "Category": "none",
       "Cost": 13000,
@@ -5808,7 +6311,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RE-M3\"Mainsail\"LiquidFuelEngine",
+      "Title": "RE-M3 \"Mainsail\" Liquid Fuel Engine",
       "Name": "liquidEngineMainsail_v2",
       "Category": "Engine",
       "Cost": 13000,
@@ -5862,7 +6365,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk-55\"Thud\"LiquidFuelEngine",
+      "Title": "Mk-55 \"Thud\" Liquid Fuel Engine",
       "Name": "radialLiquidEngine1-2",
       "Category": "Engine",
       "Cost": 820,
@@ -5902,7 +6405,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RE-L10\"Poodle\"LiquidFuelEngine",
+      "Title": "RE-L10 \"Poodle\" Liquid Fuel Engine",
       "Name": "liquidEngine2-2",
       "Category": "none",
       "Cost": 1300,
@@ -5956,7 +6459,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RE-L10\"Poodle\"LiquidFuelEngine",
+      "Title": "RE-L10 \"Poodle\" Liquid Fuel Engine",
       "Name": "liquidEngine2-2_v2",
       "Category": "Engine",
       "Cost": 1300,
@@ -6010,7 +6513,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RE-I5\"Skipper\"LiquidFuelEngine",
+      "Title": "RE-I5 \"Skipper\" Liquid Fuel Engine",
       "Name": "engineLargeSkipper",
       "Category": "none",
       "Cost": 5300,
@@ -6064,7 +6567,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RE-I5\"Skipper\"LiquidFuelEngine",
+      "Title": "RE-I5 \"Skipper\" Liquid Fuel Engine",
       "Name": "engineLargeSkipper_v2",
       "Category": "Engine",
       "Cost": 5300,
@@ -6118,7 +6621,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "S3KS-25\"Vector\"LiquidFuelEngine",
+      "Title": "S3 KS-25 \"Vector\" Liquid Fuel Engine",
       "Name": "SSME",
       "Category": "Engine",
       "Cost": 18000,
@@ -6172,7 +6675,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "S1SRB-KD25k\"Kickback\"SolidFuelBooster",
+      "Title": "S1 SRB-KD25k \"Kickback\" Solid Fuel Booster",
       "Name": "MassiveBooster",
       "Category": "Engine",
       "Cost": 2700,
@@ -6213,7 +6716,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "J-20\"Juno\"BasicJetEngine",
+      "Title": "J-20 \"Juno\" Basic Jet Engine",
       "Name": "miniJetEngine",
       "Category": "Engine",
       "Cost": 450,
@@ -6267,7 +6770,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "O-10\"Puff\"MonoPropellantFuelEngine",
+      "Title": "O-10 \"Puff\" MonoPropellant Fuel Engine",
       "Name": "omsEngine",
       "Category": "Engine",
       "Cost": 150,
@@ -6300,7 +6803,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "CR-7R.A.P.I.E.R.Engine",
+      "Title": "CR-7 R.A.P.I.E.R. Engine",
       "Name": "RAPIER",
       "Category": "Engine",
       "Cost": 6000,
@@ -6368,7 +6871,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RT-10\"Hammer\"SolidFuelBooster",
+      "Title": "RT-10 \"Hammer\" Solid Fuel Booster",
       "Name": "solidBooster_v2",
       "Category": "Engine",
       "Cost": 400,
@@ -6409,7 +6912,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RT-5\"Flea\"SolidFuelBooster",
+      "Title": "RT-5 \"Flea\" Solid Fuel Booster",
       "Name": "solidBooster_sm_v2",
       "Category": "Engine",
       "Cost": 200,
@@ -6450,7 +6953,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LFBKR-1x2\"Twin-Boar\"LiquidFuelEngine",
+      "Title": "LFB KR-1x2 \"Twin-Boar\" Liquid Fuel Engine",
       "Name": "Size2LFB",
       "Category": "none",
       "Cost": 17000,
@@ -6505,7 +7008,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LFBKR-1x2\"Twin-Boar\"LiquidFuelEngine",
+      "Title": "LFB KR-1x2 \"Twin-Boar\" Liquid Fuel Engine",
       "Name": "Size2LFB_v2",
       "Category": "Engine",
       "Cost": 17000,
@@ -6560,7 +7063,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneKR-2L+\"Rhino\"LiquidFuelEngine",
+      "Title": "Kerbodyne KR-2L+ \"Rhino\" Liquid Fuel Engine",
       "Name": "Size3AdvancedEngine",
       "Category": "Engine",
       "Cost": 25000,
@@ -6614,7 +7117,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "S3KS-25x4\"Mammoth\"LiquidFuelEngine",
+      "Title": "S3 KS-25x4 \"Mammoth\" Liquid Fuel Engine",
       "Name": "Size3EngineCluster",
       "Category": "Engine",
       "Cost": 39000,
@@ -6668,7 +7171,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "BACC\"Thumper\"SolidFuelBooster",
+      "Title": "BACC \"Thumper\" Solid Fuel Booster",
       "Name": "solidBooster1-1",
       "Category": "Engine",
       "Cost": 850,
@@ -6709,7 +7212,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RT-10\"Hammer\"SolidFuelBooster",
+      "Title": "RT-10 \"Hammer\" Solid Fuel Booster",
       "Name": "solidBooster",
       "Category": "none",
       "Cost": 400,
@@ -6750,7 +7253,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RT-5\"Flea\"SolidFuelBooster",
+      "Title": "RT-5 \"Flea\" Solid Fuel Booster",
       "Name": "solidBooster_sm",
       "Category": "none",
       "Cost": 200,
@@ -6791,7 +7294,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "S2-17\"Thoroughbred\"SolidFuelBooster",
+      "Title": "S2-17 \"Thoroughbred\" Solid Fuel Booster",
       "Name": "Thoroughbred",
       "Category": "Engine",
       "Cost": 9000,
@@ -6832,7 +7335,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "S2-33\"Clydesdale\"SolidFuelBooster",
+      "Title": "S2-33 \"Clydesdale\" Solid Fuel Booster",
       "Name": "Clydesdale",
       "Category": "Engine",
       "Cost": 18500,
@@ -6873,7 +7376,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SepratronI",
+      "Title": "Sepratron I",
       "Name": "sepMotor1",
       "Category": "Engine",
       "Cost": 75,
@@ -6914,7 +7417,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "F3S0\"Shrimp\"SolidFuelBooster",
+      "Title": "F3S0 \"Shrimp\" Solid Fuel Booster",
       "Name": "Shrimp",
       "Category": "Engine",
       "Cost": 150,
@@ -6955,7 +7458,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FM1\"Mite\"SolidFuelBooster",
+      "Title": "FM1 \"Mite\" Solid Fuel Booster",
       "Name": "Mite",
       "Category": "Engine",
       "Cost": 75,
@@ -6996,7 +7499,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3toMk2Adapter",
+      "Title": "Mk3 to Mk2 Adapter",
       "Name": "adapterMk3-Mk2",
       "Category": "FuelTank",
       "Cost": 2200,
@@ -7026,7 +7529,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3EngineMount",
+      "Title": "Mk3 Engine Mount",
       "Name": "adapterEngines",
       "Category": "Structural",
       "Cost": 2500,
@@ -7041,7 +7544,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3to2.5mAdapter",
+      "Title": "Mk3 to 2.5m Adapter",
       "Name": "adapterMk3-Size2",
       "Category": "FuelTank",
       "Cost": 2500,
@@ -7071,7 +7574,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3to2.5mAdapterSlanted",
+      "Title": "Mk3 to 2.5m Adapter Slanted",
       "Name": "adapterMk3-Size2Slant",
       "Category": "FuelTank",
       "Cost": 2500,
@@ -7101,7 +7604,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "2.5mtoMk2Adapter",
+      "Title": "2.5m to Mk2 Adapter",
       "Name": "adapterSize2-Mk2",
       "Category": "FuelTank",
       "Cost": 800,
@@ -7131,7 +7634,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "C7BrandAdapter-2.5mto1.25m",
+      "Title": "C7 Brand Adapter - 2.5m to 1.25m",
       "Name": "adapterSize2-Size1",
       "Category": "FuelTank",
       "Cost": 800,
@@ -7161,7 +7664,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "C7BrandAdapterSlanted-2.5mto1.25m",
+      "Title": "C7 Brand Adapter Slanted - 2.5m to 1.25m",
       "Name": "adapterSize2-Size1Slant",
       "Category": "FuelTank",
       "Cost": 800,
@@ -7191,7 +7694,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3to3.75mAdapter",
+      "Title": "Mk3 to 3.75m Adapter",
       "Name": "adapterSize3-Mk3",
       "Category": "FuelTank",
       "Cost": 2500,
@@ -7221,7 +7724,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FTE-1DrainValve",
+      "Title": "FTE-1 Drain Valve",
       "Name": "ReleaseValve",
       "Category": "FuelTank",
       "Cost": 50,
@@ -7236,7 +7739,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "R-11'Baguette'ExternalTank",
+      "Title": "R-11 'Baguette' External Tank",
       "Name": "externalTankCapsule",
       "Category": "Propulsion",
       "Cost": 50,
@@ -7266,7 +7769,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "R-4'Dumpling'ExternalTank",
+      "Title": "R-4 'Dumpling' External Tank",
       "Name": "externalTankRound",
       "Category": "Propulsion",
       "Cost": 50,
@@ -7296,7 +7799,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "R-12'Doughnut'ExternalTank",
+      "Title": "R-12 'Doughnut' External Tank",
       "Name": "externalTankToroid",
       "Category": "FuelTank",
       "Cost": 147,
@@ -7326,7 +7829,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Oscar-BFuelTank",
+      "Title": "Oscar-B Fuel Tank",
       "Name": "miniFuelTank",
       "Category": "FuelTank",
       "Cost": 70,
@@ -7356,7 +7859,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk0LiquidFuelFuselage",
+      "Title": "Mk0 Liquid Fuel Fuselage",
       "Name": "miniFuselage",
       "Category": "Propulsion",
       "Cost": 200,
@@ -7379,7 +7882,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2Bicoupler",
+      "Title": "Mk2 Bicoupler",
       "Name": "mk2_1m_Bicoupler",
       "Category": "Propulsion",
       "Cost": 860,
@@ -7409,7 +7912,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2to1.25mAdapterLong",
+      "Title": "Mk2 to 1.25m Adapter Long",
       "Name": "mk2_1m_AdapterLong",
       "Category": "Propulsion",
       "Cost": 1050,
@@ -7439,7 +7942,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2to1.25mAdapter",
+      "Title": "Mk2 to 1.25m Adapter",
       "Name": "mk2SpacePlaneAdapter",
       "Category": "Propulsion",
       "Cost": 550,
@@ -7469,7 +7972,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2RocketFuelFuselage",
+      "Title": "Mk2 Rocket Fuel Fuselage",
       "Name": "mk2FuselageLongLFO",
       "Category": "Propulsion",
       "Cost": 1450,
@@ -7499,7 +8002,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2LiquidFuelFuselage",
+      "Title": "Mk2 Liquid Fuel Fuselage",
       "Name": "mk2Fuselage",
       "Category": "Propulsion",
       "Cost": 1450,
@@ -7522,7 +8025,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2RocketFuelFuselageShort",
+      "Title": "Mk2 Rocket Fuel Fuselage Short",
       "Name": "mk2FuselageShortLFO",
       "Category": "Propulsion",
       "Cost": 750,
@@ -7552,7 +8055,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2LiquidFuelFuselageShort",
+      "Title": "Mk2 Liquid Fuel Fuselage Short",
       "Name": "mk2FuselageShortLiquid",
       "Category": "Propulsion",
       "Cost": 750,
@@ -7575,7 +8078,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2MonopropellantTank",
+      "Title": "Mk2 Monopropellant Tank",
       "Name": "mk2FuselageShortMono",
       "Category": "Propulsion",
       "Cost": 750,
@@ -7598,7 +8101,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3PassengerModule",
+      "Title": "Mk3 Passenger Module",
       "Name": "mk3CrewCabin",
       "Category": "Utility",
       "Cost": 30000,
@@ -7621,7 +8124,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3RocketFuelFuselageLong",
+      "Title": "Mk3 Rocket Fuel Fuselage Long",
       "Name": "mk3FuselageLFO_100",
       "Category": "FuelTank",
       "Cost": 10000,
@@ -7651,7 +8154,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3RocketFuelFuselageShort",
+      "Title": "Mk3 Rocket Fuel Fuselage Short",
       "Name": "mk3FuselageLFO_25",
       "Category": "FuelTank",
       "Cost": 2500,
@@ -7681,7 +8184,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3RocketFuelFuselage",
+      "Title": "Mk3 Rocket Fuel Fuselage",
       "Name": "mk3FuselageLFO_50",
       "Category": "FuelTank",
       "Cost": 5000,
@@ -7711,7 +8214,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3LiquidFuelFuselageLong",
+      "Title": "Mk3 Liquid Fuel Fuselage Long",
       "Name": "mk3FuselageLF_100",
       "Category": "FuelTank",
       "Cost": 17200,
@@ -7734,7 +8237,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3LiquidFuelFuselageShort",
+      "Title": "Mk3 Liquid Fuel Fuselage Short",
       "Name": "mk3FuselageLF_25",
       "Category": "FuelTank",
       "Cost": 4300,
@@ -7757,7 +8260,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3LiquidFuelFuselage",
+      "Title": "Mk3 Liquid Fuel Fuselage",
       "Name": "mk3FuselageLF_50",
       "Category": "FuelTank",
       "Cost": 8600,
@@ -7780,7 +8283,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3MonopropellantTank",
+      "Title": "Mk3 Monopropellant Tank",
       "Name": "mk3FuselageMONO",
       "Category": "FuelTank",
       "Cost": 5040,
@@ -7803,7 +8306,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-R1RCSFuelTank",
+      "Title": "FL-R1 RCS Fuel Tank",
       "Name": "RCSTank1-2",
       "Category": "FuelTank",
       "Cost": 1800,
@@ -7826,7 +8329,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-R10RCSFuelTank",
+      "Title": "FL-R10 RCS Fuel Tank",
       "Name": "rcsTankMini",
       "Category": "FuelTank",
       "Cost": 200,
@@ -7849,7 +8352,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-R25RCSFuelTank",
+      "Title": "FL-R25 RCS Fuel Tank",
       "Name": "RCSFuelTank",
       "Category": "FuelTank",
       "Cost": 330,
@@ -7872,7 +8375,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Stratus-VRoundifiedMonopropellantTank",
+      "Title": "Stratus-V Roundified Monopropellant Tank",
       "Name": "radialRCSTank",
       "Category": "FuelTank",
       "Cost": 200,
@@ -7895,7 +8398,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Stratus-VCylindrifiedMonopropellantTank",
+      "Title": "Stratus-V Cylindrified Monopropellant Tank",
       "Name": "rcsTankRadialLong",
       "Category": "FuelTank",
       "Cost": 250,
@@ -7918,7 +8421,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RockomaxX200-16FuelTank",
+      "Title": "Rockomax X200-16 Fuel Tank",
       "Name": "Rockomax16_BW",
       "Category": "FuelTank",
       "Cost": 1550,
@@ -7948,7 +8451,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RockomaxX200-32FuelTank",
+      "Title": "Rockomax X200-32 Fuel Tank",
       "Name": "Rockomax32_BW",
       "Category": "FuelTank",
       "Cost": 3000,
@@ -7978,7 +8481,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RockomaxJumbo-64FuelTank",
+      "Title": "Rockomax Jumbo-64 Fuel Tank",
       "Name": "Rockomax64_BW",
       "Category": "FuelTank",
       "Cost": 5750,
@@ -8008,7 +8511,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RockomaxX200-8FuelTank",
+      "Title": "Rockomax X200-8 Fuel Tank",
       "Name": "Rockomax8BW",
       "Category": "FuelTank",
       "Cost": 800,
@@ -8038,7 +8541,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-T100FuelTank",
+      "Title": "FL-T100 Fuel Tank",
       "Name": "fuelTankSmallFlat",
       "Category": "FuelTank",
       "Cost": 150,
@@ -8068,7 +8571,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-T200FuelTank",
+      "Title": "FL-T200 Fuel Tank",
       "Name": "fuelTankSmall",
       "Category": "FuelTank",
       "Cost": 275,
@@ -8098,7 +8601,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-T400FuelTank",
+      "Title": "FL-T400 Fuel Tank",
       "Name": "fuelTank",
       "Category": "FuelTank",
       "Cost": 500,
@@ -8128,7 +8631,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-T800FuelTank",
+      "Title": "FL-T800 Fuel Tank",
       "Name": "fuelTank_long",
       "Category": "FuelTank",
       "Cost": 800,
@@ -8158,7 +8661,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneS3-14400Tank",
+      "Title": "Kerbodyne S3-14400 Tank",
       "Name": "Size3LargeTank",
       "Category": "Propulsion",
       "Cost": 13000,
@@ -8188,7 +8691,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneS3-7200Tank",
+      "Title": "Kerbodyne S3-7200 Tank",
       "Name": "Size3MediumTank",
       "Category": "Propulsion",
       "Cost": 6500,
@@ -8218,7 +8721,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneS3-3600Tank",
+      "Title": "Kerbodyne S3-3600 Tank",
       "Name": "Size3SmallTank",
       "Category": "Propulsion",
       "Cost": 3250,
@@ -8248,7 +8751,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PB-X150XenonContainer",
+      "Title": "PB-X150 Xenon Container",
       "Name": "xenonTank",
       "Category": "FuelTank",
       "Cost": 3680,
@@ -8271,7 +8774,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PB-X750XenonContainer",
+      "Title": "PB-X750 Xenon Container",
       "Name": "xenonTankLarge",
       "Category": "FuelTank",
       "Cost": 24300,
@@ -8294,7 +8797,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PB-X50RXenonContainer",
+      "Title": "PB-X50R Xenon Container",
       "Name": "xenonTankRadial",
       "Category": "FuelTank",
       "Cost": 2220,
@@ -8317,7 +8820,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SENTINELInfraredTelescope",
+      "Title": "SENTINEL Infrared Telescope",
       "Name": "InfraredTelescope",
       "Category": "Science",
       "Cost": 4500,
@@ -8340,7 +8843,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneHECS2",
+      "Title": "Probodobodyne HECS2",
       "Name": "HECS2_ProbeCore",
       "Category": "Pods",
       "Cost": 7500,
@@ -8402,7 +8905,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "CommunotronHG-55",
+      "Title": "Communotron HG-55",
       "Name": "HighGainAntenna",
       "Category": "Communication",
       "Cost": 1200,
@@ -8428,7 +8931,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "OX-STAT-XLPhotovoltaicPanels",
+      "Title": "OX-STAT-XL Photovoltaic Panels",
       "Name": "LgRadialSolarPanel",
       "Category": "Electrical",
       "Cost": 600,
@@ -8450,7 +8953,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FuelCell",
+      "Title": "Fuel Cell",
       "Name": "FuelCell",
       "Category": "Electrical",
       "Cost": 750,
@@ -8464,7 +8967,7 @@
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
           "Name": "ModuleResourceConverter",
-          "ConverterName": "FuelCell",
+          "ConverterName": "Fuel Cell",
           "FillAmount": 0.95,
           "GeneratesHeat": false,
           "UseEngineerBonus": false,
@@ -8494,7 +8997,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 1.5,
+          "Load": 0.0
         }
       ],
       "Resources": [
@@ -8509,7 +9013,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FuelCellArray",
+      "Title": "Fuel Cell Array",
       "Name": "FuelCellArray",
       "Category": "Electrical",
       "Cost": 4500,
@@ -8523,7 +9027,7 @@
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
           "Name": "ModuleResourceConverter",
-          "ConverterName": "FuelCell",
+          "ConverterName": "Fuel Cell",
           "FillAmount": 0.95,
           "GeneratesHeat": false,
           "UseEngineerBonus": false,
@@ -8553,7 +9057,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 18.0,
+          "Load": 0.0
         }
       ],
       "Resources": [
@@ -8568,7 +9073,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Convert-O-Tron250",
+      "Title": "Convert-O-Tron 250",
       "Name": "ISRU",
       "Category": "Utility",
       "Cost": 8000,
@@ -8620,7 +9125,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 30.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -8655,7 +9161,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 30.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -8690,7 +9197,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 30.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -8725,14 +9233,15 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 30.0
         }
       ],
       "Resources": []
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LargeHoldingTank",
+      "Title": "Large Holding Tank",
       "Name": "LargeTank",
       "Category": "FuelTank",
       "Cost": 3000,
@@ -8747,7 +9256,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Drill-O-MaticJunior'MiningExcavator",
+      "Title": "Drill-O-Matic Junior' Mining Excavator",
       "Name": "MiniDrill",
       "Category": "Utility",
       "Cost": 1000,
@@ -8769,7 +9278,16 @@
           "EngineerBonusBase": 0.0,
           "EngineerEfficiencyFactor": 0.0,
           "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
+          "ResourceInputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "ElectricCharge",
+              "Ratio": 3.0,
+              "FlowMode": 0
+            }
+          ],
+          "Load": 3.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceHarvesterModule, KSPModelLibrary",
@@ -8782,14 +9300,15 @@
           "EngineerBonusBase": 0.0,
           "EngineerEfficiencyFactor": 0.0,
           "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
+          "ResourceInputs": [],
+          "Load": 0.0
         }
       ],
       "Resources": []
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Convert-O-Tron125",
+      "Title": "Convert-O-Tron 125",
       "Name": "MiniISRU",
       "Category": "Utility",
       "Cost": 1000,
@@ -8841,7 +9360,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 30.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -8876,7 +9396,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 30.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -8911,7 +9432,8 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 30.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceConverterModule, KSPModelLibrary",
@@ -8946,14 +9468,15 @@
               "DumpExcess": false
             }
           ],
-          "Charge": 0.0
+          "Charge": 0.0,
+          "Load": 30.0
         }
       ],
       "Resources": []
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "M4435Narrow-BandScanner",
+      "Title": "M4435 Narrow-Band Scanner",
       "Name": "OrbitalScanner",
       "Category": "Science",
       "Cost": 1000,
@@ -8968,7 +9491,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Drill-O-Matic'MiningExcavator",
+      "Title": "Drill-O-Matic' Mining Excavator",
       "Name": "RadialDrill",
       "Category": "Utility",
       "Cost": 6000,
@@ -8990,7 +9513,16 @@
           "EngineerBonusBase": 0.0,
           "EngineerEfficiencyFactor": 0.0,
           "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
+          "ResourceInputs": [
+            {
+              "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.InputResourceModule, KSPModelLibrary",
+              "Name": null,
+              "ResourceName": "ElectricCharge",
+              "Ratio": 15.0,
+              "FlowMode": 0
+            }
+          ],
+          "Load": 15.0
         },
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.ResourceHarvesterModule, KSPModelLibrary",
@@ -9003,14 +9535,15 @@
           "EngineerBonusBase": 0.0,
           "EngineerEfficiencyFactor": 0.0,
           "EngineerHeatFactor": 0.0,
-          "ResourceInputs": []
+          "ResourceInputs": [],
+          "Load": 0.0
         }
       ],
       "Resources": []
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RadialHoldingTank",
+      "Title": "Radial Holding Tank",
       "Name": "RadialOreTank",
       "Category": "FuelTank",
       "Cost": 300,
@@ -9025,7 +9558,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SmallHoldingTank",
+      "Title": "Small Holding Tank",
       "Name": "SmallTank",
       "Category": "FuelTank",
       "Cost": 1000,
@@ -9040,7 +9573,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SurfaceScanningModule",
+      "Title": "Surface Scanning Module",
       "Name": "SurfaceScanner",
       "Category": "Science",
       "Cost": 800,
@@ -9055,7 +9588,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "M700SurveyScanner",
+      "Title": "M700 Survey Scanner",
       "Name": "SurveyScanner",
       "Category": "Science",
       "Cost": 1500,
@@ -9070,7 +9603,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AtmosphericFluidSpectro-Variometer",
+      "Title": "Atmospheric Fluid Spectro-Variometer",
       "Name": "sensorAtmosphere",
       "Category": "Science",
       "Cost": 6500,
@@ -9093,7 +9626,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "MysteryGoo™ContainmentUnit\\u0020",
+      "Title": "Mystery Goo™ Containment Unit\\u0020",
       "Name": "GooExperiment",
       "Category": "Science",
       "Cost": 800,
@@ -9116,7 +9649,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "MobileProcessingLabMPL-LG-2",
+      "Title": "Mobile Processing Lab MPL-LG-2",
       "Name": "Large_Crewed_Lab",
       "Category": "Science",
       "Cost": 4000,
@@ -9131,7 +9664,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "MagnetometerBoom",
+      "Title": "Magnetometer Boom",
       "Name": "Magnetometer",
       "Category": "Science",
       "Cost": 2200,
@@ -9154,7 +9687,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SC-9001ScienceJr.",
+      "Title": "SC-9001 Science Jr.",
       "Name": "science_module",
       "Category": "Science",
       "Cost": 1800,
@@ -9177,7 +9710,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ExperimentStorageUnit",
+      "Title": "Experiment Storage Unit",
       "Name": "ScienceBox",
       "Category": "Science",
       "Cost": 1000,
@@ -9192,7 +9725,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Double-CSeismicAccelerometer",
+      "Title": "Double-C Seismic Accelerometer",
       "Name": "sensorAccelerometer",
       "Category": "Science",
       "Cost": 6000,
@@ -9215,7 +9748,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PresMatBarometer",
+      "Title": "PresMat Barometer",
       "Name": "sensorBarometer",
       "Category": "Science",
       "Cost": 880,
@@ -9238,7 +9771,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "GRAVMAXNegativeGravioliDetector",
+      "Title": "GRAVMAX Negative Gravioli Detector",
       "Name": "sensorGravimeter",
       "Category": "Science",
       "Cost": 8800,
@@ -9261,7 +9794,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "2HOTThermometer",
+      "Title": "2HOT Thermometer",
       "Name": "sensorThermometer",
       "Category": "Science",
       "Cost": 900,
@@ -9284,7 +9817,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-A5Adapter",
+      "Title": "FL-A5 Adapter",
       "Name": "adapterSmallMiniShort",
       "Category": "Structural",
       "Cost": 100,
@@ -9299,7 +9832,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-A10Adapter",
+      "Title": "FL-A10 Adapter",
       "Name": "adapterSmallMiniTall",
       "Category": "Structural",
       "Cost": 150,
@@ -9314,7 +9847,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EnginePre-cooler",
+      "Title": "Engine Pre-cooler",
       "Name": "radialEngineBody",
       "Category": "Aero",
       "Cost": 1650,
@@ -9351,7 +9884,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EngineNacelle",
+      "Title": "Engine Nacelle",
       "Name": "nacelleBody",
       "Category": "Aero",
       "Cost": 600,
@@ -9388,7 +9921,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk1LiquidFuelFuselage",
+      "Title": "Mk1 Liquid Fuel Fuselage",
       "Name": "MK1Fuselage",
       "Category": "FuelTank",
       "Cost": 550,
@@ -9411,7 +9944,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk1DiverterlessSupersonicIntake",
+      "Title": "Mk1 Diverterless Supersonic Intake",
       "Name": "MK1IntakeFuselage",
       "Category": "Aero",
       "Cost": 720,
@@ -9425,7 +9958,7 @@
         {
           "$type": "KSPModelLibrary.Data.PartDataModels.ModuleTypes.AirIntakeModule, KSPModelLibrary",
           "Name": "ModuleResourceIntake",
-          "Area": 0.0,
+          "Area": 0.0061,
           "IntakeSpeed": 12.0
         }
       ],
@@ -9448,7 +9981,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "StructuralFuselage",
+      "Title": "Structural Fuselage",
       "Name": "Mk1FuselageStructural",
       "Category": "Structural",
       "Cost": 380,
@@ -9463,7 +9996,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneADTP-2-3",
+      "Title": "Kerbodyne ADTP-2-3",
       "Name": "Size3to2Adapter",
       "Category": "none",
       "Cost": 2600,
@@ -9478,7 +10011,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneADTP-2-3",
+      "Title": "Kerbodyne ADTP-2-3",
       "Name": "Size3To2Adapter_v2",
       "Category": "FuelTank",
       "Cost": 1623,
@@ -9508,7 +10041,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TVR-200LStackBi-Adapter",
+      "Title": "TVR-200L Stack Bi-Adapter",
       "Name": "adapterLargeSmallBi",
       "Category": "Structural",
       "Cost": 400,
@@ -9523,7 +10056,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TVR-400LStackQuad-Adapter",
+      "Title": "TVR-400L Stack Quad-Adapter",
       "Name": "adapterLargeSmallQuad",
       "Category": "Structural",
       "Cost": 800,
@@ -9538,7 +10071,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TVR-300LStackTri-Adapter",
+      "Title": "TVR-300L Stack Tri-Adapter",
       "Name": "adapterLargeSmallTri",
       "Category": "Structural",
       "Cost": 600,
@@ -9553,7 +10086,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RockomaxHubMaxMulti-PointConnector",
+      "Title": "Rockomax HubMax Multi-Point Connector",
       "Name": "stationHub",
       "Category": "Structural",
       "Cost": 900,
@@ -9568,7 +10101,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "M-Beam200I-Beam",
+      "Title": "M-Beam 200 I-Beam",
       "Name": "structuralIBeam2",
       "Category": "Structural",
       "Cost": 25,
@@ -9583,7 +10116,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "M-Beam200I-BeamPocketEdition",
+      "Title": "M-Beam 200 I-Beam Pocket Edition",
       "Name": "structuralIBeam3",
       "Category": "Structural",
       "Cost": 14,
@@ -9598,7 +10131,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "M-Beam650I-Beam",
+      "Title": "M-Beam 650 I-Beam",
       "Name": "structuralIBeam1",
       "Category": "Structural",
       "Cost": 50,
@@ -9613,7 +10146,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TheNot-RockomaxMicronode",
+      "Title": "The Not-Rockomax Micronode",
       "Name": "structuralMiniNode",
       "Category": "Structural",
       "Cost": 25,
@@ -9628,7 +10161,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "M-1x1StructuralPanel",
+      "Title": "M-1x1 Structural Panel",
       "Name": "structuralPanel1",
       "Category": "Structural",
       "Cost": 30,
@@ -9643,7 +10176,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "M-2x2StructuralPanel",
+      "Title": "M-2x2 Structural Panel",
       "Name": "structuralPanel2",
       "Category": "Structural",
       "Cost": 90,
@@ -9658,7 +10191,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SmallHardpoint",
+      "Title": "Small Hardpoint",
       "Name": "smallHardpoint",
       "Category": "Structural",
       "Cost": 60,
@@ -9679,7 +10212,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "StructuralPylon",
+      "Title": "Structural Pylon",
       "Name": "structuralPylon",
       "Category": "Structural",
       "Cost": 125,
@@ -9700,7 +10233,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "CubicOctagonalStrut",
+      "Title": "Cubic Octagonal Strut",
       "Name": "strutCube",
       "Category": "Structural",
       "Cost": 16,
@@ -9715,7 +10248,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "OctagonalStrut",
+      "Title": "Octagonal Strut",
       "Name": "strutOcto",
       "Category": "Structural",
       "Cost": 20,
@@ -9730,7 +10263,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ModularGirderAdapter",
+      "Title": "Modular Girder Adapter",
       "Name": "trussAdapter",
       "Category": "Structural",
       "Cost": 50,
@@ -9745,7 +10278,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ModularGirderSegment",
+      "Title": "Modular Girder Segment",
       "Name": "trussPiece1x",
       "Category": "Structural",
       "Cost": 25,
@@ -9760,7 +10293,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SegmentXL",
+      "Title": "Segment XL",
       "Name": "trussPiece3x",
       "Category": "Structural",
       "Cost": 75,
@@ -9775,7 +10308,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ThermalControlSystem(large)",
+      "Title": "Thermal Control System (large)",
       "Name": "foldingRadLarge",
       "Category": "Thermal",
       "Cost": 9000,
@@ -9805,7 +10338,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ThermalControlSystem(medium)",
+      "Title": "Thermal Control System (medium)",
       "Name": "foldingRadMed",
       "Category": "Thermal",
       "Cost": 2250,
@@ -9835,7 +10368,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ThermalControlSystem(small)",
+      "Title": "Thermal Control System (small)",
       "Name": "foldingRadSmall",
       "Category": "Thermal",
       "Cost": 450,
@@ -9865,7 +10398,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RadiatorPanel(edge)",
+      "Title": "Radiator Panel (edge)",
       "Name": "radPanelEdge",
       "Category": "Thermal",
       "Cost": 450,
@@ -9895,7 +10428,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RadiatorPanel(large)",
+      "Title": "Radiator Panel (large)",
       "Name": "radPanelLg",
       "Category": "Thermal",
       "Cost": 450,
@@ -9925,7 +10458,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RadiatorPanel(small)",
+      "Title": "Radiator Panel (small)",
       "Name": "radPanelSm",
       "Category": "Thermal",
       "Cost": 150,
@@ -9955,7 +10488,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Communotron88-88",
+      "Title": "Communotron 88-88",
       "Name": "commDish",
       "Category": "Communication",
       "Cost": 1500,
@@ -9981,7 +10514,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "CommunotronDTS-M1",
+      "Title": "Communotron DTS-M1",
       "Name": "mediumDishAntenna",
       "Category": "Communication",
       "Cost": 900,
@@ -10007,7 +10540,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Communotron16",
+      "Title": "Communotron 16",
       "Name": "longAntenna",
       "Category": "Communication",
       "Cost": 300,
@@ -10033,7 +10566,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HydraulicDetachmentManifold",
+      "Title": "Hydraulic Detachment Manifold",
       "Name": "radialDecoupler1-2",
       "Category": "Coupling",
       "Cost": 770,
@@ -10048,7 +10581,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TT-38KRadialDecoupler",
+      "Title": "TT-38K Radial Decoupler",
       "Name": "radialDecoupler",
       "Category": "Coupling",
       "Cost": 600,
@@ -10063,7 +10596,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TT-70RadialDecoupler",
+      "Title": "TT-70 Radial Decoupler",
       "Name": "radialDecoupler2",
       "Category": "Coupling",
       "Cost": 700,
@@ -10078,7 +10611,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Communotron16-S",
+      "Title": "Communotron 16-S",
       "Name": "SurfAntenna",
       "Category": "Communication",
       "Cost": 300,
@@ -10104,7 +10637,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HG-5HighGainAntenna",
+      "Title": "HG-5 High Gain Antenna",
       "Name": "HighGainAntenna5",
       "Category": "none",
       "Cost": 600,
@@ -10130,7 +10663,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HG-5HighGainAntenna",
+      "Title": "HG-5 High Gain Antenna",
       "Name": "HighGainAntenna5_v2",
       "Category": "Communication",
       "Cost": 600,
@@ -10156,7 +10689,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Clamp-O-TronDockingPort",
+      "Title": "Clamp-O-Tron Docking Port",
       "Name": "dockingPort2",
       "Category": "Coupling",
       "Cost": 280,
@@ -10171,7 +10704,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "InlineClamp-O-Tron",
+      "Title": "Inline Clamp-O-Tron",
       "Name": "dockingPortLateral",
       "Category": "Coupling",
       "Cost": 700,
@@ -10186,7 +10719,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Clamp-O-TronDockingPortJr.",
+      "Title": "Clamp-O-Tron Docking Port Jr.",
       "Name": "dockingPort3",
       "Category": "Coupling",
       "Cost": 800,
@@ -10201,7 +10734,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Clamp-O-TronShieldedDockingPort",
+      "Title": "Clamp-O-Tron Shielded Docking Port",
       "Name": "dockingPort1",
       "Category": "Coupling",
       "Cost": 400,
@@ -10216,7 +10749,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Clamp-O-TronDockingPortSr.",
+      "Title": "Clamp-O-Tron Docking Port Sr.",
       "Name": "dockingPortLarge",
       "Category": "Coupling",
       "Cost": 980,
@@ -10231,7 +10764,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AdvancedGrabbingUnit",
+      "Title": "Advanced Grabbing Unit",
       "Name": "GrapplingDevice",
       "Category": "Coupling",
       "Cost": 450,
@@ -10246,7 +10779,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PegasusIMobilityEnhancer",
+      "Title": "Pegasus I Mobility Enhancer",
       "Name": "ladder1",
       "Category": "Utility",
       "Cost": 100,
@@ -10261,7 +10794,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KelusMobilityEnhancer",
+      "Title": "Kelus Mobility Enhancer",
       "Name": "telescopicLadder",
       "Category": "Utility",
       "Cost": 350,
@@ -10276,7 +10809,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Kelus-LVBayMobilityEnhancer",
+      "Title": "Kelus-LV Bay Mobility Enhancer",
       "Name": "telescopicLadderBay",
       "Category": "Utility",
       "Cost": 440,
@@ -10291,7 +10824,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LT-1LandingStruts",
+      "Title": "LT-1 Landing Struts",
       "Name": "landingLeg1",
       "Category": "Ground",
       "Cost": 440,
@@ -10306,7 +10839,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LT-2LandingStrut",
+      "Title": "LT-2 Landing Strut",
       "Name": "landingLeg1-2",
       "Category": "Ground",
       "Cost": 340,
@@ -10321,7 +10854,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LT-05MicroLandingStrut",
+      "Title": "LT-05 Micro Landing Strut",
       "Name": "miniLandingLeg",
       "Category": "Ground",
       "Cost": 200,
@@ -10336,7 +10869,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TT18-ALaunchStabilityEnhancer",
+      "Title": "TT18-A Launch Stability Enhancer",
       "Name": "launchClamp1",
       "Category": "Structural",
       "Cost": 200,
@@ -10368,7 +10901,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LaunchEscapeSystem",
+      "Title": "Launch Escape System",
       "Name": "LaunchEscapeSystem",
       "Category": "Utility",
       "Cost": 1000,
@@ -10409,7 +10942,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "DomelightMk1",
+      "Title": "Domelight Mk1",
       "Name": "domeLight1",
       "Category": "Utility",
       "Cost": 50,
@@ -10432,7 +10965,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "WorkLamp-Small",
+      "Title": "Work Lamp - Small",
       "Name": "groundLight1",
       "Category": "Cargo",
       "Cost": 25,
@@ -10455,7 +10988,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "WorkLamp-Stand",
+      "Title": "Work Lamp - Stand",
       "Name": "groundLight2",
       "Category": "Cargo",
       "Cost": 35,
@@ -10478,7 +11011,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "NavigationLightMk1",
+      "Title": "Navigation Light Mk1",
       "Name": "navLight1",
       "Category": "Utility",
       "Cost": 40,
@@ -10501,7 +11034,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SpotlightMk1",
+      "Title": "Spotlight Mk1",
       "Name": "spotLight3",
       "Category": "Utility",
       "Cost": 75,
@@ -10524,7 +11057,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LightStripMk1",
+      "Title": "LightStrip Mk1",
       "Name": "stripLight1",
       "Category": "Utility",
       "Cost": 40,
@@ -10547,7 +11080,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Place-Anywhere7LinearRCSPort",
+      "Title": "Place-Anywhere 7 Linear RCS Port",
       "Name": "linearRcs",
       "Category": "Control",
       "Cost": 25,
@@ -10569,7 +11102,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "VernorEngine",
+      "Title": "Vernor Engine",
       "Name": "vernierEngine",
       "Category": "Control",
       "Cost": 150,
@@ -10591,7 +11124,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2CargoBayCRG-08",
+      "Title": "Mk2 Cargo Bay CRG-08",
       "Name": "mk2CargoBayL",
       "Category": "Payload",
       "Cost": 500,
@@ -10606,7 +11139,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2CargoBayCRG-04",
+      "Title": "Mk2 Cargo Bay CRG-04",
       "Name": "mk2CargoBayS",
       "Category": "Payload",
       "Cost": 320,
@@ -10621,7 +11154,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "MK2CrewCabin",
+      "Title": "MK2 Crew Cabin",
       "Name": "mk2CrewCabin",
       "Category": "Utility",
       "Cost": 4200,
@@ -10644,7 +11177,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2Clamp-O-Tron",
+      "Title": "Mk2 Clamp-O-Tron",
       "Name": "mk2DockingPort",
       "Category": "Coupling",
       "Cost": 850,
@@ -10667,7 +11200,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3CargoBayCRG-100",
+      "Title": "Mk3 Cargo Bay CRG-100",
       "Name": "mk3CargoBayL",
       "Category": "Payload",
       "Cost": 3000,
@@ -10682,7 +11215,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3CargoBayCRG-50",
+      "Title": "Mk3 Cargo Bay CRG-50",
       "Name": "mk3CargoBayM",
       "Category": "Payload",
       "Cost": 1500,
@@ -10697,7 +11230,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3CargoRamp",
+      "Title": "Mk3 Cargo Ramp",
       "Name": "mk3CargoRamp",
       "Category": "Payload",
       "Cost": 3000,
@@ -10712,7 +11245,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk3CargoBayCRG-25",
+      "Title": "Mk3 Cargo Bay CRG-25",
       "Name": "mk3CargoBayS",
       "Category": "Payload",
       "Cost": 750,
@@ -10727,7 +11260,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk16Parachute",
+      "Title": "Mk16 Parachute",
       "Name": "parachuteSingle",
       "Category": "Utility",
       "Cost": 422,
@@ -10742,7 +11275,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk12-RRadial-MountDrogueChute",
+      "Title": "Mk12-R Radial-Mount Drogue Chute",
       "Name": "radialDrogue",
       "Category": "Utility",
       "Cost": 150,
@@ -10757,7 +11290,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk16-XLParachute",
+      "Title": "Mk16-XL Parachute",
       "Name": "parachuteLarge",
       "Category": "Utility",
       "Cost": 850,
@@ -10772,7 +11305,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2-RRadial-MountParachute",
+      "Title": "Mk2-R Radial-Mount Parachute",
       "Name": "parachuteRadial",
       "Category": "Utility",
       "Cost": 400,
@@ -10787,7 +11320,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk25Parachute",
+      "Title": "Mk25 Parachute",
       "Name": "parachuteDrogue",
       "Category": "Utility",
       "Cost": 400,
@@ -10802,7 +11335,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "BZ-52RadialAttachmentPoint",
+      "Title": "BZ-52 Radial Attachment Point",
       "Name": "stackPoint1",
       "Category": "Structural",
       "Cost": 250,
@@ -10817,7 +11350,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RV-105RCSThrusterBlock",
+      "Title": "RV-105 RCS Thruster Block",
       "Name": "RCSBlock",
       "Category": "none",
       "Cost": 620,
@@ -10839,7 +11372,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RV-105RCSThrusterBlock",
+      "Title": "RV-105 RCS Thruster Block",
       "Name": "RCSBlock_v2",
       "Category": "Control",
       "Cost": 45,
@@ -10861,7 +11394,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RV-1XVariableThrusterBlock",
+      "Title": "RV-1X Variable Thruster Block",
       "Name": "RCSblock_01_small",
       "Category": "Control",
       "Cost": 30,
@@ -10883,7 +11416,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PlaceAnywhere1LinearRCSPort",
+      "Title": "Place Anywhere 1 Linear RCS Port",
       "Name": "RCSLinearSmall",
       "Category": "Control",
       "Cost": 15,
@@ -10905,7 +11438,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RA-100RelayAntenna",
+      "Title": "RA-100 Relay Antenna",
       "Name": "RelayAntenna100",
       "Category": "Communication",
       "Cost": 3000,
@@ -10931,7 +11464,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RA-2RelayAntenna",
+      "Title": "RA-2 Relay Antenna",
       "Name": "RelayAntenna5",
       "Category": "Communication",
       "Cost": 1800,
@@ -10957,7 +11490,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RA-15RelayAntenna",
+      "Title": "RA-15 Relay Antenna",
       "Name": "RelayAntenna50",
       "Category": "Communication",
       "Cost": 2400,
@@ -10983,7 +11516,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RockomaxBrandAdapter",
+      "Title": "Rockomax Brand Adapter",
       "Name": "largeAdapter",
       "Category": "Structural",
       "Cost": 500,
@@ -10998,7 +11531,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RockomaxBrandAdapter02",
+      "Title": "Rockomax Brand Adapter 02",
       "Name": "largeAdapter2",
       "Category": "Structural",
       "Cost": 450,
@@ -11013,7 +11546,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ServiceBay(1.25m)",
+      "Title": "Service Bay (1.25m)",
       "Name": "ServiceBay_125",
       "Category": "none",
       "Cost": 500,
@@ -11028,7 +11561,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ServiceBay(2.5m)",
+      "Title": "Service Bay (2.5m)",
       "Name": "ServiceBay_250",
       "Category": "none",
       "Cost": 500,
@@ -11043,7 +11576,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ServiceBay(1.25m)",
+      "Title": "Service Bay (1.25m)",
       "Name": "ServiceBay_125_v2",
       "Category": "Payload",
       "Cost": 500,
@@ -11058,7 +11591,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ServiceBay(2.5m)",
+      "Title": "Service Bay (2.5m)",
       "Name": "ServiceBay_250_v2",
       "Category": "Payload",
       "Cost": 500,
@@ -11073,7 +11606,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AdvancedGrabbingUnitJr.",
+      "Title": "Advanced Grabbing Unit Jr.",
       "Name": "smallClaw",
       "Category": "Coupling",
       "Cost": 315,
@@ -11088,7 +11621,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "IlluminatorMk1",
+      "Title": "Illuminator Mk1",
       "Name": "spotLight1",
       "Category": "Utility",
       "Cost": 100,
@@ -11111,7 +11644,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "IlluminatorMk2",
+      "Title": "Illuminator Mk2",
       "Name": "spotLight2",
       "Category": "Utility",
       "Cost": 100,
@@ -11134,7 +11667,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TVR-200StackBi-Coupler",
+      "Title": "TVR-200 Stack Bi-Coupler",
       "Name": "stackBiCoupler",
       "Category": "none",
       "Cost": 400,
@@ -11149,7 +11682,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TVR-200StackBi-Coupler",
+      "Title": "TVR-200 Stack Bi-Coupler",
       "Name": "stackBiCoupler_v2",
       "Category": "Structural",
       "Cost": 400,
@@ -11164,7 +11697,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TVR-2160CMk2StackQuad-Coupler",
+      "Title": "TVR-2160C Mk2 Stack Quad-Coupler",
       "Name": "stackQuadCoupler",
       "Category": "Structural",
       "Cost": 2000,
@@ -11179,7 +11712,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TVR-1180CMk1StackTri-Coupler",
+      "Title": "TVR-1180C Mk1 Stack Tri-Coupler",
       "Name": "stackTriCoupler_v2",
       "Category": "Structural",
       "Cost": 680,
@@ -11194,7 +11727,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TVR-1180CMk1StackTri-Coupler",
+      "Title": "TVR-1180C Mk1 Stack Tri-Coupler",
       "Name": "stackTriCoupler",
       "Category": "none",
       "Cost": 680,
@@ -11209,7 +11742,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LY-99ExtraLargeLandingGear",
+      "Title": "LY-99 Extra Large Landing Gear",
       "Name": "GearLarge",
       "Category": "Ground",
       "Cost": 1700,
@@ -11232,7 +11765,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LY-01FixedLandingGear",
+      "Title": "LY-01 Fixed Landing Gear",
       "Name": "GearFixed",
       "Category": "Ground",
       "Cost": 100,
@@ -11247,7 +11780,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LY-05SteerableLandingGear",
+      "Title": "LY-05 Steerable Landing Gear",
       "Name": "GearFree",
       "Category": "Ground",
       "Cost": 150,
@@ -11262,7 +11795,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LY-60LargeLandingGear",
+      "Title": "LY-60 Large Landing Gear",
       "Name": "GearMedium",
       "Category": "Ground",
       "Cost": 1200,
@@ -11285,7 +11818,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LY-35MediumLandingGear",
+      "Title": "LY-35 Medium Landing Gear",
       "Name": "GearSmall",
       "Category": "Ground",
       "Cost": 700,
@@ -11308,7 +11841,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LY-10SmallLandingGear",
+      "Title": "LY-10 Small Landing Gear",
       "Name": "SmallGearBay",
       "Category": "Ground",
       "Cost": 600,
@@ -11331,7 +11864,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RoveMaxModelM1",
+      "Title": "RoveMax Model M1",
       "Name": "roverWheel1",
       "Category": "Ground",
       "Cost": 450,
@@ -11346,7 +11879,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RoveMaxModelS2",
+      "Title": "RoveMax Model S2",
       "Name": "roverWheel2",
       "Category": "Ground",
       "Cost": 300,
@@ -11361,10 +11894,10 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TR-2LRuggedizedVehicularWheel",
+      "Title": "TR-2L Ruggedized Vehicular Wheel",
       "Name": "wheelMed",
       "Category": "Ground",
-      "Cost": 0,
+      "Cost": 760,
       "Mass": 0.105,
       "DryMass": 0.0,
       "WetMass": 0.0,
@@ -11376,7 +11909,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RoveMaxModelXL3",
+      "Title": "RoveMax Model XL3",
       "Name": "roverWheel3",
       "Category": "Ground",
       "Cost": 1200,
@@ -11391,7 +11924,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TD-18Decoupler",
+      "Title": "TD-18 Decoupler",
       "Name": "Decoupler_1p5",
       "Category": "Coupling",
       "Cost": 250,
@@ -11412,7 +11945,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TD-50Decoupler",
+      "Title": "TD-50 Decoupler",
       "Name": "Decoupler_4",
       "Category": "Coupling",
       "Cost": 450,
@@ -11433,7 +11966,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EP-18EnginePlate",
+      "Title": "EP-18 Engine Plate",
       "Name": "EnginePlate1p5",
       "Category": "Coupling",
       "Cost": 250,
@@ -11454,7 +11987,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EP-25EnginePlate",
+      "Title": "EP-25 Engine Plate",
       "Name": "EnginePlate2",
       "Category": "Coupling",
       "Cost": 300,
@@ -11475,7 +12008,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EP-37EnginePlate",
+      "Title": "EP-37 Engine Plate",
       "Name": "EnginePlate3",
       "Category": "Coupling",
       "Cost": 500,
@@ -11496,7 +12029,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EP-50EnginePlate",
+      "Title": "EP-50 Engine Plate",
       "Name": "EnginePlate4",
       "Category": "Coupling",
       "Cost": 700,
@@ -11517,7 +12050,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "InflatableAirlock",
+      "Title": "Inflatable Airlock",
       "Name": "InflatableAirlock",
       "Category": "Coupling",
       "Cost": 400,
@@ -11532,7 +12065,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TS-18StackSeparator",
+      "Title": "TS-18 Stack Separator",
       "Name": "Separator_1p5",
       "Category": "Coupling",
       "Cost": 325,
@@ -11553,7 +12086,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TS-50StackSeparator",
+      "Title": "TS-50 Stack Separator",
       "Name": "Separator_4",
       "Category": "Coupling",
       "Cost": 650,
@@ -11574,7 +12107,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Size1.5Decoupler",
+      "Title": "Size 1.5 Decoupler",
       "Name": "Size1p5_Strut_Decoupler",
       "Category": "Coupling",
       "Cost": 475,
@@ -11595,7 +12128,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneKE-1\"Mastodon\"LiquidFuelEngine",
+      "Title": "Kerbodyne KE-1 \"Mastodon\" Liquid Fuel Engine",
       "Name": "LiquidEngineKE-1",
       "Category": "Engine",
       "Cost": 8000,
@@ -11649,7 +12182,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-T91\"Cheetah\"LiquidFuelEngine",
+      "Title": "LV-T91 \"Cheetah\" Liquid Fuel Engine",
       "Name": "LiquidEngineLV-T91",
       "Category": "Engine",
       "Cost": 850,
@@ -11703,7 +12236,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "LV-TX87\"Bobcat\"LiquidFuelEngine",
+      "Title": "LV-TX87 \"Bobcat\" Liquid Fuel Engine",
       "Name": "LiquidEngineLV-TX87",
       "Category": "Engine",
       "Cost": 2000,
@@ -11757,7 +12290,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RE-I2\"Skiff\"LiquidFuelEngine",
+      "Title": "RE-I2 \"Skiff\" Liquid Fuel Engine",
       "Name": "LiquidEngineRE-I2",
       "Category": "Engine",
       "Cost": 2300,
@@ -11811,7 +12344,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RE-J10\"Wolfhound\"LiquidFuelEngine",
+      "Title": "RE-J10 \"Wolfhound\"  Liquid Fuel Engine",
       "Name": "LiquidEngineRE-J10",
       "Category": "Engine",
       "Cost": 3000,
@@ -11865,7 +12398,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RK-7\"Kodiak\"LiquidFueledEnine",
+      "Title": "RK-7 \"Kodiak\" Liquid Fueled Enine",
       "Name": "LiquidEngineRK-7",
       "Category": "Engine",
       "Cost": 1100,
@@ -11919,7 +12452,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RV-1\"Cub\"VernierEngine",
+      "Title": "RV-1 \"Cub\" Vernier Engine",
       "Name": "LiquidEngineRV-1",
       "Category": "Engine",
       "Cost": 800,
@@ -11959,7 +12492,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Stratus-VMinifiedMonopropellantTank",
+      "Title": "Stratus-V Minified Monopropellant Tank",
       "Name": "monopropMiniSphere",
       "Category": "Propulsion",
       "Cost": 30,
@@ -11982,7 +12515,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-R5RCSFuelTank",
+      "Title": "FL-R5 RCS Fuel Tank",
       "Name": "Size1p5_Monoprop",
       "Category": "FuelTank",
       "Cost": 960,
@@ -12005,7 +12538,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-A150FuelTankAdapter",
+      "Title": "FL-A150 Fuel Tank Adapter",
       "Name": "Size1p5_Size0_Adapter_01",
       "Category": "FuelTank",
       "Cost": 160,
@@ -12035,7 +12568,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-A151LFuelTankAdapter",
+      "Title": "FL-A151L Fuel Tank Adapter",
       "Name": "Size1p5_Size1_Adapter_01",
       "Category": "FuelTank",
       "Cost": 600,
@@ -12065,7 +12598,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-A151SFuelTankAdapter",
+      "Title": "FL-A151S Fuel Tank Adapter",
       "Name": "Size1p5_Size1_Adapter_02",
       "Category": "FuelTank",
       "Cost": 160,
@@ -12095,7 +12628,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-A215FuelTankAdapter",
+      "Title": "FL-A215 Fuel Tank Adapter",
       "Name": "Size1p5_Size2_Adapter_01",
       "Category": "FuelTank",
       "Cost": 1200,
@@ -12125,7 +12658,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-TX220FuelTank",
+      "Title": "FL-TX220 Fuel Tank",
       "Name": "Size1p5_Tank_01",
       "Category": "FuelTank",
       "Cost": 220,
@@ -12155,7 +12688,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-TX440FuelTank",
+      "Title": "FL-TX440 Fuel Tank",
       "Name": "Size1p5_Tank_02",
       "Category": "FuelTank",
       "Cost": 440,
@@ -12185,7 +12718,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-TX900FuelTank",
+      "Title": "FL-TX900 Fuel Tank",
       "Name": "Size1p5_Tank_03",
       "Category": "FuelTank",
       "Cost": 900,
@@ -12215,7 +12748,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-TX1800FuelTank",
+      "Title": "FL-TX1800 Fuel Tank",
       "Name": "Size1p5_Tank_04",
       "Category": "FuelTank",
       "Cost": 1800,
@@ -12245,7 +12778,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "FL-C1000FuelTank",
+      "Title": "FL-C1000 Fuel Tank",
       "Name": "Size1p5_Tank_05",
       "Category": "FuelTank",
       "Cost": 1400,
@@ -12300,7 +12833,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneS3-S4AdapterTank",
+      "Title": "Kerbodyne S3-S4 Adapter Tank",
       "Name": "Size3_Size4_Adapter_01",
       "Category": "FuelTank",
       "Cost": 6400,
@@ -12330,7 +12863,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneEngineClusterAdapterTank",
+      "Title": "Kerbodyne Engine Cluster Adapter Tank",
       "Name": "Size4_EngineAdapter_01",
       "Category": "FuelTank",
       "Cost": 9000,
@@ -12360,7 +12893,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneS4-64FuelTank",
+      "Title": "Kerbodyne S4-64 Fuel Tank",
       "Name": "Size4_Tank_01",
       "Category": "FuelTank",
       "Cost": 6400,
@@ -12390,7 +12923,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneS4-128FuelTank",
+      "Title": "Kerbodyne S4-128 Fuel Tank",
       "Name": "Size4_Tank_02",
       "Category": "FuelTank",
       "Cost": 12800,
@@ -12420,7 +12953,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneS4-256FuelTank",
+      "Title": "Kerbodyne S4-256 Fuel Tank",
       "Name": "Size4_Tank_03",
       "Category": "FuelTank",
       "Cost": 25600,
@@ -12450,7 +12983,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KerbodyneS4-512FuelTank",
+      "Title": "Kerbodyne S4-512 Fuel Tank",
       "Name": "Size4_Tank_04",
       "Category": "FuelTank",
       "Cost": 51200,
@@ -12480,7 +13013,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RoveMaxM1-FRoverWheel",
+      "Title": "RoveMax M1-F Rover Wheel",
       "Name": "roverWheelM1-F",
       "Category": "Ground",
       "Cost": 500,
@@ -12495,7 +13028,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AE-FF1.5AirstreamProtectiveShell(1.875m)//Needsnewautolocforsize",
+      "Title": "AE-FF1.5 Airstream Protective Shell (1.875m) //Needs new autoloc for size",
       "Name": "fairingSize1p5",
       "Category": "Payload",
       "Cost": 450,
@@ -12510,10 +13043,10 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "AE-FF5AirstreamProtectiveShell(5m)//Needsautolocwithnewsize",
+      "Title": "AE-FF5 Airstream Protective Shell (5m) //Needs autoloc with new size",
       "Name": "fairingSize4",
       "Category": "Payload",
-      "Cost": 0,
+      "Cost": 1200,
       "Mass": 0.8,
       "DryMass": 0.0,
       "WetMass": 0.0,
@@ -12525,7 +13058,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SM-6AServiceModule",
+      "Title": "SM-6A Service Module",
       "Name": "Size1to0ServiceModule",
       "Category": "Payload",
       "Cost": 300,
@@ -12540,7 +13073,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SM-18ServiceModule",
+      "Title": "SM-18 Service Module",
       "Name": "ServiceModule18",
       "Category": "Payload",
       "Cost": 300,
@@ -12555,7 +13088,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SM-25ServiceModule",
+      "Title": "SM-25 Service Module",
       "Name": "ServiceModule25",
       "Category": "Payload",
       "Cost": 500,
@@ -12581,7 +13114,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KV-1'Onion'ReentryModule",
+      "Title": "KV-1 'Onion' Reentry Module",
       "Name": "kv1Pod",
       "Category": "Pods",
       "Cost": 600,
@@ -12630,7 +13163,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KV-2'Onion'ReentryModule",
+      "Title": "KV-2 'Onion' Reentry Module",
       "Name": "kv2Pod",
       "Category": "Pods",
       "Cost": 2000,
@@ -12679,7 +13212,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KV-3'Tato'ReentryModule",
+      "Title": "KV-3 'Tato' Reentry Module",
       "Name": "kv3Pod",
       "Category": "Pods",
       "Cost": 3000,
@@ -12728,7 +13261,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mk2CommandPod",
+      "Title": "Mk2 Command Pod",
       "Name": "Mk2Pod",
       "Category": "Pods",
       "Cost": 2800,
@@ -12792,7 +13325,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "MunarExcursionModule(M.E.M.)",
+      "Title": "Munar Excursion Module (M.E.M.)",
       "Name": "MEMLander",
       "Category": "Pods",
       "Cost": 3500,
@@ -12868,7 +13401,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-T06StructuralPanel",
+      "Title": "SP-T06 Structural Panel",
       "Name": "EquiTriangle0",
       "Category": "Structural",
       "Cost": 10,
@@ -12883,7 +13416,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-T12StructuralPanel",
+      "Title": "SP-T12 Structural Panel",
       "Name": "EquiTriangle1",
       "Category": "Structural",
       "Cost": 20,
@@ -12898,7 +13431,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-T18StructuralPanel",
+      "Title": "SP-T18 Structural Panel",
       "Name": "EquiTriangle1p5",
       "Category": "Structural",
       "Cost": 45,
@@ -12913,7 +13446,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-T25StructuralPanel",
+      "Title": "SP-T25 Structural Panel",
       "Name": "EquiTriangle2",
       "Category": "Structural",
       "Cost": 60,
@@ -12928,7 +13461,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-S06StructuralPanel",
+      "Title": "SP-S06 Structural Panel",
       "Name": "Panel0",
       "Category": "Structural",
       "Cost": 15,
@@ -12943,7 +13476,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-S12StructuralPanel",
+      "Title": "SP-S12 Structural Panel",
       "Name": "Panel1",
       "Category": "Structural",
       "Cost": 30,
@@ -12958,7 +13491,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-S18StructuralPanel",
+      "Title": "SP-S18 Structural Panel",
       "Name": "Panel1p5",
       "Category": "Structural",
       "Cost": 60,
@@ -12973,7 +13506,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-S25StructuralPanel",
+      "Title": "SP-S25 Structural Panel",
       "Name": "Panel2",
       "Category": "Structural",
       "Cost": 90,
@@ -12988,7 +13521,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-R06StructuralPanel",
+      "Title": "SP-R06 Structural Panel",
       "Name": "Triangle0",
       "Category": "Structural",
       "Cost": 10,
@@ -13003,7 +13536,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-R12StructuralPanel",
+      "Title": "#autoLOC_8310187",
       "Name": "Triangle1",
       "Category": "Structural",
       "Cost": 20,
@@ -13018,7 +13551,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-R18StructuralPanel",
+      "Title": "SP-R18 Structural Panel",
       "Name": "Triangle1p5",
       "Category": "Structural",
       "Cost": 45,
@@ -13033,7 +13566,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SP-R25StructuralPanel",
+      "Title": "SP-R25 Structural Panel",
       "Name": "Triangle2",
       "Category": "Structural",
       "Cost": 60,
@@ -13048,7 +13581,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "T-12StructuralTube",
+      "Title": "T-12 Structural Tube",
       "Name": "Tube1",
       "Category": "Structural",
       "Cost": 300,
@@ -13063,7 +13596,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "T-18StructuralTube",
+      "Title": "T-18 Structural Tube",
       "Name": "Tube1p5",
       "Category": "Structural",
       "Cost": 300,
@@ -13078,7 +13611,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "T-25StructuralTube",
+      "Title": "T-25 Structural Tube",
       "Name": "Tube2",
       "Category": "Structural",
       "Cost": 300,
@@ -13093,7 +13626,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "T-37StructuralTube",
+      "Title": "T-37 Structural Tube",
       "Name": "Tube3",
       "Category": "Structural",
       "Cost": 300,
@@ -13108,7 +13641,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "T-50StructuralTube",
+      "Title": "T-50 Structural Tube",
       "Name": "Tube4",
       "Category": "Structural",
       "Cost": 300,
@@ -13123,7 +13656,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HeatShield(1.875m)",
+      "Title": "Heat Shield (1.875m)",
       "Name": "HeatShield1p5",
       "Category": "Thermal",
       "Cost": 500,
@@ -13144,7 +13677,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011113//S-062FanShroud",
+      "Title": "#autoLOC_6011113",
       "Name": "FanShroud_01",
       "Category": "Aero",
       "Cost": 85,
@@ -13159,7 +13692,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011116//S-12FanShroud",
+      "Title": "#autoLOC_6011116",
       "Name": "FanShroud_02",
       "Category": "Aero",
       "Cost": 175,
@@ -13174,7 +13707,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011119//S-25FanShroud",
+      "Title": "#autoLOC_6011119",
       "Name": "FanShroud_03",
       "Category": "Aero",
       "Cost": 325,
@@ -13189,7 +13722,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "TinyNosecone",
+      "Title": "Tiny Nosecone",
       "Name": "noseconeTiny",
       "Category": "Aero",
       "Cost": 40,
@@ -13204,7 +13737,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "VerySmallNosecone",
+      "Title": "Very Small Nosecone",
       "Name": "noseconeVS",
       "Category": "Aero",
       "Cost": 80,
@@ -13219,7 +13752,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProbodobodyneExperimentControlStation",
+      "Title": "Probodobodyne Experiment Control Station",
       "Name": "DeployedCentralStation",
       "Category": "Cargo",
       "Cost": 800,
@@ -13234,7 +13767,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Go-obEDMonitor",
+      "Title": "Go-ob ED Monitor",
       "Name": "DeployedGoExOb",
       "Category": "Cargo",
       "Cost": 1000,
@@ -13249,7 +13782,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "IonographerPD-22",
+      "Title": "Ionographer PD-22",
       "Name": "DeployedIONExp",
       "Category": "Cargo",
       "Cost": 7000,
@@ -13264,7 +13797,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "Mini-NUK-PDRadioisotopeThermoelectricGenerator",
+      "Title": "Mini-NUK-PD Radioisotope Thermoelectric Generator",
       "Name": "DeployedRTG",
       "Category": "Cargo",
       "Cost": 10000,
@@ -13279,7 +13812,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "CommunotronGroundHG-48",
+      "Title": "Communotron Ground HG-48",
       "Name": "DeployedSatDish",
       "Category": "Cargo",
       "Cost": 1000,
@@ -13294,7 +13827,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "GrandSlamPassiveSeismometer",
+      "Title": "Grand Slam Passive Seismometer",
       "Name": "DeployedSeismicSensor",
       "Category": "Cargo",
       "Cost": 4000,
@@ -13309,7 +13842,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "OX-Stat-PDPhotovoltaicPanel",
+      "Title": "OX-Stat-PD Photovoltaic Panel",
       "Name": "DeployedSolarPanel",
       "Category": "Cargo",
       "Cost": 300,
@@ -13324,7 +13857,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PD-3WeatherAnalyzer",
+      "Title": "PD-3 Weather Analyzer",
       "Name": "DeployedWeatherStn",
       "Category": "Cargo",
       "Cost": 1300,
@@ -13339,7 +13872,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011110//R-25DuctedFanBlade",
+      "Title": "#autoLOC_6011110",
       "Name": "largeFanBlade",
       "Category": "Aero",
       "Cost": 550,
@@ -13354,7 +13887,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HelicopterBladeS",
+      "Title": "Helicopter Blade S",
       "Name": "largeHeliBlade",
       "Category": "Aero",
       "Cost": 500,
@@ -13369,7 +13902,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PropellerBladeTypeS",
+      "Title": "Propeller Blade Type S",
       "Name": "largePropeller",
       "Category": "Aero",
       "Cost": 400,
@@ -13384,7 +13917,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011107//R-12DuctedFanBlade",
+      "Title": "#autoLOC_6011107",
       "Name": "mediumFanBlade",
       "Category": "Aero",
       "Cost": 275,
@@ -13399,7 +13932,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HelicopterBladeTypeB",
+      "Title": "Helicopter Blade Type B",
       "Name": "mediumHeliBlade",
       "Category": "Aero",
       "Cost": 225,
@@ -13414,7 +13947,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PropellerBladeTypeB",
+      "Title": "Propeller Blade Type B",
       "Name": "mediumPropeller",
       "Category": "Aero",
       "Cost": 175,
@@ -13429,7 +13962,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011104//R-062DuctedFanBlade",
+      "Title": "#autoLOC_6011104",
       "Name": "smallFanBlade",
       "Category": "Aero",
       "Cost": 150,
@@ -13444,7 +13977,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "HelicopterBladeTypeA",
+      "Title": "Helicopter Blade Type A",
       "Name": "smallHeliBlade",
       "Category": "Aero",
       "Cost": 100,
@@ -13459,7 +13992,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "PropellerBladeTypeA",
+      "Title": "Propeller Blade Type A",
       "Name": "smallPropeller",
       "Category": "Aero",
       "Cost": 75,
@@ -13474,7 +14007,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "G-11Hinge",
+      "Title": "#autoLOC_8320017",
       "Name": "hinge_01",
       "Category": "Robotics",
       "Cost": 120,
@@ -13489,7 +14022,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "G-00Hinge",
+      "Title": "G-00 Hinge",
       "Name": "hinge_01_s",
       "Category": "Robotics",
       "Cost": 50,
@@ -13504,7 +14037,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "G-12LAlligatorHinge",
+      "Title": "G-12L Alligator Hinge",
       "Name": "hinge_03",
       "Category": "Robotics",
       "Cost": 360,
@@ -13519,7 +14052,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "G-01LAlligatorHinge",
+      "Title": "G-01L Alligator Hinge",
       "Name": "hinge_03_s",
       "Category": "Robotics",
       "Cost": 120,
@@ -13534,7 +14067,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "G-32WHinge",
+      "Title": "G-32W Hinge",
       "Name": "hinge_04",
       "Category": "Robotics",
       "Cost": 480,
@@ -13549,7 +14082,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "3P6HydraulicCylinder",
+      "Title": "3P6 Hydraulic Cylinder",
       "Name": "piston_01",
       "Category": "Robotics",
       "Cost": 300,
@@ -13564,7 +14097,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "1P2HydraulicCylinder",
+      "Title": "1P2 Hydraulic Cylinder",
       "Name": "piston_02",
       "Category": "Robotics",
       "Cost": 50,
@@ -13579,7 +14112,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "3PTTelescopingHydraulicCylinder",
+      "Title": "3PT Telescoping Hydraulic Cylinder",
       "Name": "piston_03",
       "Category": "Robotics",
       "Cost": 500,
@@ -13594,7 +14127,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "1P4TelescopingHydraulicCylinder",
+      "Title": "1P4 Telescoping Hydraulic Cylinder",
       "Name": "piston_04",
       "Category": "Robotics",
       "Cost": 100,
@@ -13609,7 +14142,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "R121TurboshaftEngine",
+      "Title": "R121 Turboshaft Engine",
       "Name": "RotorEngine_02",
       "Category": "Robotics",
       "Cost": 200,
@@ -13653,7 +14186,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "R7000TurboshaftEngine",
+      "Title": "R7000 Turboshaft Engine",
       "Name": "RotorEngine_03",
       "Category": "Robotics",
       "Cost": 550,
@@ -13697,7 +14230,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EM-16LightDutyRotor",
+      "Title": "EM-16 Light Duty Rotor",
       "Name": "rotor_01",
       "Category": "Robotics",
       "Cost": 60,
@@ -13712,7 +14245,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EM-16SLightDutyRotor",
+      "Title": "EM-16S Light Duty Rotor",
       "Name": "rotor_01s",
       "Category": "Robotics",
       "Cost": 60,
@@ -13727,7 +14260,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EM-32StandardRotor",
+      "Title": "EM-32 Standard Rotor",
       "Name": "rotor_02",
       "Category": "Robotics",
       "Cost": 150,
@@ -13742,7 +14275,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EM-32SStandardRotor",
+      "Title": "EM-32S Standard Rotor",
       "Name": "rotor_02s",
       "Category": "Robotics",
       "Cost": 150,
@@ -13757,7 +14290,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EM-64HeavyRotor",
+      "Title": "EM-64 Heavy Rotor",
       "Name": "rotor_03",
       "Category": "Robotics",
       "Cost": 600,
@@ -13772,7 +14305,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "EM-64SHeavyRotor",
+      "Title": "EM-64S Heavy Rotor",
       "Name": "rotor_03s",
       "Category": "Robotics",
       "Cost": 600,
@@ -13787,7 +14320,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RotationServoM-06",
+      "Title": "Rotation Servo M-06",
       "Name": "rotoServo_00",
       "Category": "Robotics",
       "Cost": 60,
@@ -13802,7 +14335,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RotationServoF-12",
+      "Title": "Rotation Servo F-12",
       "Name": "rotoServo_02",
       "Category": "Robotics",
       "Cost": 100,
@@ -13817,7 +14350,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RotationServoM-12",
+      "Title": "Rotation Servo M-12",
       "Name": "rotoServo_03",
       "Category": "Robotics",
       "Cost": 120,
@@ -13832,7 +14365,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "RotationServoM-25",
+      "Title": "Rotation Servo M-25",
       "Name": "rotoServo_04",
       "Category": "Robotics",
       "Cost": 500,
@@ -14742,7 +15275,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProtectiveNoseConeMk16A",
+      "Title": "#autoLOC_6012028",
       "Name": "rocketNoseConeSize4",
       "Category": "Aero",
       "Cost": 1700,
@@ -14757,7 +15290,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "ProtectiveRocketNoseconeMk5A",
+      "Title": "Protective Rocket Nosecone Mk5A",
       "Name": "Size_1_5_Cone",
       "Category": "Aero",
       "Cost": 160,
@@ -14772,7 +15305,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "THK\"Pollux\"SolidFuelBooster",
+      "Title": "THK \"Pollux\" Solid Fuel Booster",
       "Name": "Pollux",
       "Category": "Engine",
       "Cost": 6000,
@@ -14813,7 +15346,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "KAL-1000Controller",
+      "Title": "#autoLOC_8003279",
       "Name": "controller1000",
       "Category": "Robotics",
       "Cost": 1000,
@@ -14828,7 +15361,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "CRSYLightScanningArm",
+      "Title": "CRSY Light Scanning Arm",
       "Name": "RobotArmScanner_S1",
       "Category": "Science",
       "Cost": 400,
@@ -14851,7 +15384,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "SPRTMediumScanningArm",
+      "Title": "SPRT Medium Scanning Arm",
       "Name": "RobotArmScanner_S2",
       "Category": "Science",
       "Cost": 600,
@@ -14874,7 +15407,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "OPPOLargeScanningArm",
+      "Title": "OPPO Large Scanning Arm",
       "Name": "RobotArmScanner_S3",
       "Category": "Science",
       "Cost": 800,
@@ -14897,7 +15430,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011087//GP-156GripPad",
+      "Title": "#autoLOC_6011087",
       "Name": "lGripPad",
       "Category": "Structural",
       "Cost": 300,
@@ -14912,7 +15445,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011093//GPS-156GripStrip",
+      "Title": "#autoLOC_6011093",
       "Name": "lGripStrip",
       "Category": "Structural",
       "Cost": 300,
@@ -14927,7 +15460,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011089//GP-036GripPad",
+      "Title": "#autoLOC_6011089",
       "Name": "mGripPad",
       "Category": "Structural",
       "Cost": 75,
@@ -14942,7 +15475,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011091//GP-004GripPad",
+      "Title": "#autoLOC_6011091",
       "Name": "sGripPad",
       "Category": "Structural",
       "Cost": 30,
@@ -14957,7 +15490,7 @@
     },
     {
       "$type": "KSPModelLibrary.Data.PartDataModels.Part, KSPModelLibrary",
-      "Title": "#autoLOC_6011095//GPS025",
+      "Title": "#autoLOC_6011095",
       "Name": "sGripStrip",
       "Category": "Structural",
       "Cost": 50,

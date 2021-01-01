@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class ResourceHarvesterModule : IModule
+   public class ResourceHarvesterModule : IModule, IELoadModule
    {
       public string Name { get; set; }
       public double Efficiency { get; set; }
@@ -34,7 +34,35 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
          {
             newInst.SetProp(kv);
          }
+
+         if (obj.Children.Count > 0)
+         {
+            var inputChildren = obj.GetChildren("INPUT_RESOURCE");
+            foreach (var input in inputChildren)
+            {
+               newInst.ResourceInputs.Add(InputResourceModule.BuildModule(input));
+            }
+         }
          return newInst;
+      }
+
+      public double Load
+      {
+         get
+         {
+            double output = 0;
+            if (ResourceInputs != null)
+            {
+               foreach (var resInput in ResourceInputs)
+               {
+                  if (resInput.ResourceName == "ElectricCharge")
+                  {
+                     output += resInput.Ratio;
+                  }
+               }
+            }
+            return output;
+         }
       }
    }
 }

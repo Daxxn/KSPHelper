@@ -253,18 +253,19 @@ namespace ConfigReaderLibrary
       {
          //var cleanedLine = CleanTabsRec(line);
          var dirtySplit = line.Split(new string[] { " = ", "=" }, StringSplitOptions.RemoveEmptyEntries);
-         var split = Clean(dirtySplit, false);
+         //var split = Clean(dirtySplit, false);
+         var split = Trim(dirtySplit);
          if (split.Length == 2)
          {
-            return (split[0], split[1]);
+            return (CleanSpaces(split[0]), split[1]);
          }
          else if (split.Length == 1)
          {
-            return (split[0], "NULL");
+            return (CleanSpaces(split[0]), "NULL");
          }
          else if (split.Length > 2)
          {
-            return (split[0], split[2]);
+            return (CleanSpaces(split[0]), split[2]);
          }
          else
          {
@@ -299,28 +300,95 @@ namespace ConfigReaderLibrary
       /// <returns>The cleaned <paramref name="input"/> line.</returns>
       private string Clean(string input, bool strict = true)
       {
+         var newInput = RemoveComment(input);
          if (strict)
          {
-            StringBuilder sb = new StringBuilder();
-            foreach (char c in input)
-            {
-               if (c != '\t' && c != ' ')
-               {
-                  sb.Append(c);
-               }
-            }
-            return sb.ToString();
+            //StringBuilder sb = new StringBuilder();
+            //foreach (char c in input)
+            //{
+            //   if (c != '\t' && c != ' ')
+            //   {
+            //      sb.Append(c);
+            //   }
+            //}
+            //return sb.ToString();
+            //return CleanTabs(input);
+            return CleanSpaces(newInput.Trim('\t'));
          }
          else
          {
-            if (input.Contains('\t') || input.Contains(' '))
+            //if (input.Contains('\t') || input.Contains(' '))
+            if (input.Contains('\t'))
             {
-               return Clean(input);
+               return Clean(newInput);
+            }
+            else
+            {
+               return newInput;
+            }
+         }
+      }
+
+      //private string CleanTabs(string input)
+      //{
+      //   if (input.StartsWith('\t') || input.StartsWith(' '))
+      //   {
+      //      var clean = input.TrimStart('\t', ' ');
+      //      if (clean.StartsWith('\t') || clean.StartsWith(' '))
+      //      {
+      //         return CleanTabs(clean);
+      //      }
+      //      else
+      //      {
+      //         return clean;
+      //      }
+      //   }
+      //   else
+      //   {
+      //      return input;
+      //   }
+      //}
+
+      private string CleanSpaces(string input)
+      {
+         //StringBuilder sb = new StringBuilder();
+         //foreach (char c in input)
+         //{
+         //   if (c != ' ')
+         //   {
+         //      sb.Append(c);
+         //   }
+         //}
+         //return sb.ToString();
+         return input.TrimStart(' ', '\t');
+      }
+
+      private string[] Trim(string[] inputs)
+      {
+         var output = new string[inputs.Length];
+         for (int i = 0; i < inputs.Length; i++)
+         {
+            output[i] = inputs[i].Trim();
+         }
+         return output;
+      }
+
+      private string RemoveComment(string input)
+      {
+         if (!input.Contains("//#"))
+         {
+            if (input.Contains("//"))
+            {
+               return input.Split('/', StringSplitOptions.RemoveEmptyEntries)[0];
             }
             else
             {
                return input;
             }
+         }
+         else
+         {
+            return input;
          }
       }
 

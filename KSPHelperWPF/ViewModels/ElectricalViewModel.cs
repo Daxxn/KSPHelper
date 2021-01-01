@@ -35,8 +35,14 @@ namespace KSPHelperWPF.ViewModels
       private double _genTotal;
       private double _altTotal;
 
+      private double _passivechargeRateTotal;
+      //private double _throttleChargeRateTotal;
+      private TimeSpan _chargeTime;
+
       private ObservableCollection<StageTotal> _individualStageTotals;
       private ObservableCollection<StageTotal> _linearStageTotals;
+
+      private double _throttleSetting;
       #endregion
 
       #region - Constructors
@@ -69,6 +75,8 @@ namespace KSPHelperWPF.ViewModels
          LoadTotal = IndividualStageTotals.Sum(stage => stage.Loads);
          GenTotal = IndividualStageTotals.Sum(stage => stage.Generators);
          AltTotal = IndividualStageTotals.Sum(stage => stage.Alternators);
+         PassiveChargeRateTotal = ElectricalCalcMethods.ChargeRate(GenTotal, LoadTotal);
+         //ThrottleChargeRateTotal = ElectricalCalcMethods.ThrottleChargeRate(AltTotal, LoadTotal, ThrottleSetting);
       }
       #endregion
 
@@ -281,6 +289,86 @@ namespace KSPHelperWPF.ViewModels
          {
             _selectedPart = value;
             OnPropertyChanged(nameof(SelectedPart));
+            OnPropertyChanged(nameof(SelectedPartLoad));
+            OnPropertyChanged(nameof(SelectedPartBattery));
+            OnPropertyChanged(nameof(SelectedPartGenerator));
+            OnPropertyChanged(nameof(SelectedPartAlternator));
+         }
+      }
+
+      public double SelectedPartLoad
+      {
+         get
+         {
+            double load = 0;
+            if (SelectedPart != null)
+            {
+               foreach (var module in SelectedPart.Part.Modules)
+               {
+                  if (module is IELoadModule found)
+                  {
+                     load = found.Load;
+                  }
+               }
+            }
+            return load;
+         }
+      }
+
+      public double SelectedPartBattery
+      {
+         get
+         {
+            double batt = 0;
+            if (SelectedPart != null)
+            {
+               foreach (var resource in SelectedPart.Part.Resources)
+               {
+                  if (resource is ElectricalResource)
+                  {
+                     batt = resource.Amount;
+                  }
+               }
+            }
+            return batt;
+         }
+      }
+
+      public double SelectedPartGenerator
+      {
+         get
+         {
+            double charge = 0;
+            if (SelectedPart != null)
+            {
+               foreach (var module in SelectedPart.Part.Modules)
+               {
+                  if (module is IEGenModule found)
+                  {
+                     charge = found.Charge;
+                  }
+               }
+            }
+            return charge;
+         }
+      }
+
+      public double SelectedPartAlternator
+      {
+         get
+         {
+            double charge = 0;
+            if (SelectedPart != null)
+            {
+               foreach (var module in SelectedPart.Part.Modules)
+               {
+                  if (module is IEAltModule found)
+                  {
+                     charge = found.Charge;
+                  }
+               }
+            }
+            return charge;
          }
       }
 
@@ -365,6 +453,42 @@ namespace KSPHelperWPF.ViewModels
          }
       }
 
+      public double PassiveChargeRateTotal
+      {
+         get { return _passivechargeRateTotal; }
+         set
+         {
+            _passivechargeRateTotal = value;
+            OnPropertyChanged(nameof(PassiveChargeRateTotal));
+            OnPropertyChanged(nameof(ThrottleChargeRateTotal));
+            OnPropertyChanged(nameof(ChargeTimeTotal));
+         }
+      }
+
+      public double ThrottleChargeRateTotal
+      {
+         get
+         {
+            return ElectricalCalcMethods.ThrottleChargeRate(AltTotal, LoadTotal, ThrottleSetting);
+         }
+      }
+
+      public double CombinedChargeRate
+      {
+         get
+         {
+            return PassiveChargeRateTotal + ThrottleChargeRateTotal;
+         }
+      }
+
+      public TimeSpan ChargeTimeTotal
+      {
+         get
+         {
+            return ElectricalCalcMethods.BatteryChargeTime(BatteryTotal, CombinedChargeRate);
+         }
+      }
+
       public ObservableCollection<StageTotal> IndividualStageTotals
       {
          get { return _individualStageTotals; }
@@ -385,6 +509,17 @@ namespace KSPHelperWPF.ViewModels
          }
       }
       #endregion
+
+      public double ThrottleSetting
+      {
+         get { return _throttleSetting; }
+         set
+         {
+            _throttleSetting = value;
+            OnPropertyChanged(nameof(ThrottleSetting));
+            OnPropertyChanged(nameof(ThrottleChargeRateTotal));
+         }
+      }
       #endregion
    }
 }

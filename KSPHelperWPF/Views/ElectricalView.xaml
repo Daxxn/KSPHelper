@@ -6,8 +6,14 @@
              xmlns:local="clr-namespace:KSPHelperWPF.Views"
              xmlns:components="clr-namespace:KSPHelperWPF.Components"
              mc:Ignorable="d"
-             Background="AliceBlue"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="\ResourceDictionaries\ElectricalViewStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -19,7 +25,6 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <!--<RowDefinition Height="Auto"/>-->
         </Grid.RowDefinitions>
 
         <Border Grid.Column="0" Grid.Row="0" Padding="4">
@@ -29,10 +34,15 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" FontSize="13">Craft</TextBlock>
+                <TextBlock
+                    Style="{StaticResource ListTitleBlock}"
+                >
+                    Craft
+                </TextBlock>
                 <ListView
                     Grid.Row="1"
                     x:Name="mainCraftList"
+                    Style="{StaticResource test}"
                     ItemsSource="{Binding Path=Craft.Stages.Values}"
                     SelectedItem="{Binding Path=SelectedPart}"
                 >
@@ -49,12 +59,12 @@
                                                 Grid.IsSharedSizeScope="True"
                                             >
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition SharedSizeGroup="title"/>
-                                                    <ColumnDefinition SharedSizeGroup="value"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <TextBlock Grid.Column="0">Part</TextBlock>
-                                                <TextBlock Grid.Column="1" Text="{Binding Path=Part.Title}"/>
+                                                <TextBlock Style="{StaticResource PartListTitle}"/>
+                                                <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
                                             </Grid>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
@@ -73,7 +83,11 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" FontSize="13">Battry Parts</TextBlock>
+                <TextBlock
+                    Style="{StaticResource ListTitleBlock}"
+                >
+                    Battery Parts
+                </TextBlock>
                 <ListView
                     Grid.Row="1"
                     x:Name="batteriesList"
@@ -93,12 +107,12 @@
                                                 Grid.IsSharedSizeScope="True"
                                             >
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition SharedSizeGroup="title"/>
-                                                    <ColumnDefinition SharedSizeGroup="value"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <TextBlock Grid.Column="0">Part</TextBlock>
-                                                <TextBlock Grid.Column="1" Text="{Binding Path=Part.Title}"/>
+                                                <TextBlock Style="{StaticResource PartListTitle}"/>
+                                                <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
                                             </Grid>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
@@ -117,7 +131,11 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" FontSize="13">Load Parts</TextBlock>
+                <TextBlock
+                    Style="{StaticResource ListTitleBlock}"
+                >
+                    Load Parts
+                </TextBlock>
                 <ListView
                     Grid.Row="1"
                     x:Name="loadsList"
@@ -137,12 +155,12 @@
                                                 Grid.IsSharedSizeScope="True"
                                             >
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition SharedSizeGroup="title"/>
-                                                    <ColumnDefinition SharedSizeGroup="value"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <TextBlock Grid.Column="0">Part</TextBlock>
-                                                <TextBlock Grid.Column="1" Text="{Binding Path=Part.Title}"/>
+                                                <TextBlock Style="{StaticResource PartListTitle}"/>
+                                                <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
                                             </Grid>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
@@ -161,7 +179,11 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" FontSize="13">Generator Parts</TextBlock>
+                <TextBlock
+                    Style="{StaticResource ListTitleBlock}"
+                >
+                    Generator Parts
+                </TextBlock>
                 <ListView
                     Grid.Row="1"
                     x:Name="generatorsList"
@@ -181,12 +203,12 @@
                                                 Grid.IsSharedSizeScope="True"
                                             >
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition SharedSizeGroup="title"/>
-                                                    <ColumnDefinition SharedSizeGroup="value"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <TextBlock Grid.Column="0">Part</TextBlock>
-                                                <TextBlock Grid.Column="1" Text="{Binding Path=Part.Title}"/>
+                                                <TextBlock Style="{StaticResource PartListTitle}"/>
+                                                <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
                                             </Grid>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
@@ -205,7 +227,11 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" FontSize="13">Alternator Parts</TextBlock>
+                <TextBlock
+                    Style="{StaticResource ListTitleBlock}"
+                >
+                    Alternator Parts
+                </TextBlock>
                 <ListView
                     Grid.Row="1"
                     x:Name="alternatorsList"
@@ -225,12 +251,12 @@
                                                 Grid.IsSharedSizeScope="True"
                                             >
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition SharedSizeGroup="title"/>
-                                                    <ColumnDefinition SharedSizeGroup="value"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <TextBlock Grid.Column="0">Part</TextBlock>
-                                                <TextBlock Grid.Column="1" Text="{Binding Path=Part.Title}"/>
+                                                <TextBlock Style="{StaticResource PartListTitle}"/>
+                                                <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
                                             </Grid>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
@@ -245,11 +271,26 @@
         <Border Grid.Column="5" Padding="6">
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                
+
                 <Border Grid.Row="0" Padding="2">
+                    <Slider
+                        Minimum="0"
+                        Maximum="1"
+                        TickFrequency="0.025"
+                        TickPlacement="BottomRight"
+                        AutoToolTipPlacement="TopLeft"
+                        AutoToolTipPrecision="3"
+                        IsSnapToTickEnabled="True"
+                        IsMoveToPointEnabled="True"
+                        Value="{Binding Path=ThrottleSetting, UpdateSourceTrigger=PropertyChanged}"
+                    />
+                </Border>
+
+                <Border Grid.Row="1" Style="{StaticResource SelectedPartBorder}">
                     <Grid Grid.IsSharedSizeScope="True">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition SharedSizeGroup="title"/>
@@ -260,56 +301,127 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <TextBlock>Selected Part</TextBlock>
                         <TextBlock
                             Grid.Row="0"
                             Grid.Column="1"
+                            Style="{StaticResource SelectedPartBlock}"
                             Text="{Binding Path=SelectedPart.Part.Title}"
                         />
                         <TextBlock
                             Grid.Row="1"
                             Grid.Column="0"
                         >
-                            Module Count
+                            Load
                         </TextBlock>
                         <TextBlock
                             Grid.Row="1"
                             Grid.Column="1"
-                            Text="{Binding Path=SelectedPart.Part.Modules.Count}"
+                            Style="{StaticResource SelectedValueBlock}"
+                            Text="{Binding Path=SelectedPartLoad}"
+                        />
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                        >
+                            Battery
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Style="{StaticResource SelectedValueBlock}"
+                            Text="{Binding Path=SelectedPartBattery}"
+                        />
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                        >
+                            Generator
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Style="{StaticResource SelectedValueBlock}"
+                            Text="{Binding Path=SelectedPartGenerator}"
+                        />
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="0"
+                        >
+                            Alternator
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Style="{StaticResource SelectedValueBlock}"
+                            Text="{Binding Path=SelectedPartAlternator}"
                         />
                     </Grid>
                 </Border>
 
-                <Border Grid.Row="1" Padding="2">
-                    <Grid Grid.IsSharedSizeScope="True">
+                <Border Grid.Row="2" Style="{StaticResource TotalsBorder}">
+                    <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="Title"/>
+                            <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-
-                        <!--<Button x:Name="CalcTestButton">Test - Run Calc</Button>-->
                         
-                        <TextBlock Grid.Row="1" Grid.Column="0">Total Batt</TextBlock>
-                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=BatteryTotal}"/>
-                        <TextBlock Grid.Row="2" Grid.Column="0">Total Load</TextBlock>
-                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=LoadTotal}"/>
-                        <TextBlock Grid.Row="3" Grid.Column="0">Total Gen</TextBlock>
-                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=GenTotal}"/>
-                        <TextBlock Grid.Row="4" Grid.Column="0">Total Alt</TextBlock>
-                        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=AltTotal}"/>
+                        <Grid Grid.IsSharedSizeScope="True" Grid.Column="0" Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="Title"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
+                            <!--<Button x:Name="CalcTestButton">Test - Run Calc</Button>-->
+
+                            <TextBlock Grid.Row="1" Grid.Column="0">Total Batt</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=BatteryTotal}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="0">Total Load</TextBlock>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=LoadTotal}"/>
+                            <TextBlock Grid.Row="3" Grid.Column="0">Total Gen</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=GenTotal}"/>
+                            <TextBlock Grid.Row="4" Grid.Column="0">Total Alt</TextBlock>
+                            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=AltTotal}"/>
+
+                        </Grid>
+
+                        <Grid Grid.Row="0" Grid.Column="1" Grid.IsSharedSizeScope="True">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="title"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0">Passive Charge Rate</TextBlock>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=PassiveChargeRateTotal}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0">Throttle Charge Rate</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=ThrottleChargeRateTotal}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="0">Charge Time</TextBlock>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=ChargeTimeTotal}"/>
+                        </Grid>
+                        
                         <Expander
-                            Grid.Row="5"
+                            Grid.Row="1"
                             Grid.ColumnSpan="2"
                             Header="Stage totals"
                         >
@@ -344,17 +456,23 @@
                                                             <RowDefinition Height="Auto"/>
                                                             <RowDefinition Height="Auto"/>
                                                             <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
                                                         </Grid.RowDefinitions>
 
                                                         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Path=Stage, StringFormat=Stage {0}}" />
-                                                        <TextBlock Grid.Row="1" Grid.Column="0">Batteries</TextBlock>
-                                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Batteries}" />
-                                                        <TextBlock Grid.Row="2" Grid.Column="0">Loads</TextBlock>
-                                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Loads}" />
-                                                        <TextBlock Grid.Row="3" Grid.Column="0">Generators</TextBlock>
-                                                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Generators}" />
-                                                        <TextBlock Grid.Row="4" Grid.Column="0">Alternators</TextBlock>
-                                                        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=Alternators}" />
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="1" Grid.Column="0">Batteries</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Batteries}" />
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="2" Grid.Column="0">Loads</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="2" Grid.Column="1" Text="{Binding Path=Loads}" />
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="3" Grid.Column="0">Generators</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="3" Grid.Column="1" Text="{Binding Path=Generators}" />
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="4" Grid.Column="0">Alternators</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="4" Grid.Column="1" Text="{Binding Path=Alternators}" />
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="5" Grid.Column="0">Charge Rate</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="5" Grid.Column="1" Text="{Binding Path=ChargeRate}"/>
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="6" Grid.Column="0">Charge Time</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="6" Grid.Column="1" Text="{Binding Path=ChargeTime}"/>
                                                     </Grid>
                                                 </Border>
                                             </DataTemplate>
@@ -386,17 +504,24 @@
                                                             <RowDefinition Height="Auto"/>
                                                             <RowDefinition Height="Auto"/>
                                                             <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
                                                         </Grid.RowDefinitions>
 
                                                         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Path=Stage, StringFormat=Stage {0}}" />
-                                                        <TextBlock Grid.Row="1" Grid.Column="0">Batteries</TextBlock>
-                                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Batteries}" />
-                                                        <TextBlock Grid.Row="2" Grid.Column="0">Loads</TextBlock>
-                                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Loads}" />
-                                                        <TextBlock Grid.Row="3" Grid.Column="0">Generators</TextBlock>
-                                                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Generators}" />
-                                                        <TextBlock Grid.Row="4" Grid.Column="0">Alternators</TextBlock>
-                                                        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=Alternators}" />
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="1" Grid.Column="0">Batteries</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Batteries}" />
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="2" Grid.Column="0">Loads</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="2" Grid.Column="1" Text="{Binding Path=Loads}" />
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="3" Grid.Column="0">Generators</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="3" Grid.Column="1" Text="{Binding Path=Generators}" />
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="4" Grid.Column="0">Alternators</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="4" Grid.Column="1" Text="{Binding Path=Alternators}" />
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="5" Grid.Column="0">Charge Rate</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="5" Grid.Column="1" Text="{Binding Path=ChargeRate}"/>
+                                                        <TextBlock Style="{StaticResource StageTitleBlock}" Grid.Row="6" Grid.Column="0">Charge Time</TextBlock>
+                                                        <TextBlock Style="{StaticResource StageValueBlock}" Grid.Row="6" Grid.Column="1" Text="{Binding Path=ChargeTime}"/>
                                                     </Grid>
                                                 </Border>
                                             </DataTemplate>

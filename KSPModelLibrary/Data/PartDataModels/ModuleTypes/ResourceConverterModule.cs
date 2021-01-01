@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
 {
-   public class ResourceConverterModule : IModule, IEGenModule
+   public class ResourceConverterModule : IModule, IEGenModule, IELoadModule
    {
       public string Name { get; set; }
       public string ConverterName { get; set; }
@@ -71,7 +71,7 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
             {
                foreach (var resOut in ResourceOutputs)
                {
-                  if (resOut.Name == "ElectricCharge")
+                  if (resOut.ResourceName == "ElectricCharge")
                   {
                      if (resOut.Rate > 0)
                      {
@@ -81,6 +81,25 @@ namespace KSPModelLibrary.Data.PartDataModels.ModuleTypes
                      {
                         output += resOut.Ratio;
                      }
+                  }
+               }
+            }
+            return output;
+         }
+      }
+
+      public double Load
+      {
+         get
+         {
+            double output = 0;
+            if (ResourceInputs != null)
+            {
+               foreach (var resInput in ResourceInputs)
+               {
+                  if (resInput.ResourceName == "ElectricCharge")
+                  {
+                     output += resInput.Ratio;
                   }
                }
             }

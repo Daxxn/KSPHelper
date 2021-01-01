@@ -161,6 +161,12 @@ namespace KSPModelLibrary.Data
                case ModuleType.ModuleRCSFX:
                   part.Modules.Add(RCSModule.BuildModule(module));
                   break;
+               case ModuleType.SCANsat:
+                  part.Modules.Add(SCANSatModule.BuildModule(module));
+                  break;
+               case ModuleType.SCANexperiment:
+                  part.Modules.Add(SCANExperimentModule.BuildModule(module));
+                  break;
                default:
                   break;
             }

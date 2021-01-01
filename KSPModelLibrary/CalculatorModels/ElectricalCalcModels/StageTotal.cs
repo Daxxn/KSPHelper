@@ -12,6 +12,9 @@ namespace KSPModelLibrary.CalculatorModels.ElectricalCalcModels
       private double _loads;
       private double _generators;
       private double _alternators;
+
+      //private double _chargeRate;
+      //private TimeSpan _chargeTime;
       #endregion
 
       #region - Constructors
@@ -25,7 +28,7 @@ namespace KSPModelLibrary.CalculatorModels.ElectricalCalcModels
       #region - Methods
       public override string ToString()
       {
-         return $"Stage {Stage} : Batt {Batteries} : Loads {Loads} : Gens {Generators}";
+         return $"Stage {Stage} : Batt {Batteries} : Loads {Loads} : Gens {Generators} : ChargeRate {ChargeRate} : ChargeTime {ChargeTime}";
       }
       #endregion
 
@@ -47,6 +50,7 @@ namespace KSPModelLibrary.CalculatorModels.ElectricalCalcModels
          {
             _batteries = value;
             OnPropertyChanged(nameof(Batteries));
+            OnPropertyChanged(nameof(ChargeTime));
          }
       }
 
@@ -57,6 +61,7 @@ namespace KSPModelLibrary.CalculatorModels.ElectricalCalcModels
          {
             _loads = value;
             OnPropertyChanged(nameof(Loads));
+            OnPropertyChanged(nameof(ChargeRate));
          }
       }
 
@@ -67,6 +72,7 @@ namespace KSPModelLibrary.CalculatorModels.ElectricalCalcModels
          {
             _generators = value;
             OnPropertyChanged(nameof(Generators));
+            OnPropertyChanged(nameof(ChargeRate));
          }
       }
 
@@ -77,6 +83,22 @@ namespace KSPModelLibrary.CalculatorModels.ElectricalCalcModels
          {
             _alternators = value;
             OnPropertyChanged(nameof(Alternators));
+            OnPropertyChanged(nameof(ChargeRate));
+         }
+      }
+      public double ChargeRate
+      {
+         get
+         {
+            return ElectricalCalcMethods.ChargeRate(Generators + Alternators, Loads);
+         }
+      }
+
+      public TimeSpan ChargeTime
+      {
+         get
+         {
+            return ElectricalCalcMethods.BatteryChargeTime(Batteries, ChargeRate);
          }
       }
       #endregion
