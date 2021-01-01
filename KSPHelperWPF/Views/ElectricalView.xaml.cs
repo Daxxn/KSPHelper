@@ -19,6 +19,8 @@ namespace KSPHelperWPF.Views
    /// </summary>
    public partial class ElectricalView : UserControl
    {
+      private static double ScrollSensitivity { get; } = 0.3;
+      private static double FineScrollSensitivity { get; } = 0.1;
       public ElectricalView(ElectricalViewModel vm)
       {
          InitializeComponent();
@@ -29,6 +31,30 @@ namespace KSPHelperWPF.Views
       private void InitEvents(ElectricalViewModel vm)
       {
          //CalcTestButton.Click += vm.CalcTestEvent;
+      }
+
+      private void PartsListScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
+      {
+         if (PartsListScrollViewer.HorizontalScrollBarVisibility == ScrollBarVisibility.Visible)
+         {
+            //PartsListScrollViewer.ExtentHeight
+         }
+      }
+
+      private void PartsList_MouseWheel(object sender, MouseWheelEventArgs e)
+      {
+         if (PartsListScrollViewer.HorizontalScrollBarVisibility == ScrollBarVisibility.Visible)
+         {
+            //PartsListScrollViewer.
+         }
+      }
+      private void ListViewScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+      {
+         //ScrollViewer scv = (ScrollViewer)sender;
+         PartsListScrollViewer.ScrollToHorizontalOffset(
+            PartsListScrollViewer.HorizontalOffset - (e.Delta * (e.RightButton == MouseButtonState.Pressed ? FineScrollSensitivity : ScrollSensitivity))
+         );
+         e.Handled = true;
       }
    }
 }

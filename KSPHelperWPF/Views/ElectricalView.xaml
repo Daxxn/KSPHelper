@@ -16,263 +16,289 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="Auto" MinWidth="300"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <Border Grid.Column="0" Grid.Row="0" Padding="4">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+        <!--#region Parts Lists-->
+        <ScrollViewer
+            x:Name="PartsListScrollViewer"
+            PreviewMouseWheel="ListViewScrollViewer_PreviewMouseWheel"
+            Grid.Column="0"
+            HorizontalScrollBarVisibility="Auto"
+            VerticalScrollBarVisibility="Auto"
+        >
+            <Border PreviewMouseWheel="ListViewScrollViewer_PreviewMouseWheel">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-                <TextBlock
-                    Style="{StaticResource ListTitleBlock}"
-                >
-                    Craft
-                </TextBlock>
-                <ListView
-                    Grid.Row="1"
-                    x:Name="mainCraftList"
-                    Style="{StaticResource test}"
-                    ItemsSource="{Binding Path=Craft.Stages.Values}"
-                    SelectedItem="{Binding Path=SelectedPart}"
-                >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Expander Header="{Binding Path=StageNumber}">
-                                <ListView
-                                    ItemsSource="{Binding Path=Parts}"
-                                    SelectedItem="{Binding ElementName=mainCraftList, Path=SelectedItem}"
-                                >
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid
-                                                Grid.IsSharedSizeScope="True"
+                    <Border Grid.Column="0" Grid.Row="0" Padding="4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock
+                                Style="{StaticResource ListTitleBlock}"
+                            >
+                                Craft
+                            </TextBlock>
+                            <ListView
+                                PreviewMouseWheel="ListViewScrollViewer_PreviewMouseWheel"
+                                Grid.Row="1"
+                                x:Name="mainCraftList"
+                                ItemsSource="{Binding Path=Craft.Stages.Values}"
+                                SelectedItem="{Binding Path=SelectedPart}"
+                            >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Expander Header="{Binding Path=StageNumber}">
+                                            <ListView
+                                                ItemsSource="{Binding Path=Parts}"
+                                                SelectedItem="{Binding ElementName=mainCraftList, Path=SelectedItem}"
                                             >
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid
+                                                            Grid.IsSharedSizeScope="True"
+                                                        >
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
 
-                                                <TextBlock Style="{StaticResource PartListTitle}"/>
-                                                <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </Expander>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-        </Border>
+                                                            <TextBlock Style="{StaticResource PartListTitle}"/>
+                                                            <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+                                        </Expander>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </Border>
 
-        <Border Grid.Column="1" Grid.Row="0" Padding="4">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                    <Border Grid.Column="1" Grid.Row="0" Padding="4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-                <TextBlock
-                    Style="{StaticResource ListTitleBlock}"
-                >
-                    Battery Parts
-                </TextBlock>
-                <ListView
-                    Grid.Row="1"
-                    x:Name="batteriesList"
-                    ItemsSource="{Binding Path=CraftBatteries.Stages.Values}"
-                    SelectedItem="{Binding Path=SelectedPart}"
-                >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Expander Header="{Binding Path=StageNumber}">
-                                <ListView
-                                    ItemsSource="{Binding Path=Parts}"
-                                    SelectedItem="{Binding ElementName=batteriesList, Path=SelectedItem}"
-                                >
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid
-                                                Grid.IsSharedSizeScope="True"
+                            <TextBlock
+                                Style="{StaticResource ListTitleBlock}"
+                            >
+                                Battery Parts
+                            </TextBlock>
+                            <ListView
+                                Grid.Row="1"
+                                x:Name="batteriesList"
+                                ItemsSource="{Binding Path=CraftBatteries.Stages.Values}"
+                                SelectedItem="{Binding Path=SelectedPart}"
+                            >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Expander Header="{Binding Path=StageNumber}">
+                                            <ListView
+                                                ItemsSource="{Binding Path=Parts}"
+                                                SelectedItem="{Binding ElementName=batteriesList, Path=SelectedItem}"
                                             >
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid
+                                                            Grid.IsSharedSizeScope="True"
+                                                        >
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
 
-                                                <TextBlock Style="{StaticResource PartListTitle}"/>
-                                                <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </Expander>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-        </Border>
+                                                            <TextBlock Style="{StaticResource PartListTitle}"/>
+                                                            <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+                                        </Expander>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </Border>
 
-        <Border Grid.Column="2" Grid.Row="0" Padding="4">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                    <Border Grid.Column="2" Grid.Row="0" Padding="4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-                <TextBlock
-                    Style="{StaticResource ListTitleBlock}"
-                >
-                    Load Parts
-                </TextBlock>
-                <ListView
-                    Grid.Row="1"
-                    x:Name="loadsList"
-                    ItemsSource="{Binding Path=CraftLoads.Stages.Values}"
-                    SelectedItem="{Binding Path=SelectedPart}"
-                >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Expander Header="{Binding Path=StageNumber}">
-                                <ListView
-                                    ItemsSource="{Binding Path=Parts}"
-                                    SelectedItem="{Binding ElementName=loadsList, Path=SelectedItem}"
-                                >
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid
-                                                Grid.IsSharedSizeScope="True"
+                            <TextBlock
+                                Style="{StaticResource ListTitleBlock}"
+                            >
+                                Load Parts
+                            </TextBlock>
+                            <ListView
+                                Grid.Row="1"
+                                x:Name="loadsList"
+                                ItemsSource="{Binding Path=CraftLoads.Stages.Values}"
+                                SelectedItem="{Binding Path=SelectedPart}"
+                            >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Expander Header="{Binding Path=StageNumber}">
+                                            <ListView
+                                                ItemsSource="{Binding Path=Parts}"
+                                                SelectedItem="{Binding ElementName=loadsList, Path=SelectedItem}"
                                             >
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid
+                                                            Grid.IsSharedSizeScope="True"
+                                                        >
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
 
-                                                <TextBlock Style="{StaticResource PartListTitle}"/>
-                                                <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </Expander>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-        </Border>
+                                                            <TextBlock Style="{StaticResource PartListTitle}"/>
+                                                            <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+                                        </Expander>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </Border>
 
-        <Border Grid.Column="3" Grid.Row="0" Padding="4">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                    <Border Grid.Column="3" Grid.Row="0" Padding="4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-                <TextBlock
-                    Style="{StaticResource ListTitleBlock}"
-                >
-                    Generator Parts
-                </TextBlock>
-                <ListView
-                    Grid.Row="1"
-                    x:Name="generatorsList"
-                    ItemsSource="{Binding Path=CraftGenerators.Stages.Values}"
-                    SelectedItem="{Binding Path=SelectedPart}"
-                >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Expander Header="{Binding Path=StageNumber}">
-                                <ListView
-                                    ItemsSource="{Binding Path=Parts}"
-                                    SelectedItem="{Binding ElementName=generatorsList, Path=SelectedItem}"
-                                >
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid
-                                                Grid.IsSharedSizeScope="True"
+                            <TextBlock
+                                Style="{StaticResource ListTitleBlock}"
+                            >
+                                Generator Parts
+                            </TextBlock>
+                            <ListView
+                                Grid.Row="1"
+                                x:Name="generatorsList"
+                                ItemsSource="{Binding Path=CraftGenerators.Stages.Values}"
+                                SelectedItem="{Binding Path=SelectedPart}"
+                            >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Expander Header="{Binding Path=StageNumber}">
+                                            <ListView
+                                                ItemsSource="{Binding Path=Parts}"
+                                                SelectedItem="{Binding ElementName=generatorsList, Path=SelectedItem}"
                                             >
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid
+                                                            Grid.IsSharedSizeScope="True"
+                                                        >
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
 
-                                                <TextBlock Style="{StaticResource PartListTitle}"/>
-                                                <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </Expander>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-        </Border>
+                                                            <TextBlock Style="{StaticResource PartListTitle}"/>
+                                                            <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+                                        </Expander>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </Border>
 
-        <Border Grid.Column="4" Grid.Row="0" Padding="4">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                    <Border Grid.Column="4" Grid.Row="0" Padding="4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-                <TextBlock
-                    Style="{StaticResource ListTitleBlock}"
-                >
-                    Alternator Parts
-                </TextBlock>
-                <ListView
-                    Grid.Row="1"
-                    x:Name="alternatorsList"
-                    ItemsSource="{Binding Path=CraftAlternators.Stages.Values}"
-                    SelectedItem="{Binding Path=SelectedPart}"
-                >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Expander Header="{Binding Path=StageNumber}">
-                                <ListView
-                                    ItemsSource="{Binding Path=Parts}"
-                                    SelectedItem="{Binding ElementName=alternatorsList, Path=SelectedItem}"
-                                >
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid
-                                                Grid.IsSharedSizeScope="True"
+                            <TextBlock
+                                Style="{StaticResource ListTitleBlock}"
+                            >
+                                Alternator Parts
+                            </TextBlock>
+                            <ListView
+                                Grid.Row="1"
+                                x:Name="alternatorsList"
+                                ItemsSource="{Binding Path=CraftAlternators.Stages.Values}"
+                                SelectedItem="{Binding Path=SelectedPart}"
+                            >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Expander Header="{Binding Path=StageNumber}">
+                                            <ListView
+                                                ItemsSource="{Binding Path=Parts}"
+                                                SelectedItem="{Binding ElementName=alternatorsList, Path=SelectedItem}"
                                             >
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid
+                                                            Grid.IsSharedSizeScope="True"
+                                                        >
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
 
-                                                <TextBlock Style="{StaticResource PartListTitle}"/>
-                                                <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </Expander>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-        </Border>
+                                                            <TextBlock Style="{StaticResource PartListTitle}"/>
+                                                            <TextBlock Style="{StaticResource PartListValue}" Text="{Binding Path=Part.Title}"/>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+                                        </Expander>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+        </ScrollViewer>
+        <!--#endregion-->
+        
+        <GridSplitter
+            Grid.Column="1"
+            Padding="0,2,0,2"
+            Background="{StaticResource TotalsBorderColor}"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+        />
 
-        <Border Grid.Column="5" Padding="6">
+        <!--#region Calc Display Pannel-->
+        <Border Grid.Column="2" Padding="2">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="7"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
@@ -363,7 +389,16 @@
                     </Grid>
                 </Border>
 
-                <Border Grid.Row="2" Style="{StaticResource TotalsBorder}">
+                <GridSplitter
+                    Grid.Row="2"
+                    Padding="2,0,2,0"
+                    Height="5"
+                    Background="{StaticResource TotalsBorderColor}"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                />
+
+                <Border Grid.Row="3" Style="{StaticResource TotalsBorder}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -373,7 +408,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        
+
                         <Grid Grid.IsSharedSizeScope="True" Grid.Column="0" Grid.Row="0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition SharedSizeGroup="Title"/>
@@ -419,7 +454,7 @@
                             <TextBlock Grid.Row="2" Grid.Column="0">Charge Time</TextBlock>
                             <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=ChargeTimeTotal}"/>
                         </Grid>
-                        
+
                         <Expander
                             Grid.Row="1"
                             Grid.ColumnSpan="2"
@@ -534,5 +569,6 @@
                 </Border>
             </Grid>
         </Border>
+        <!--#endregion-->
     </Grid>
 </UserControl>
